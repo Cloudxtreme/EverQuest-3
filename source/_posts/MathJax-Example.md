@@ -3,6 +3,7 @@ date: 2016-07-08 20:07:55
 categories:
 - 技术
 tags:
+thumbnail: /gallery/math.jpg
 ---
 ![](gallery/math.jpg "")
 

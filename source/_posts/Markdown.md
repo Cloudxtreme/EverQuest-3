@@ -1,11 +1,11 @@
 title: Markdown
-date: 2014-12-25 00:31:00
+date: 2015-12-25 00:31:00
 categories:
 - 技术
 - Github
 tags:
 - markdown
-thumbnail: gallery/markdown.jpg
+thumbnail: /gallery/markdown.jpg
 ---
 ![](gallery/markdown.jpg "")
 A markdown example shows how to write a markdown file. This document integrates core syntax and extensions (GMF).
