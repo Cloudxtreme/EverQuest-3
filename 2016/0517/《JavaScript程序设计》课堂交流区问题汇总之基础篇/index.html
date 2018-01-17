@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>《JavaScript程序设计》课堂交流问题汇总之基础篇 | 后乐</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="javascript" />
+    
+    <meta name="description" content="本课程为网易云课堂 - - 前端开发工程师 - - 《JavaScript程序设计》学习总结  问题一：获取随机整数&amp;emsp;&amp;emsp;获取一个大于等于0且小于等于9的随机整数？ 解答： 1234567891011// 方法一：Math.random() -- 返回0和1之间的伪随机数 可能为0，但总是小于1，即取值范围为[0,1)。   Math.floor(Math.random()*">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《JavaScript程序设计》课堂交流问题汇总之基础篇">
+<meta property="og:url" content="https://sophoraflower.github.io/EverQuest/2016/0517/《JavaScript程序设计》课堂交流区问题汇总之基础篇/index.html">
+<meta property="og:site_name" content="后乐">
+<meta property="og:description" content="本课程为网易云课堂 - - 前端开发工程师 - - 《JavaScript程序设计》学习总结  问题一：获取随机整数&amp;emsp;&amp;emsp;获取一个大于等于0且小于等于9的随机整数？ 解答： 1234567891011// 方法一：Math.random() -- 返回0和1之间的伪随机数 可能为0，但总是小于1，即取值范围为[0,1)。   Math.floor(Math.random()*">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://sophoraflower.github.io/gallery/js-software-design.jpg">
+<meta property="og:updated_time" content="2018-01-17T11:57:01.748Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《JavaScript程序设计》课堂交流问题汇总之基础篇">
+<meta name="twitter:description" content="本课程为网易云课堂 - - 前端开发工程师 - - 《JavaScript程序设计》学习总结  问题一：获取随机整数&amp;emsp;&amp;emsp;获取一个大于等于0且小于等于9的随机整数？ 解答： 1234567891011// 方法一：Math.random() -- 返回0和1之间的伪随机数 可能为0，但总是小于1，即取值范围为[0,1)。   Math.floor(Math.random()*">
+<meta name="twitter:image" content="https://sophoraflower.github.io/gallery/js-software-design.jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="后乐" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">柴门闻犬吠，风雪夜归人</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LifeStyle/">LifeStyle</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LifeStyle/随笔/">随笔</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/">技术</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/JavaScript/">JavaScript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/小记/">小记</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/数据可视化/">数据可视化</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/软件测试/">软件测试</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/摄影/">摄影</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/技术/JavaScript/">JavaScript</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-《JavaScript程序设计》课堂交流区问题汇总之基础篇" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        《JavaScript程序设计》课堂交流问题汇总之基础篇
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2016/0517/《JavaScript程序设计》课堂交流区问题汇总之基础篇/" class="article-date">
+            <time datetime="2016-05-17T11:19:00.000Z" itemprop="datePublished">2016-05-17</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/javascript/">javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="gallery/js-software-design.jpg" alt=""></p>
+<blockquote>
+<p>本课程为网易云课堂 - - 前端开发工程师 - - <a href="http://mooc.study.163.com/course/NEU-1000054003#/info" target="_blank" rel="noopener">《JavaScript程序设计》</a>学习总结</p>
+</blockquote>
+<h3 id="问题一：获取随机整数"><a href="#问题一：获取随机整数" class="headerlink" title="问题一：获取随机整数"></a>问题一：获取随机整数</h3><p>&emsp;&emsp;获取一个大于等于0且小于等于9的随机整数？</p>
+<p><strong>解答：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法一：Math.random() -- 返回0和1之间的伪随机数 可能为0，但总是小于1，即取值范围为[0,1)。</span></span><br><span class="line">   <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">10</span>);</span><br><span class="line"> <span class="comment">// 方法二 : 先取0-1的随机数，然后乘以10，获得0-10的随机数，然后向上取整，然后减1，或者乘以9，获得0-9的随机数，然后向上取整</span></span><br><span class="line">　<span class="keyword">var</span> number=(<span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random()*<span class="number">10</span>))<span class="number">-1</span>;</span><br><span class="line">　<span class="keyword">var</span> number=<span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random()*<span class="number">9</span>);</span><br><span class="line"><span class="comment">// 方法三：先取0-1的随机数，然后乘以10，获得0-10的随机数，然后保留0位小数点，获得整数</span></span><br><span class="line">　<span class="keyword">var</span> number=(<span class="built_in">Math</span>.random()*<span class="number">10</span>).toFixed(<span class="number">0</span>);</span><br><span class="line"><span class="comment">//方法四：先取0-1的随机数，然后乘以9.5，获得0-9.5的随机数，然后四舍五入，获得整数</span></span><br><span class="line">　<span class="keyword">var</span> number=<span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random()*<span class="number">9.5</span>);</span><br><span class="line"><span class="comment">//方法五：先取0-1的随机数，然后乘以10，获得0-10的随机数，然后使用parseInt进行数值转换</span></span><br><span class="line">　<span class="keyword">var</span> number=<span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random()*<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="问题二：字符删除"><a href="#问题二：字符删除" class="headerlink" title="问题二：字符删除"></a>问题二：字符删除</h3><p>&emsp;&emsp;想要去除一个字符串的第一个字符，有哪些方法可以实现？</p>
+<p><strong>解答：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"hellomiaomiao"</span>.replace(<span class="string">"hellomiaomiao"</span>.charAt(<span class="number">0</span>),<span class="string">""</span>);</span><br><span class="line"><span class="string">"ellomiaomiao"</span><span class="comment">//运行结果</span></span><br><span class="line"><span class="string">"hellomiaomiao"</span>.slice(<span class="number">1</span>);</span><br><span class="line"><span class="string">"ellomiaomiao"</span><span class="comment">//运行结果</span></span><br><span class="line"><span class="string">"hellomiaomiao"</span>.substr(<span class="number">1</span>);</span><br><span class="line"><span class="string">"ellomiaomiao"</span><span class="comment">//运行结果</span></span><br><span class="line"><span class="string">"hellomiaomiao"</span>.substring(<span class="number">1</span>);</span><br><span class="line"><span class="string">"ellomiaomiao"</span><span class="comment">//运行结果</span></span><br></pre></td></tr></table></figure>
+<h3 id="问题三：数组求和"><a href="#问题三：数组求和" class="headerlink" title="问题三：数组求和"></a>问题三：数组求和</h3><p>&emsp;&emsp;对一个数组（每项都是数值）求和，有哪些方法？</p>
+<p><strong>解答：</strong></p>
+<p>&emsp;&emsp;首先设定一个作为数据源的数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>every()方法：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getSum</span>(<span class="params">item, index, array</span>) </span>&#123;</span><br><span class="line">        sum += item;</span><br><span class="line">        <span class="built_in">console</span>.log(sum);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;<span class="comment">//由于every方法是会在遇到回调函数返回的第一个false时停止遍历所以需要始终返回true</span></span><br><span class="line">    &#125;;</span><br><span class="line">    arr.every(getSum);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"use every:sum = "</span> + sum);&#125;)();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>some()方法：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">     <span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line">     <span class="function"><span class="keyword">function</span> <span class="title">getSum</span>(<span class="params">item, index, array</span>) </span>&#123;</span><br><span class="line">         sum += item;</span><br><span class="line">         <span class="built_in">console</span>.log(sum);</span><br><span class="line">     &#125;;</span><br><span class="line">     arr.some(getSum);</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">"use some:sum = "</span> + sum);&#125;)();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>array.filter()方法：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">getSum</span>(<span class="params">item, index, array</span>) </span>&#123;</span><br><span class="line">          sum += item;</span><br><span class="line">          <span class="built_in">console</span>.log(sum);</span><br><span class="line">      &#125;;</span><br><span class="line">      arr.filter(getSum);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"use filter:sum = "</span> + sum);&#125;)();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>array.map()方法：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line">       <span class="function"><span class="keyword">function</span> <span class="title">getSum</span>(<span class="params">item, index, array</span>) </span>&#123;</span><br><span class="line">           sum += item;</span><br><span class="line">           <span class="built_in">console</span>.log(sum);</span><br><span class="line">       &#125;;</span><br><span class="line">       arr.map(getSum);</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">"use map:sum = "</span> + sum);&#125;)();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>array.froEach()方法：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line">       <span class="function"><span class="keyword">function</span> <span class="title">getSum</span>(<span class="params">item, index, array</span>) </span>&#123;</span><br><span class="line">           sum += item;</span><br><span class="line">           <span class="built_in">console</span>.log(sum);</span><br><span class="line">       &#125;;</span><br><span class="line">       arr.forEach(getSum);</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">"use forEach:sum = "</span> + sum);&#125;)();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>array.reduce()正向归并方法：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">prevResult, item, index, array</span>) </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> prevResult += item;</span><br><span class="line">   &#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>array.reduceRight()逆向归并方法：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.reduceRight(<span class="function"><span class="keyword">function</span>(<span class="params">prevResult, item, index, array</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> prevResult += item;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>for循环方法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, sum = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">           sum += arr[i];</span><br><span class="line">           <span class="built_in">console</span>.log(sum);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">"use for:sum = "</span> + sum);&#125;)();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>while循环方法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">var</span> i = <span class="number">0</span>, sum = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">while</span>(i&lt;arr.length)&#123;</span><br><span class="line">          sum+=arr[i];</span><br><span class="line">          <span class="built_in">console</span>.log(sum);</span><br><span class="line">          i++;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"use while:sum = "</span> + sum);&#125;)();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>for -in方法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">var</span> index <span class="keyword">in</span> arr) &#123;</span><br><span class="line">           sum += arr[index];</span><br><span class="line">           <span class="built_in">console</span>.log(sum);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">"use for-in:sum = "</span> + sum);&#125;)();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>forEach()方法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> calc = &#123;    <span class="attr">sum</span>: <span class="number">0</span>&#125;;</span><br><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">getSum</span>(<span class="params">item, index, array</span>) </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.sum += item;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>.sum);</span><br><span class="line">   &#125;</span><br><span class="line">   arr.forEach(getSum,calc);</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">'use forEach and change this:sum='</span> + calc.sum);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>join()方法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">eval(arr.join(&quot;+&quot;));</span><br><span class="line">   /*这里先将所有数组项通过字符串&quot;+&quot;连为一个字符串&quot;1+2+3+4+5+6&quot;，然后返回的这个字符串传给eval()方法，eval()方法接收了这段字符串后，就直接将这段字符串中的代码放在当前作用域下执行了。*/</span><br></pre></td></tr></table></figure>
+<p><strong>重点相关文章推荐：</strong><a href="http://blog.csdn.net/lovejulyer/article/details/51200974" target="_blank" rel="noopener">《数组求和方法比较 》</a></p>
+<h3 id="问题四：量词"><a href="#问题四：量词" class="headerlink" title="问题四：量词"></a>问题四：量词</h3><p>&emsp;&emsp;正则表达式中，量词的贪婪模式与惰性模式有什么区别？</p>
+<p><strong>解答：</strong></p>
+<p>&emsp;&emsp;贪婪与非贪婪模式影响的是被量词修饰的子表达式的匹配行为，贪婪模式在整个表达式匹配成功的前提下，尽可能多的匹配，而非贪婪模式在整个表达式匹配成功的前提下，尽可能少的匹配。非贪婪模式只被部分NFA引擎所支持。</p>
+<p>&emsp;&emsp;<strong>贪婪量词：</strong>先看整个字符串是否匹配，如果不匹配就把最后一个字符去掉在进行匹配，不匹配继续去掉最后一个字符，指导找到一个匹配或者不剩任何字符才停止。</p>
+<p>&emsp;&emsp;<strong>惰性量词：</strong>先看第一个字符串是否匹配，如果第一个不匹配就在加入第二个字符串依此类推，指导找到一个匹配或者不剩任何字符才停止，贪婪量词与贪婪量词的方法正好相反.</p>
+<p>&emsp;&emsp;浏览器对量词的支持还不完善，IE和OPERA都不支持量词，MOZILLA把支配量词看作是贪婪的。</p>
+<p>&emsp;&emsp;参考文章：</p>
+<ul>
+<li><p><a href="http://www.jb51.net/article/31491.htm" target="_blank" rel="noopener">正则表达式之 贪婪与非贪婪模式详解（概述）</a>；</p>
+</li>
+<li><p><a href="http://blog.sina.com.cn/s/blog_50a82dcd010095sh.html" target="_blank" rel="noopener">JS-正则量词的贪婪、惰性</a></p>
+</li>
+</ul>
+<h3 id="问题五：JSON-stringify兼容"><a href="#问题五：JSON-stringify兼容" class="headerlink" title="问题五：JSON.stringify兼容"></a>问题五：JSON.stringify兼容</h3><p>&emsp;&emsp;JSON.stringify函数在ie6/7中不支持，如何兼容？</p>
+<p><strong>解答：</strong></p>
+<ul>
+<li><p>jQuery插件支持的转换方式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.parseJSON( jsonstr ); <span class="comment">//jQuery.parseJSON(jsonstr),可以将json字符串转换成json对象</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Javascript支持的转换方式： </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span>(<span class="string">'('</span> + jsonstr + <span class="string">')'</span>); <span class="comment">//可以将json字符串转换成json对象,注意需要在json字符外包裹一对小括号</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>&emsp;&emsp;<strong>注：</strong>ie8(兼容模式),ie7和ie6可以使用eval()将字符串转为JSON对象，但不推荐这些方式，这种方式不安全eval会执行json串中的表达式。</p>
+<ul>
+<li>JSON官方的转换方式： </li>
+</ul>
+<p>&emsp;&emsp;<a href="http://www.json.org/提供了一个json.js,这样ie8(兼容模式),ie7和ie6就可以支持JSON对象以及其stringify()和parse()方法；" target="_blank" rel="noopener">http://www.json.org/提供了一个json.js,这样ie8(兼容模式),ie7和ie6就可以支持JSON对象以及其stringify()和parse()方法；</a><br>可以在<a href="https://github.com/douglascrockford/JSON-js上获取到这个js，一般现在用json2.js。" target="_blank" rel="noopener">https://github.com/douglascrockford/JSON-js上获取到这个js，一般现在用json2.js。</a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--[<span class="keyword">if</span> lt IE <span class="number">9</span>]&gt;</span><br><span class="line">    &lt;script src=<span class="string">"json2.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;![endif]--&gt;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;这样JSON.stringify 便可以正常使用！</p>
+<ul>
+<li>判断类型加算法实现：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">forIn</span>(<span class="params">obj, handler</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> obj) &#123;</span><br><span class="line">        <span class="keyword">if</span> (obj.hasOwnProperty(i)) &#123;</span><br><span class="line">            handler(i, obj[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">each</span>(<span class="params">arr, handler</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i += <span class="number">1</span>) &#123;</span><br><span class="line">        handler(i, arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (!<span class="built_in">JSON</span>) &#123;</span><br><span class="line">    <span class="built_in">JSON</span> = &#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (!<span class="built_in">JSON</span>.parse) &#123;</span><br><span class="line">    <span class="built_in">JSON</span>.parse = <span class="function"><span class="keyword">function</span>(<span class="params">json</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">eval</span>(<span class="string">'1,'</span> + json)</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (!<span class="built_in">JSON</span>.stringify) &#123;</span><br><span class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">JSON</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> arr = <span class="string">'[object Array]'</span>,</span><br><span class="line">            obj = <span class="string">'[object Object]'</span>;</span><br><span class="line">        <span class="built_in">JSON</span>.stringify = <span class="function"><span class="keyword">function</span>(<span class="params">json</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> t = <span class="string">''</span>;</span><br><span class="line">            <span class="keyword">var</span> m = <span class="built_in">Object</span>.prototype.toString.call(json);</span><br><span class="line">            <span class="keyword">if</span> (m == arr) &#123;</span><br><span class="line">                t = ArrPartten(json);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (m == obj) &#123;</span><br><span class="line">                t = ObjectJson(json);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                t = json;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> t;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">ObjectParse</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> t = <span class="string">'&#123;'</span>;</span><br><span class="line">            forIn(json, <span class="function"><span class="keyword">function</span>(<span class="params">i, ele</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> m = <span class="built_in">Object</span>.prototype.toString.call(ele);</span><br><span class="line">                <span class="keyword">if</span> (m == arr) &#123;</span><br><span class="line">                    t += i + <span class="string">':'</span> + ArrPartten(ele) + <span class="string">','</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (m == obj) &#123;</span><br><span class="line">                    t += i + <span class="string">':'</span> + ObjectJson(ele) + <span class="string">','</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    t += i + <span class="string">':'</span> + ele + <span class="string">','</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">if</span> (t.length != <span class="number">1</span>) &#123;</span><br><span class="line">                t = t.substring(<span class="number">0</span>, t.length - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> t + <span class="string">'&#125;'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">ArrayParse</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> t = <span class="string">'['</span>;</span><br><span class="line">            each(json, <span class="function"><span class="keyword">function</span>(<span class="params">i, ele</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> m = <span class="built_in">Object</span>.prototype.toString.call(ele);</span><br><span class="line">                <span class="keyword">if</span> (m == arr) &#123;</span><br><span class="line">                    t += ArrPartten(ele) + <span class="string">','</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (m == obj) &#123;</span><br><span class="line">                    t += ObjectJson(ele) + <span class="string">','</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    t += ele + <span class="string">','</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">if</span> (json.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                t = t.substring(<span class="number">0</span>, t.length - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> t + <span class="string">']'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;(<span class="built_in">JSON</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>判断类型加算法实现（版本二）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!<span class="built_in">window</span>.JSON)&#123;</span><br><span class="line">    <span class="built_in">window</span>.JSON = &#123;</span><br><span class="line">        parse: <span class="function"><span class="keyword">function</span>(<span class="params">sJson</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">eval</span>(<span class="string">"("</span> + sJSON + <span class="string">")"</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">        stringify: <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> result = <span class="string">""</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> obj)&#123;</span><br><span class="line">                <span class="keyword">if</span>(<span class="keyword">typeof</span> obj[key] == <span class="string">"string"</span>)&#123;</span><br><span class="line">                    <span class="comment">// 如果属性值是String类型，属性值需要加上双引号</span></span><br><span class="line">                    result += <span class="string">"\""</span> + key + <span class="string">"\":\""</span> + obj[key] + <span class="string">"\","</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(obj[key] <span class="keyword">instanceof</span> <span class="built_in">RegExp</span>)&#123;</span><br><span class="line">                    <span class="comment">// 如果属性是正则表达式，属性值只保留一对空大括号&#123;&#125;</span></span><br><span class="line">                    result += <span class="string">"\""</span> + key + <span class="string">"\":&#123;&#125;,"</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">typeof</span> obj[key] == <span class="string">"undefined"</span> || obj[key] <span class="keyword">instanceof</span> <span class="built_in">Function</span>)&#123;</span><br><span class="line">                    <span class="comment">// 如果属性值是undefined, 该属性被忽略。忽略方法。</span></span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(obj[key] <span class="keyword">instanceof</span> <span class="built_in">Array</span>)&#123;</span><br><span class="line">                    <span class="comment">// 如果属性值是数组</span></span><br><span class="line">                    result += <span class="string">"\""</span> + key + <span class="string">"\":["</span>;</span><br><span class="line">                    <span class="keyword">var</span> arr = obj[key];</span><br><span class="line">                    <span class="keyword">for</span>(<span class="keyword">var</span> item <span class="keyword">in</span> arr)&#123;</span><br><span class="line">                        <span class="keyword">if</span>(<span class="keyword">typeof</span> arr[item] == <span class="string">"string"</span>)&#123;</span><br><span class="line">                            <span class="comment">// 如果数组项是String类型，需要加上双引号</span></span><br><span class="line">                            result += <span class="string">"\""</span> + arr[item] + <span class="string">"\","</span>;</span><br><span class="line">                        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(arr[item] <span class="keyword">instanceof</span> <span class="built_in">RegExp</span>)&#123;</span><br><span class="line">                            <span class="comment">// 如果属数组项是正则表达式，只保留一对空大括号&#123;&#125;</span></span><br><span class="line">                            result += <span class="string">"&#123;&#125;,"</span>;</span><br><span class="line">                        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">typeof</span> arr[item] == <span class="string">"undefined"</span> || arr[item] <span class="keyword">instanceof</span> <span class="built_in">Function</span>)&#123;</span><br><span class="line">                            <span class="comment">// 如果数组项是undefined, 则显示null。如果是函数，则显示null?。</span></span><br><span class="line">                            result += <span class="literal">null</span> +<span class="string">","</span>;</span><br><span class="line">                        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(arr[item] <span class="keyword">instanceof</span> <span class="built_in">Object</span>)&#123;</span><br><span class="line">                            <span class="comment">//如果数组项是对象(非正则，非函数，非null)，调用本函数处理</span></span><br><span class="line">                            result += <span class="keyword">this</span>.stringify(arr[item]) +<span class="string">","</span>;</span><br><span class="line">                        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                            result += arr[item] + <span class="string">","</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    result = result.slice(<span class="number">0</span>,<span class="number">-1</span>)+<span class="string">"],"</span></span><br><span class="line">      </span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(obj[key] <span class="keyword">instanceof</span> <span class="built_in">Object</span>)&#123;</span><br><span class="line">                    <span class="comment">// 如果属性值是对象(非null，非函数，非正则)，调用本函数处理</span></span><br><span class="line">                    result += <span class="string">"\""</span> + key + <span class="string">"\":"</span> + <span class="keyword">this</span>.stringify(obj[key]) + <span class="string">","</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    result += <span class="string">"\""</span> + key + <span class="string">"\":"</span> + obj[key] + <span class="string">","</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 去除最后一个逗号,两边加&#123;&#125;</span></span><br><span class="line">            <span class="keyword">return</span> <span class="string">"&#123;"</span> + result.slice(<span class="number">0</span>,<span class="number">-1</span>) + <span class="string">"&#125;"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://sophoraflower.github.io/EverQuest/2016/0517/《JavaScript程序设计》课堂交流区问题汇总之基础篇/" data-id="cjcj14p97000650u781951qx2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="知乎" href="https://zhihu.com/people/Houlelord" target="_blank">
+                            <i class="icon fa fa-key"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="微博" href="https://weibo.com/u/1782696323" target="_blank">
+                            <i class="icon fa fa-weibo"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="实验楼" href="https://www.shiyanlou.com/user/577969/" target="_blank">
+                            <i class="icon fa fa-book"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="GitHub" href="https://github.com/sophoraFlower/" target="_blank">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="Rss" href="/" target="_blank">
+                            <i class="icon fa fa-rss"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/0518/《JavaScript程序设计》课堂交流区问题汇总之进阶篇/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            《JavaScript程序设计》课堂交流问题汇总之进阶篇
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/0322/西湖春游/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">西湖春游</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/1130/年末小记/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/ideas201712.jpg)" alt="年末小记" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/小记/">小记</a></p>
+                            <p class="item-title"><a href="/2017/1130/年末小记/" class="title">年末小记</a></p>
+                            <p class="item-date"><time datetime="2017-11-30T12:08:08.000Z" itemprop="datePublished">2017-11-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/0528/D3.js 小结/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/math.jpg)" alt="D3.js小结" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/数据可视化/">数据可视化</a></p>
+                            <p class="item-title"><a href="/2017/0528/D3.js 小结/" class="title">D3.js小结</a></p>
+                            <p class="item-date"><time datetime="2017-05-28T13:13:00.000Z" itemprop="datePublished">2017-05-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/0424/软件测试管理/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/software-test-management.jpg)" alt="软件测试管理" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/软件测试/">软件测试</a></p>
+                            <p class="item-title"><a href="/2017/0424/软件测试管理/" class="title">软件测试管理</a></p>
+                            <p class="item-date"><time datetime="2017-04-24T15:35:00.000Z" itemprop="datePublished">2017-04-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/0808/上海-西塘-绍兴/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.hdwallpapers.net/previews/lion-453.jpg)" alt="上海-西塘-绍兴" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/摄影/">摄影</a></p>
+                            <p class="item-title"><a href="/2016/0808/上海-西塘-绍兴/" class="title">上海-西塘-绍兴</a></p>
+                            <p class="item-date"><time datetime="2016-08-07T16:00:00.000Z" itemprop="datePublished">2016-08-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/0628/《页面架构》课堂交流问题汇总/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/page-layout.jpg)" alt="《页面架构》课堂交流问题汇总" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/Web/">Web</a></p>
+                            <p class="item-title"><a href="/2016/0628/《页面架构》课堂交流问题汇总/" class="title">《页面架构》课堂交流问题汇总</a></p>
+                            <p class="item-date"><time datetime="2016-06-28T10:21:00.000Z" itemprop="datePublished">2016-06-28</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/">LifeStyle</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/随笔/">随笔</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/JavaScript/">JavaScript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Web/">Web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/小记/">小记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/数据可视化/">数据可视化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/软件测试/">软件测试</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/摄影/">摄影</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">2017年11月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">2017年05月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">2017年04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016年08月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 ZiZhi Cao</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'EverQuest';
+    
+    
+    var disqus_url = 'https://sophoraflower.github.io/EverQuest/2016/0517/《JavaScript程序设计》课堂交流区问题汇总之基础篇/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>D3.js小结 | 后乐</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="javascript" />
+    
+    <meta name="description" content="D3：数据可视化库(D3 4.0+)&amp;emsp;&amp;emsp;D3是目前最流行的JavaScript可视化图表库之一，D3的图表类型非常丰富，并且支持SVG格式，因此应用十分广泛，也有很多图表插件基于D3开发，比如MetricsGraphics.js，在D3上构建的数据图表非常强大。1234567// 引用D3对象// select()方法返回一个对DOM中匹配的第一个元素的引用d3.select">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="D3.js小结">
+<meta property="og:url" content="https://sophoraflower.github.io/EverQuest/2017/0528/D3.js 小结/index.html">
+<meta property="og:site_name" content="后乐">
+<meta property="og:description" content="D3：数据可视化库(D3 4.0+)&amp;emsp;&amp;emsp;D3是目前最流行的JavaScript可视化图表库之一，D3的图表类型非常丰富，并且支持SVG格式，因此应用十分广泛，也有很多图表插件基于D3开发，比如MetricsGraphics.js，在D3上构建的数据图表非常强大。1234567// 引用D3对象// select()方法返回一个对DOM中匹配的第一个元素的引用d3.select">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://sophoraflower.github.io/gallery/math.jpg">
+<meta property="og:updated_time" content="2018-01-17T12:10:45.022Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="D3.js小结">
+<meta name="twitter:description" content="D3：数据可视化库(D3 4.0+)&amp;emsp;&amp;emsp;D3是目前最流行的JavaScript可视化图表库之一，D3的图表类型非常丰富，并且支持SVG格式，因此应用十分广泛，也有很多图表插件基于D3开发，比如MetricsGraphics.js，在D3上构建的数据图表非常强大。1234567// 引用D3对象// select()方法返回一个对DOM中匹配的第一个元素的引用d3.select">
+<meta name="twitter:image" content="https://sophoraflower.github.io/gallery/math.jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="后乐" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">柴门闻犬吠，风雪夜归人</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LifeStyle/">LifeStyle</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LifeStyle/随笔/">随笔</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/">技术</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/JavaScript/">JavaScript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/小记/">小记</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/数据可视化/">数据可视化</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/软件测试/">软件测试</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/摄影/">摄影</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/技术/数据可视化/">数据可视化</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-D3.js 小结" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        D3.js小结
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/0528/D3.js 小结/" class="article-date">
+            <time datetime="2017-05-28T13:13:00.000Z" itemprop="datePublished">2017-05-28</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/javascript/">javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="gallery/math.jpg" alt=""></p>
+<h3 id="D3：数据可视化库-D3-4-0"><a href="#D3：数据可视化库-D3-4-0" class="headerlink" title="D3：数据可视化库(D3 4.0+)"></a>D3：数据可视化库(D3 4.0+)</h3><p>&emsp;&emsp;D3是目前最流行的JavaScript可视化图表库之一，D3的图表类型非常丰富，并且支持SVG格式，因此应用十分广泛，也有很多图表插件基于D3开发，比如MetricsGraphics.js，在D3上构建的数据图表非常强大。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引用D3对象</span></span><br><span class="line"><span class="comment">// select()方法返回一个对DOM中匹配的第一个元素的引用</span></span><br><span class="line">d3.select(<span class="string">"body"</span>)</span><br><span class="line">  <span class="comment">// append()会创建一个新的DOM元素,然后把它追加到调用它的元素末尾</span></span><br><span class="line">  .append(<span class="string">"p"</span>)</span><br><span class="line">  <span class="comment">// text()接受一个字符串，把它插入到当前元素的开始和结束标签之间</span></span><br><span class="line">  .text(<span class="string">"New paragraph!"</span>)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">d3.select(<span class="string">"body"</span>)</span><br><span class="line">  <span class="comment">// 选择DOM中的所以段落。没有段落时，返回空元素</span></span><br><span class="line">  .selectAll(<span class="string">"p"</span>)</span><br><span class="line">  <span class="comment">// 解析并输出数据值</span></span><br><span class="line">  .data(dataset)</span><br><span class="line">  <span class="comment">// 创建新的绑定数据的元素（占位元素）</span></span><br><span class="line">  .enter()</span><br><span class="line">  .append(<span class="string">"p"</span>)</span><br><span class="line">  .text(<span class="string">"New paragraph"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h3><h4 id="加载CSV数据"><a href="#加载CSV数据" class="headerlink" title="加载CSV数据"></a>加载CSV数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">d3.csv(&quot;xxx.csv&quot;, function(error, data)&#123;</span><br><span class="line">    if (error) &#123;</span><br><span class="line">        console.log(error);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        // 把CSV数据交给全局变量</span><br><span class="line">        dataset = data;</span><br><span class="line">        // 调用生成可视化图标的其他函数</span><br><span class="line">        generateVis();</span><br><span class="line">        hideLoadingMsg();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="加载JSON数据"><a href="#加载JSON数据" class="headerlink" title="加载JSON数据"></a>加载JSON数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">d3.json(&quot;waterfallvelocities.json&quot;, function(json)&#123;</span><br><span class="line">     console.log(json);</span><br><span class="line">     // todo json data</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a>SVG</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建SVG元素</span></span><br><span class="line"><span class="keyword">var</span> w = <span class="number">500</span>, h = <span class="number">70</span>;</span><br><span class="line"><span class="keyword">var</span> svg = d3.select(<span class="string">"body"</span>)</span><br><span class="line">            .append(<span class="string">"svg"</span>)</span><br><span class="line">            .attr(<span class="string">"width"</span>, w)</span><br><span class="line">            .attr(<span class="string">"height"</span>, h);</span><br><span class="line"><span class="keyword">var</span> dataset = [<span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">20</span>, <span class="number">25</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建圆形</span></span><br><span class="line"><span class="keyword">var</span> circles = svg.selectAll(<span class="string">"circle"</span>)</span><br><span class="line">                 .data(dataset)</span><br><span class="line">                 .enter()</span><br><span class="line">                 .append(<span class="string">"circle"</span>);</span><br><span class="line"><span class="comment">// i为从0开始的整数，d为dataset[i]</span></span><br><span class="line">circles.attr(<span class="string">"cx"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d, i</span>)</span>&#123;</span><br><span class="line">               <span class="keyword">return</span> (i * <span class="number">50</span>) + <span class="number">25</span>;</span><br><span class="line">           &#125;)</span><br><span class="line">        .attr(<span class="string">"cy"</span>, h/<span class="number">2</span>)</span><br><span class="line">        .attr(<span class="string">"r"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>)</span>&#123;</span><br><span class="line">               <span class="keyword">return</span> d;</span><br><span class="line">           &#125;)</span><br><span class="line">        <span class="comment">// 填充</span></span><br><span class="line">        .attr(<span class="string">"fill"</span>, <span class="string">"yellow"</span>)</span><br><span class="line">        <span class="comment">// 描边</span></span><br><span class="line">        .attr(<span class="string">"stroke"</span>, <span class="string">"orange"</span>)</span><br><span class="line">        .attr(<span class="string">"stroke-width"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>)</span>&#123;</span><br><span class="line">               <span class="keyword">return</span> d/<span class="number">2</span>;</span><br><span class="line">           &#125;);</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;&emsp;&emsp;<img src="http://img.blog.csdn.net/20170528193846347?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTG92ZWp1bHllcg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="条形图"><a href="#条形图" class="headerlink" title="条形图"></a>条形图</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> w = <span class="number">500</span>, h = <span class="number">100</span>, barpadding = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> dataset = [ <span class="number">15</span>, <span class="number">20</span>, <span class="number">13</span>, <span class="number">15</span>, <span class="number">17</span>, <span class="number">19</span>, <span class="number">60</span>, <span class="number">55</span>, <span class="number">34</span>, <span class="number">19</span>, <span class="number">57</span>, <span class="number">99</span>, <span class="number">55</span>, <span class="number">61</span>, <span class="number">77</span>, <span class="number">64</span>, <span class="number">81</span>, <span class="number">56</span>, <span class="number">33</span>, <span class="number">24</span> ];</span><br><span class="line">    <span class="keyword">var</span> svg = d3.select(<span class="string">"body"</span>).append(<span class="string">"svg"</span>).attr(<span class="string">"width"</span>, w).attr(<span class="string">"height"</span>, h);</span><br><span class="line">    <span class="comment">// 创建矩形</span></span><br><span class="line">    svg.selectAll(<span class="string">"rect"</span>).data(dataset).enter().append(<span class="string">"rect"</span>)</span><br><span class="line">        .attr(<span class="string">"x"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d, i</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> i * (w / dataset.length);</span><br><span class="line">        &#125;).attr(<span class="string">"y"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> h - d;</span><br><span class="line">        &#125;).attr(<span class="string">"width"</span>, w / dataset.length - barpadding).attr(<span class="string">"height"</span>, <span class="number">100</span>)</span><br><span class="line">        .attr(<span class="string">"fill"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"rgb(0, 0, "</span> + (d * <span class="number">10</span>) + <span class="string">")"</span>;</span><br><span class="line">        &#125;);</span><br><span class="line">    <span class="comment">// 值标签</span></span><br><span class="line">    svg.selectAll(<span class="string">"text"</span>).data(dataset).enter().append(<span class="string">"text"</span>)</span><br><span class="line">        .text(<span class="function"><span class="keyword">function</span>(<span class="params">d</span>)</span>&#123; <span class="keyword">return</span> d; &#125;)</span><br><span class="line">        .attr(<span class="string">"x"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d, i</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> i * (w / dataset.length) + <span class="number">11</span>;</span><br><span class="line">        &#125;)</span><br><span class="line">        .attr(<span class="string">"y"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> (h-d) + (h-(h-d))/<span class="number">2</span> + <span class="number">2</span>;</span><br><span class="line">        &#125;)</span><br><span class="line">        .attr(<span class="string">"font-family"</span>, <span class="string">"sans-serif"</span>)</span><br><span class="line">        .attr(<span class="string">"font-size"</span>, <span class="string">"11px"</span>)</span><br><span class="line">        .attr(<span class="string">"fill"</span>, <span class="string">"white"</span>)</span><br><span class="line">        <span class="comment">// 水平居中文本</span></span><br><span class="line">        .attr(<span class="string">"text-anchor"</span>, <span class="string">"middle"</span>);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://img.blog.csdn.net/20170528195606418?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTG92ZWp1bHllcg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="比例尺和数轴"><a href="#比例尺和数轴" class="headerlink" title="比例尺和数轴"></a>比例尺和数轴</h3><h4 id="创建通用的数轴函数"><a href="#创建通用的数轴函数" class="headerlink" title="创建通用的数轴函数"></a>创建通用的数轴函数</h4><p>原写法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xAxis = d3.svg.axis();</span><br><span class="line">xAxis.scale(xScale);</span><br><span class="line">xAxis.orient(bottom);</span><br></pre></td></tr></table></figure>
+<p>最新写法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xAxis = d3.axisBottom().scale(xScale);</span><br><span class="line"><span class="keyword">var</span> yAxis = d3.axisLeft()</span><br><span class="line">              .scale(yScale);</span><br></pre></td></tr></table></figure>
+<h4 id="创建线性比例尺"><a href="#创建线性比例尺" class="headerlink" title="创建线性比例尺"></a>创建线性比例尺</h4><p>原写法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xScale = d3.scale.linear().domain([<span class="number">0</span>, <span class="number">100</span>]).range(<span class="number">0</span>, <span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<p>最新写法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xScale = d3.scaleLinear().domain([<span class="number">0</span>, <span class="number">100</span>]).range(<span class="number">0</span>, <span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="散点图示例"><a href="#散点图示例" class="headerlink" title="散点图示例"></a>散点图示例</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.axis</span> <span class="selector-tag">path</span>,</span><br><span class="line"><span class="selector-class">.axis</span> <span class="selector-tag">line</span> &#123;</span><br><span class="line">	<span class="attribute">fill</span>: none;</span><br><span class="line">	<span class="attribute">stroke</span>: black;</span><br><span class="line">	<span class="attribute">shape-rendering</span>: crispEdges;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.axis</span> <span class="selector-tag">text</span> &#123;</span><br><span class="line">	<span class="attribute">font-family</span>: sans-serif;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">11px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">//Width and height</span></span><br><span class="line">   <span class="keyword">var</span> w = <span class="number">500</span>;</span><br><span class="line">   <span class="keyword">var</span> h = <span class="number">300</span>;</span><br><span class="line">   <span class="keyword">var</span> padding = <span class="number">30</span>;</span><br><span class="line">		</span><br><span class="line">   <span class="comment">//Dynamic, random dataset</span></span><br><span class="line">   <span class="keyword">var</span> dataset = [];  <span class="comment">//Initialize empty array</span></span><br><span class="line">   <span class="keyword">var</span> numDataPoints = <span class="number">50</span>;	<span class="comment">//Number of dummy data points to create</span></span><br><span class="line">   <span class="keyword">var</span> xRange = <span class="built_in">Math</span>.random() * <span class="number">1000</span>; <span class="comment">//Max range of new x values</span></span><br><span class="line">   <span class="keyword">var</span> yRange = <span class="built_in">Math</span>.random() * <span class="number">1000</span>; <span class="comment">//Max range of new y values</span></span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; numDataPoints; i++) &#123;</span><br><span class="line">       <span class="comment">//Loop numDataPoints times</span></span><br><span class="line">       <span class="keyword">var</span> newNumber1 = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * xRange); </span><br><span class="line">       <span class="keyword">var</span> newNumber2 = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * yRange);	</span><br><span class="line">       dataset.push([newNumber1,newNumber2]);	        				</span><br><span class="line">&#125;</span><br><span class="line">   <span class="comment">//Create scale functions</span></span><br><span class="line">   <span class="keyword">var</span> xScale = d3.scaleLinear()</span><br><span class="line">                        .domain([<span class="number">0</span>, d3.max(dataset, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d[<span class="number">0</span>]; &#125;)])</span><br><span class="line">                        .range([padding, w - padding * <span class="number">2</span>]);</span><br><span class="line">   <span class="keyword">var</span> yScale = d3.scaleLinear()</span><br><span class="line">                        .domain([<span class="number">0</span>, d3.max(dataset, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d[<span class="number">1</span>]; &#125;)])</span><br><span class="line">                        .range([h - padding, padding]);</span><br><span class="line">   <span class="keyword">var</span> rScale = d3.scaleLinear()</span><br><span class="line">                        .domain([<span class="number">0</span>, d3.max(dataset, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d[<span class="number">1</span>]; &#125;)])</span><br><span class="line">                        .range([<span class="number">2</span>, <span class="number">5</span>]);</span><br><span class="line">   <span class="comment">//Define X axis</span></span><br><span class="line">   <span class="keyword">var</span> xAxis = d3.axisBottom()</span><br><span class="line">                   .scale(xScale)</span><br><span class="line">                   .ticks(<span class="number">5</span>);</span><br><span class="line">   <span class="comment">//Define Y axis</span></span><br><span class="line">   <span class="keyword">var</span> yAxis = d3.axisLeft()</span><br><span class="line">                 .scale(yScale)</span><br><span class="line">                 .ticks(<span class="number">5</span>);</span><br><span class="line">   <span class="comment">//Create SVG element</span></span><br><span class="line">   <span class="keyword">var</span> svg = d3.select(<span class="string">"body"</span>)</span><br><span class="line">               .append(<span class="string">"svg"</span>)</span><br><span class="line">               .attr(<span class="string">"width"</span>, w)</span><br><span class="line">               .attr(<span class="string">"height"</span>, h);</span><br><span class="line">   <span class="comment">//Create circles</span></span><br><span class="line">   svg.selectAll(<span class="string">"circle"</span>)</span><br><span class="line">      .data(dataset)</span><br><span class="line">      .enter()</span><br><span class="line">      .append(<span class="string">"circle"</span>)</span><br><span class="line">      .attr(<span class="string">"cx"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123;</span><br><span class="line">              <span class="keyword">return</span> xScale(d[<span class="number">0</span>]);</span><br><span class="line">      &#125;)</span><br><span class="line">      .attr(<span class="string">"cy"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123;</span><br><span class="line">              <span class="keyword">return</span> yScale(d[<span class="number">1</span>]);</span><br><span class="line">      &#125;)</span><br><span class="line">      .attr(<span class="string">"r"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123;</span><br><span class="line">              <span class="keyword">return</span> rScale(d[<span class="number">1</span>]);</span><br><span class="line">      &#125;);</span><br><span class="line">  <span class="comment">//Create labels</span></span><br><span class="line">  svg.selectAll(<span class="string">"text"</span>)</span><br><span class="line">     .data(dataset)</span><br><span class="line">     .enter()</span><br><span class="line">     .append(<span class="string">"text"</span>)</span><br><span class="line">     .text(<span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123;</span><br><span class="line">             <span class="keyword">return</span> d[<span class="number">0</span>] + <span class="string">","</span> + d[<span class="number">1</span>];</span><br><span class="line">     &#125;)</span><br><span class="line">     .attr(<span class="string">"x"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123;</span><br><span class="line">             <span class="keyword">return</span> xScale(d[<span class="number">0</span>]);</span><br><span class="line">     &#125;)</span><br><span class="line">     .attr(<span class="string">"y"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123;</span><br><span class="line">             <span class="keyword">return</span> yScale(d[<span class="number">1</span>]);</span><br><span class="line">     &#125;)</span><br><span class="line">     .attr(<span class="string">"font-family"</span>, <span class="string">"sans-serif"</span>)</span><br><span class="line">     .attr(<span class="string">"font-size"</span>, <span class="string">"11px"</span>)</span><br><span class="line">     .attr(<span class="string">"fill"</span>, <span class="string">"red"</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//Create X axis</span></span><br><span class="line">  svg.append(<span class="string">"g"</span>)</span><br><span class="line">      .attr(<span class="string">"class"</span>, <span class="string">"axis"</span>)</span><br><span class="line">      .attr(<span class="string">"transform"</span>, <span class="string">"translate(0,"</span> + (h - padding) + <span class="string">")"</span>)</span><br><span class="line">      .call(xAxis);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//Create Y axis</span></span><br><span class="line">  svg.append(<span class="string">"g"</span>)</span><br><span class="line">      .attr(<span class="string">"class"</span>, <span class="string">"axis"</span>)</span><br><span class="line">      .attr(<span class="string">"transform"</span>, <span class="string">"translate("</span> + padding + <span class="string">",0)"</span>)</span><br><span class="line">      .call(yAxis);</span><br></pre></td></tr></table></figure>
+<p><img src="http://img.blog.csdn.net/20170528210814937?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTG92ZWp1bHllcg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="更新，过渡和动画"><a href="#更新，过渡和动画" class="headerlink" title="更新，过渡和动画"></a>更新，过渡和动画</h3><h3 id="交互式图表"><a href="#交互式图表" class="headerlink" title="交互式图表"></a>交互式图表</h3><h3 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h3><h3 id="地图"><a href="#地图" class="headerlink" title="地图"></a>地图</h3>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://sophoraflower.github.io/EverQuest/2017/0528/D3.js 小结/" data-id="cjcj14p8y000250u7qlhyrds6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="知乎" href="https://zhihu.com/people/Houlelord" target="_blank">
+                            <i class="icon fa fa-key"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="微博" href="https://weibo.com/u/1782696323" target="_blank">
+                            <i class="icon fa fa-weibo"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="实验楼" href="https://www.shiyanlou.com/user/577969/" target="_blank">
+                            <i class="icon fa fa-book"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="GitHub" href="https://github.com/sophoraFlower/" target="_blank">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="Rss" href="/" target="_blank">
+                            <i class="icon fa fa-rss"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/1130/年末小记/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            年末小记
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2017/0424/软件测试管理/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">软件测试管理</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/1130/年末小记/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/ideas201712.jpg)" alt="年末小记" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/小记/">小记</a></p>
+                            <p class="item-title"><a href="/2017/1130/年末小记/" class="title">年末小记</a></p>
+                            <p class="item-date"><time datetime="2017-11-30T12:08:08.000Z" itemprop="datePublished">2017-11-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/0528/D3.js 小结/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/math.jpg)" alt="D3.js小结" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/数据可视化/">数据可视化</a></p>
+                            <p class="item-title"><a href="/2017/0528/D3.js 小结/" class="title">D3.js小结</a></p>
+                            <p class="item-date"><time datetime="2017-05-28T13:13:00.000Z" itemprop="datePublished">2017-05-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/0424/软件测试管理/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/software-test-management.jpg)" alt="软件测试管理" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/软件测试/">软件测试</a></p>
+                            <p class="item-title"><a href="/2017/0424/软件测试管理/" class="title">软件测试管理</a></p>
+                            <p class="item-date"><time datetime="2017-04-24T15:35:00.000Z" itemprop="datePublished">2017-04-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/0808/上海-西塘-绍兴/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.hdwallpapers.net/previews/lion-453.jpg)" alt="上海-西塘-绍兴" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/摄影/">摄影</a></p>
+                            <p class="item-title"><a href="/2016/0808/上海-西塘-绍兴/" class="title">上海-西塘-绍兴</a></p>
+                            <p class="item-date"><time datetime="2016-08-07T16:00:00.000Z" itemprop="datePublished">2016-08-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/0628/《页面架构》课堂交流问题汇总/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/page-layout.jpg)" alt="《页面架构》课堂交流问题汇总" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/Web/">Web</a></p>
+                            <p class="item-title"><a href="/2016/0628/《页面架构》课堂交流问题汇总/" class="title">《页面架构》课堂交流问题汇总</a></p>
+                            <p class="item-date"><time datetime="2016-06-28T10:21:00.000Z" itemprop="datePublished">2016-06-28</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/">LifeStyle</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/随笔/">随笔</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/JavaScript/">JavaScript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Web/">Web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/小记/">小记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/数据可视化/">数据可视化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/软件测试/">软件测试</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/摄影/">摄影</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">2017年11月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">2017年05月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">2017年04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016年08月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 ZiZhi Cao</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'EverQuest';
+    
+    
+    var disqus_url = 'https://sophoraflower.github.io/EverQuest/2017/0528/D3.js 小结/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

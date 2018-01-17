@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>《DOM编程艺术》课堂交流问题汇总之进阶篇 | 后乐</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="javascript" />
+    
+    <meta name="description" content="本课程为网易云课堂 - - 前端开发工程师 - - 《DOM编程艺术》学习总结  样式操作相关笔记推荐：前端微笔记-样式操作 问题一：如何实现浏览器兼容版的window.getComputedStyle　　window.getComputedStyle能够获取元素的实际样式，但是低版本的ie8及以下不支持，如何在低版本的ie上兼容类似的功能。 解答： 1234567function getCo">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《DOM编程艺术》课堂交流问题汇总之进阶篇">
+<meta property="og:url" content="https://sophoraflower.github.io/EverQuest/2016/0608/《DOM编程艺术》课堂交流问题汇总之进阶篇/index.html">
+<meta property="og:site_name" content="后乐">
+<meta property="og:description" content="本课程为网易云课堂 - - 前端开发工程师 - - 《DOM编程艺术》学习总结  样式操作相关笔记推荐：前端微笔记-样式操作 问题一：如何实现浏览器兼容版的window.getComputedStyle　　window.getComputedStyle能够获取元素的实际样式，但是低版本的ie8及以下不支持，如何在低版本的ie上兼容类似的功能。 解答： 1234567function getCo">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://sophoraflower.github.io/gallery/winter-break.jpg">
+<meta property="og:updated_time" content="2018-01-17T12:06:55.977Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《DOM编程艺术》课堂交流问题汇总之进阶篇">
+<meta name="twitter:description" content="本课程为网易云课堂 - - 前端开发工程师 - - 《DOM编程艺术》学习总结  样式操作相关笔记推荐：前端微笔记-样式操作 问题一：如何实现浏览器兼容版的window.getComputedStyle　　window.getComputedStyle能够获取元素的实际样式，但是低版本的ie8及以下不支持，如何在低版本的ie上兼容类似的功能。 解答： 1234567function getCo">
+<meta name="twitter:image" content="https://sophoraflower.github.io/gallery/winter-break.jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="后乐" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">柴门闻犬吠，风雪夜归人</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LifeStyle/">LifeStyle</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LifeStyle/随笔/">随笔</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/">技术</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/JavaScript/">JavaScript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/小记/">小记</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/数据可视化/">数据可视化</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/软件测试/">软件测试</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/摄影/">摄影</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/技术/JavaScript/">JavaScript</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-《DOM编程艺术》课堂交流问题汇总之进阶篇" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        《DOM编程艺术》课堂交流问题汇总之进阶篇
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2016/0608/《DOM编程艺术》课堂交流问题汇总之进阶篇/" class="article-date">
+            <time datetime="2016-06-08T06:26:00.000Z" itemprop="datePublished">2016-06-08</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/javascript/">javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="gallery/winter-break.jpg" alt=""></p>
+<blockquote>
+<p>本课程为网易云课堂 - - 前端开发工程师 - - <a href="http://mooc.study.163.com/course/NEU-1000054004?tid=2001219008#/info" target="_blank" rel="noopener">《DOM编程艺术》</a>学习总结</p>
+</blockquote>
+<h3 id="样式操作"><a href="#样式操作" class="headerlink" title="样式操作"></a>样式操作</h3><p><strong>相关笔记推荐</strong>：<a href="http://wiki.jikexueyuan.com/project/fend_note/chapter3/04_style_manipulation.html" target="_blank" rel="noopener">前端微笔记-样式操作</a></p>
+<h4 id="问题一：如何实现浏览器兼容版的window-getComputedStyle"><a href="#问题一：如何实现浏览器兼容版的window-getComputedStyle" class="headerlink" title="问题一：如何实现浏览器兼容版的window.getComputedStyle"></a>问题一：如何实现浏览器兼容版的window.getComputedStyle</h4><p>　　window.getComputedStyle能够获取元素的实际样式，但是低版本的ie8及以下不支持，如何在低版本的ie上兼容类似的功能。</p>
+<p><strong>解答：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getComputedStyle</span>(<span class="params">element</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">window</span>.getComputedStyle)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">window</span>.getComputedStyle(element);        </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> element.currentStyle;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="问题二：实现getStyle函数"><a href="#问题二：实现getStyle函数" class="headerlink" title="问题二：实现getStyle函数"></a>问题二：实现getStyle函数</h3><p>　　getStyle函数用于获取元素的实际样式，语法如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cssPropertyValue = getStyle (element, cssPropertyName)；</span><br></pre></td></tr></table></figure>
+<p>　　使用示例如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getStyle(element, <span class="string">"color"</span>) 返回element元素的显示颜色，如：<span class="string">"rgb(0, 0, 0)"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getStyle(element, <span class="string">"line-height"</span>) 返回element元素的实际行高，如：<span class="string">"30px"</span></span><br></pre></td></tr></table></figure>
+<p>　　请实现getStyle函数，要求浏览器兼容。</p>
+<p><strong>解答：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getStyle</span>(<span class="params">element,cssPropertyName</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">window</span>.getComputedStyle)&#123;</span><br><span class="line">           <span class="keyword">return</span> element.currentStyle[cssPropertyName];</span><br><span class="line">         &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">           <span class="keyword">return</span> getComputedStyle(element)[cssPropertyName];</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="数据通信"><a href="#数据通信" class="headerlink" title="数据通信"></a>数据通信</h3><p><strong>相关笔记推荐：</strong><a href="http://wiki.jikexueyuan.com/project/fend_note/chapter3/09_network.html" target="_blank" rel="noopener">前端微笔记-《DOM编程艺术》-数据通信</a></p>
+<p>####问题一：Ajax请求GET方法的封装</p>
+<p>　　方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get(url, options, callback)</span><br></pre></td></tr></table></figure>
+<p>　　参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url    &#123;String&#125;    请求资源的url</span><br><span class="line">options    &#123;Object&#125;    请求的查询参数</span><br><span class="line">callback    &#123;Function&#125;    请求的回调函数，接收XMLHttpRequest对象的responseText属性作为参数</span><br></pre></td></tr></table></figure>
+<p>　　返回</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span></span><br></pre></td></tr></table></figure>
+<p>　　举例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">get(‘/information’, &#123;<span class="attr">name</span>: ‘netease’, <span class="attr">age</span>: <span class="number">18</span>&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>　　描述</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">方法get(url, options, callback) 是对Ajax请求GET方法的封装。请写出get方法的实现代码。</span><br></pre></td></tr></table></figure>
+<p><strong>解答：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params">url, options, callback</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();     <span class="comment">//创建XHR对象</span></span><br><span class="line">        <span class="comment">// 处理返回数据</span></span><br><span class="line">        xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span>) &#123;      <span class="comment">//浏览器结束请求</span></span><br><span class="line">                <span class="keyword">if</span> ((xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt;<span class="number">300</span>) || xhr.status == <span class="number">304</span>) &#123;  <span class="comment">//status为200-300表示success，304为读取缓存</span></span><br><span class="line">                    callback(xhr.responseText);     <span class="comment">//执行返回的html、xml</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    alert(<span class="string">'Requeset was unsuccessful: '</span> + xhr.status);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 请求参数序列化，把对象转换为例如'name1=value1&amp;name2=value2'的格式</span></span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">serialize</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (!data) &#123;<span class="keyword">return</span> <span class="string">''</span>;&#125;</span><br><span class="line">            <span class="keyword">var</span> pairs = [];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> name <span class="keyword">in</span> data)&#123;</span><br><span class="line">                <span class="keyword">if</span> (!data.hasOwnProperty(name)) &#123;<span class="keyword">continue</span>;&#125;     <span class="comment">//判断对象自身是否有name属性</span></span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">typeof</span> data[name] === <span class="string">'function'</span>) &#123;<span class="keyword">continue</span>;&#125;   <span class="comment">//如果对象的值是一个函数，忽略</span></span><br><span class="line">                <span class="keyword">var</span> value = data[name].toString();</span><br><span class="line">                name = <span class="built_in">encodeURIComponent</span>(name);    <span class="comment">//把字符串作为URI 组件进行编码。将转义用于分隔 URI 各个部分的标点符号</span></span><br><span class="line">                value = <span class="built_in">encodeURIComponent</span>(value);</span><br><span class="line">                pairs.push(name + <span class="string">'='</span> + value);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> pairs.join(<span class="string">'&amp;'</span>);</span><br><span class="line">        &#125;    </span><br><span class="line">        xhr.open(<span class="string">'get'</span>,URL,<span class="literal">true</span>);   <span class="comment">//url+查询参数序列号结果</span></span><br><span class="line">        <span class="comment">//放在open后执行，表示文本内容的编码方式是URL编码，即除了标准字符外，每字节以双字节16进制前加个“%”表示</span></span><br><span class="line">        xhr.setRequestHeader(<span class="string">'Content-Type'</span>,<span class="string">'application/x-www-form-urlencoded'</span>);</span><br><span class="line">        xhr.send(<span class="literal">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line">        <span class="comment">// test</span></span><br><span class="line">        get(<span class="string">'/information'</span>, &#123;<span class="attr">name</span>: <span class="string">'netease'</span>, <span class="attr">age</span>: <span class="number">18</span>&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(data);</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="问题二：Ajax请求POST方法的封装"><a href="#问题二：Ajax请求POST方法的封装" class="headerlink" title="问题二：Ajax请求POST方法的封装"></a>问题二：Ajax请求POST方法的封装</h4><p>　　post函数是对Ajax的POST请求的封装，语法如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post(url, options, callback)</span><br></pre></td></tr></table></figure></p>
+<p>　　没有返回值，参数说明如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url：请求资源的url，<span class="built_in">String</span>类型</span><br><span class="line">options：请求的查询参数，<span class="built_in">Object</span>类型</span><br><span class="line">callback：回调函数，接收XMLHttpRequest对象的responseText属性作为参数，<span class="built_in">Function</span>类型</span><br></pre></td></tr></table></figure></p>
+<p>　　使用示例如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">post(<span class="string">'/addUser'</span>, &#123;<span class="attr">name</span>: <span class="string">'jerry'</span>, <span class="attr">age</span>: <span class="number">1</span>&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">     <span class="comment">// 处理返回数据</span></span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>　　请写出post函数的实现代码，要求浏览器兼容。</p>
+<p><strong>解答：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">PostAjax</span>(<span class="params">url, options, callback</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> xhr=<span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    xhr.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(xhr.readyState==<span class="number">4</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>((xhr.status&gt;=<span class="number">200</span>&amp;&amp;xhr.status&lt;<span class="number">300</span>)||xhr.status==<span class="number">304</span>)&#123;</span><br><span class="line">                callback(xhr.responseText,options);</span><br><span class="line">           &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                alert(<span class="string">"Request was unsuccessful:"</span>+xhr.status);</span><br><span class="line">           &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    xhr.open(<span class="string">"post"</span>,url+<span class="string">"?"</span>+serialize(options),<span class="literal">true</span>);</span><br><span class="line">    xhr.setRequestHeader(<span class="string">'Content-Type'</span>,<span class="string">'application/x-www-form-urlencoded'</span>);</span><br><span class="line">    xhr.send(<span class="literal">null</span>);</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="keyword">var</span> url=<span class="string">"http://study.163.com/webDev/hotcouresByCategory.htm"</span>;</span><br><span class="line">  </span><br><span class="line">PostAjax(url,&#123;<span class="string">"id"</span>:<span class="number">1002963026</span>&#125;,<span class="function"><span class="keyword">function</span> (<span class="params">data,options</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> ObjData=<span class="built_in">JSON</span>.parse(data);</span><br><span class="line">        <span class="keyword">for</span>(key <span class="keyword">in</span> ObjData)&#123;</span><br><span class="line">            <span class="keyword">if</span>(ObjData[key][<span class="string">"id"</span>]==options.id)&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(ObjData[key]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">serialize</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!data) <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">var</span> pairs=[];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> name <span class="keyword">in</span> data)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!data.hasOwnProperty(name)) <span class="keyword">continue</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> data[name]===<span class="string">"function"</span>) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">var</span> value=data[name].toString();</span><br><span class="line">        name=<span class="built_in">encodeURIComponent</span>(value);</span><br><span class="line">        value=<span class="built_in">encodeURIComponent</span>(value);</span><br><span class="line">        pairs.push(name+<span class="string">"="</span>+value);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pairs.join(<span class="string">"&amp;"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h3><h4 id="问题：cookie的作用和弊端"><a href="#问题：cookie的作用和弊端" class="headerlink" title="问题：cookie的作用和弊端"></a>问题：cookie的作用和弊端</h4><p>　　用cookie作为浏览器端的存储有哪些作用？有哪些弊端，是否有替代的解决办法？</p>
+<p>解答：</p>
+<p>作用：</p>
+<ul>
+<li><p>可以在客户端上保存用户数据，起到简单的缓存和用户身份识别等作用。</p>
+</li>
+<li><p>保存用户的登陆状态，用户进行登陆，成功登陆后，服务器生成特定的cookie返回给客户端，客户端下次访问该域名下的任何页面，将该cookie的信息发送给服务器，服务器经过检验，来判断用户是否登陆。</p>
+</li>
+<li><p>记录用户的行为。</p>
+</li>
+</ul>
+<p>弊端：</p>
+<ul>
+<li><p>增加流量消耗，因为每次请求都会带上cookie信息</p>
+</li>
+<li><p>安全性隐患，cookie使用明文传输</p>
+</li>
+<li><p>大小限制：最大容量在4KB左右</p>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://sophoraflower.github.io/EverQuest/2016/0608/《DOM编程艺术》课堂交流问题汇总之进阶篇/" data-id="cjcj14p94000550u7rqibhuju" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="知乎" href="https://zhihu.com/people/Houlelord" target="_blank">
+                            <i class="icon fa fa-key"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="微博" href="https://weibo.com/u/1782696323" target="_blank">
+                            <i class="icon fa fa-weibo"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="实验楼" href="https://www.shiyanlou.com/user/577969/" target="_blank">
+                            <i class="icon fa fa-book"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="GitHub" href="https://github.com/sophoraFlower/" target="_blank">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="Rss" href="/" target="_blank">
+                            <i class="icon fa fa-rss"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/0628/《页面架构》课堂交流问题汇总/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            《页面架构》课堂交流问题汇总
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/0605/《产品前端架构》课堂交流问题汇总/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">《产品前端架构》课堂交流问题汇总</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/1130/年末小记/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/ideas201712.jpg)" alt="年末小记" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/小记/">小记</a></p>
+                            <p class="item-title"><a href="/2017/1130/年末小记/" class="title">年末小记</a></p>
+                            <p class="item-date"><time datetime="2017-11-30T12:08:08.000Z" itemprop="datePublished">2017-11-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/0528/D3.js 小结/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/math.jpg)" alt="D3.js小结" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/数据可视化/">数据可视化</a></p>
+                            <p class="item-title"><a href="/2017/0528/D3.js 小结/" class="title">D3.js小结</a></p>
+                            <p class="item-date"><time datetime="2017-05-28T13:13:00.000Z" itemprop="datePublished">2017-05-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/0424/软件测试管理/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/software-test-management.jpg)" alt="软件测试管理" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/软件测试/">软件测试</a></p>
+                            <p class="item-title"><a href="/2017/0424/软件测试管理/" class="title">软件测试管理</a></p>
+                            <p class="item-date"><time datetime="2017-04-24T15:35:00.000Z" itemprop="datePublished">2017-04-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/0808/上海-西塘-绍兴/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.hdwallpapers.net/previews/lion-453.jpg)" alt="上海-西塘-绍兴" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/摄影/">摄影</a></p>
+                            <p class="item-title"><a href="/2016/0808/上海-西塘-绍兴/" class="title">上海-西塘-绍兴</a></p>
+                            <p class="item-date"><time datetime="2016-08-07T16:00:00.000Z" itemprop="datePublished">2016-08-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/0628/《页面架构》课堂交流问题汇总/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/page-layout.jpg)" alt="《页面架构》课堂交流问题汇总" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/Web/">Web</a></p>
+                            <p class="item-title"><a href="/2016/0628/《页面架构》课堂交流问题汇总/" class="title">《页面架构》课堂交流问题汇总</a></p>
+                            <p class="item-date"><time datetime="2016-06-28T10:21:00.000Z" itemprop="datePublished">2016-06-28</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/">LifeStyle</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/随笔/">随笔</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/JavaScript/">JavaScript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Web/">Web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/小记/">小记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/数据可视化/">数据可视化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/软件测试/">软件测试</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/摄影/">摄影</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">2017年11月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">2017年05月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">2017年04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016年08月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 ZiZhi Cao</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'EverQuest';
+    
+    
+    var disqus_url = 'https://sophoraflower.github.io/EverQuest/2016/0608/《DOM编程艺术》课堂交流问题汇总之进阶篇/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

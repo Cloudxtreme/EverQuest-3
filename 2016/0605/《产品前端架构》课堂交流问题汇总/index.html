@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>《产品前端架构》课堂交流问题汇总 | 后乐</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="" />
+    
+    <meta name="description" content="本课程为网易云课堂 - - 前端开发工程师 - - 《产品前端架构》学习总结  版本管理问题一：分布式版本控制(DVCS) 对比集中式版本控制系统(CVCS)&amp;emsp;&amp;emsp;由于Git的持续火热， 对于DVCS与CVCS的争论和对比越来越多了， 似乎很多文章都倾向于这个观点： &amp;quot; Git这种DVCS 要比SVN这些DVCS要优越&amp;quot;  &amp;emsp;&amp;emsp;实际情况">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《产品前端架构》课堂交流问题汇总">
+<meta property="og:url" content="https://sophoraflower.github.io/EverQuest/2016/0605/《产品前端架构》课堂交流问题汇总/index.html">
+<meta property="og:site_name" content="后乐">
+<meta property="og:description" content="本课程为网易云课堂 - - 前端开发工程师 - - 《产品前端架构》学习总结  版本管理问题一：分布式版本控制(DVCS) 对比集中式版本控制系统(CVCS)&amp;emsp;&amp;emsp;由于Git的持续火热， 对于DVCS与CVCS的争论和对比越来越多了， 似乎很多文章都倾向于这个观点： &amp;quot; Git这种DVCS 要比SVN这些DVCS要优越&amp;quot;  &amp;emsp;&amp;emsp;实际情况">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://sophoraflower.github.io/gallery/font-end-layout.jpg">
+<meta property="og:updated_time" content="2018-01-17T11:55:59.787Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《产品前端架构》课堂交流问题汇总">
+<meta name="twitter:description" content="本课程为网易云课堂 - - 前端开发工程师 - - 《产品前端架构》学习总结  版本管理问题一：分布式版本控制(DVCS) 对比集中式版本控制系统(CVCS)&amp;emsp;&amp;emsp;由于Git的持续火热， 对于DVCS与CVCS的争论和对比越来越多了， 似乎很多文章都倾向于这个观点： &amp;quot; Git这种DVCS 要比SVN这些DVCS要优越&amp;quot;  &amp;emsp;&amp;emsp;实际情况">
+<meta name="twitter:image" content="https://sophoraflower.github.io/gallery/font-end-layout.jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="后乐" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">柴门闻犬吠，风雪夜归人</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LifeStyle/">LifeStyle</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LifeStyle/随笔/">随笔</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/">技术</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/JavaScript/">JavaScript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/Web/">Web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/小记/">小记</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/数据可视化/">数据可视化</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/软件测试/">软件测试</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/摄影/">摄影</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/技术/Web/">Web</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-《产品前端架构》课堂交流问题汇总" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        《产品前端架构》课堂交流问题汇总
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2016/0605/《产品前端架构》课堂交流问题汇总/" class="article-date">
+            <time datetime="2016-06-05T04:36:00.000Z" itemprop="datePublished">2016-06-05</time>
+        </a>
+    </div>
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="gallery/font-end-layout.jpg" alt=""></p>
+<blockquote>
+<p>本课程为网易云课堂 - - 前端开发工程师 - - <a href="http://mooc.study.163.com/course/NEU-1000054002?tid=2001219010#/info" target="_blank" rel="noopener">《产品前端架构》</a>学习总结</p>
+</blockquote>
+<h3 id="版本管理"><a href="#版本管理" class="headerlink" title="版本管理"></a>版本管理</h3><h4 id="问题一：分布式版本控制-DVCS-对比集中式版本控制系统-CVCS"><a href="#问题一：分布式版本控制-DVCS-对比集中式版本控制系统-CVCS" class="headerlink" title="问题一：分布式版本控制(DVCS) 对比集中式版本控制系统(CVCS)"></a>问题一：分布式版本控制(DVCS) 对比集中式版本控制系统(CVCS)</h4><p>&emsp;&emsp;由于Git的持续火热， 对于DVCS与CVCS的争论和对比越来越多了， 似乎很多文章都倾向于这个观点：</p>
+<pre><code>&quot; Git这种DVCS 要比SVN这些DVCS要优越&quot; 
+</code></pre><p>&emsp;&emsp;实际情况真的是这样吗？ 现在请同学们各抒己见， 以各个方面来分析下CVCS与 DVCS之间的优缺点. </p>
+<p><strong>回答：</strong></p>
+<p>&emsp;&emsp;<strong>分布式版本控制 (DVCS) :</strong>一种不需要中心服务器的管理文件版本的方法，但是它也可以使用中心服务器。更改可以被合并到 DVCS 的任何其他用户的系统中，因此可以实现非常灵活的工作流。</p>
+<p><strong>主要优点：</strong></p>
+<ul>
+<li><p>版本控制更加灵活，因为它除了支持传统的（集中式）工作流，还支持其他各种工作流；</p>
+</li>
+<li><p>比集中式服务器快得多，因为大多数操作在客户机本地进行，而不需要网络操作。</p>
+</li>
+</ul>
+<p>&emsp;&emsp;<strong>集中式版本控制（ CVCS）：</strong>这类系统，诸如 CVS、Subversion 以及 Perforce 等，都有一个单一的集中管理的服务器，保存所有文件的修订版本，而协同工作的人们都通过客户端连到这台服务器，取出最新的文件或者提交更新。</p>
+<p><strong>优点与缺点：</strong></p>
+<ul>
+<li><p>每个人都可以在一定程度上看到项目中的其他人正在做些什么。 而管理员也可以轻松掌控每个开发者的权限，并且管理一个 CVCS 要远比在各个客户端上维护本地数据库来得轻松容易。</p>
+</li>
+<li><p>最显而易见的缺点是中央服务器的单点故障。 如果宕机一小时，那么在这一小时内，谁都无法提交更新，也就无法协同工作。</p>
+</li>
+</ul>
+<p><strong>DVCS 和集中式版本控制系统的主要差异：</strong></p>
+<p>&emsp;&emsp;在 DVCS 和集中式版本控制系统之间有三个关键差异：</p>
+<ul>
+<li><p>DVCS 通过本地提交支持离线工作，这是由 DVCS 的操作方式决定的。这与集中式版本控制完全不同，集中式版本控制要求通过到中心服务器的连接执行所有操作。这种灵活性让开发人员在飞机上也能够像在办公室中一样轻松地工作，可以一次又一次地进行提交。</p>
+</li>
+<li><p>DVCS 比集中式系统更灵活，因为 DVCS 支持许多不同类型的工作流，从传统的集中式工作流到纯粹的特殊工作流，再到特殊工作流和集中式工作流的组合。这种灵活性允许通过电子邮件、对等网络和开发团队喜欢的任何方式进行开发。</p>
+</li>
+<li><p>DVCS 比集中式版本控制系统快得多，因为大多数操作在客户机上进行，速度非常快。另外，在需要进行推（push）操作（与另一个节点通信）时，速度也更快，因为两个客户机机器上都有完整的元数据。速度差异相当显著，根据使用本地存储库还是网络存储库，DVCS 比Subversion 快大约 3-10 倍。</p>
+</li>
+</ul>
+<p><strong>观点分析：</strong>“Git这种DVCS 要比SVN这些DVCS要优越”</p>
+<ul>
+<li><p>SVN属于集中化的版本控制系统，SVN使用起来有点像是档案仓库的感觉，支持并行读写文件，支持代码的版本化管理，功能包括取出、导入、更新、分支、改名、还原、合并等。SVN大都采用图形界面操作，直观，上手快。</p>
+</li>
+<li><p>Git是一个分布式版本控制系统，操作命令包括：clone，pull，push,branch ,merge ,push,rebase，Git擅长的是程序代码的版本化管理。不支持中文，图形界面支持差，使用难度大。不易推广。</p>
+</li>
+<li><p>SVN更适用于项目管理， Git仅适用于代码管理。    </p>
+</li>
+<li><p>一个研发队伍的成员正常包括：需求分析、设计、美工、程序员、测试、实施、运维，每个成员在工作中都有产出物，  包括了文档、设计代码、程序代码，这些都需要按项目集中进行管理的。SVN能清楚的按目录进行分类管理， 使项目组的管理处于有序高效。而很容易的实现了对本地代码修改的记录，而这整个过程中，根本没出现服务器。</p>
+</li>
+</ul>
+<p><strong>其他详细内容参考下面推荐文章。</strong></p>
+<ul>
+<li><p><a href="http://blog.jobbole.com/31444/" target="_blank" rel="noopener">Git和SVN之间的五个基本区别；</a></p>
+</li>
+<li><p><a href="http://jingyan.baidu.com/article/676629976401a154d51b8430.html" target="_blank" rel="noopener">SVN和Git比较，哪个好用，适用？</a></p>
+</li>
+<li><p><a href="http://blog.csdn.net/zssureqh/article/details/39117601" target="_blank" rel="noopener">版本控制：SVN和GIT的一些使用感受</a></p>
+</li>
+<li><p><a href="http://www.tuicool.com/articles/bMF32iE" target="_blank" rel="noopener">关于本地、集中式、分布式三种版本控制系统</a> </p>
+</li>
+<li><p><a href="http://www.ibm.com/developerworks/cn/aix/library/au-dist_ver_control/" target="_blank" rel="noopener">分布式版本控制系统入门</a> </p>
+</li>
+</ul>
+<h4 id="问题二：在命令介绍中-多次提到的-–-是用来做什么的？"><a href="#问题二：在命令介绍中-多次提到的-–-是用来做什么的？" class="headerlink" title="问题二：在命令介绍中 多次提到的 – 是用来做什么的？"></a>问题二：在命令介绍中 多次提到的 – 是用来做什么的？</h4><p>在课程中， 可以发现讲师多次在命令中使用到了 – 符号， 比如 </p>
+<pre><code>git checkout -- &lt;filename&gt;
+</code></pre><p>事实上 很多时候 你使用  git checkout <filename>  也不会有问题。</filename></p>
+<p>那么问题来了，  –  到底是用来做什么的呢？</p>
+<p><strong>回答：</strong>（这个是参考别人的）</p>
+<p><code>--代表后面的参数是命令，如果没有--，一般指分支或者路径</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">主要是用来区分文件目录和命令的关系。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">题目中“--”后面的表示把后面连接的参数当做文件名，不管它长什么样子。它是unix的命令行规范。通常，我们使用“--”去区分后面的是一个命令还是一个参数。比如下面例子：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">rm -f      # does nothing</span><br><span class="line"></span><br><span class="line">rm -- -f   # deletes a file named &quot;-f&quot;</span><br><span class="line"></span><br><span class="line">一般我们通过使用它来区分文件名和命令参数，如果一个文件名刚好和我们常用的命令冲突了，--就可以很好的解决这个问题。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">通常都会加上“--”来区分使用。</span><br><span class="line"></span><br><span class="line">具体规范和标准可以看unix命令行参数语法规范标准，IEEE Std 1003.1, 2013 Edition标准</span><br><span class="line"></span><br><span class="line">Guideline 10:</span><br><span class="line"></span><br><span class="line">The first -- argument that is not an option-argument should be accepted as a delimiter indicating the end of options. Any following arguments should be treated as operands, even if they begin with the &apos;-&apos; character.</span><br></pre></td></tr></table></figure>
+<p>####问题三：某文件在暂存区与工作目录的内容不一致时， 使用git checkout HEAD – <filename> 将导致什么结果？</filename></p>
+<p><strong>解答：</strong></p>
+<p><strong>结论：</strong>git checkout HEAD – <filename> 将内容从上次提交复制到工作目录。当某文件在暂存区与工作目录的内容不一致时， 使用git checkout HEAD – <filename> 将导致工作目录被上次提交的覆盖，这时候暂存区也就没有修改了，clean掉了。其实就是本地和暂存区都被上一次的提交覆盖了。</filename></filename></p>
+<p>简单实验了下，测试过程如下：</p>
+<p>1、首先新建了一个test.txt文件，文件是空的。这时候我们将test.txt add到暂存区，此时暂存区存在新的文件test.txt。<br><img src="http://img.blog.csdn.net/20160605121432516" alt="这里写图片描述"><br>2、将暂存区的修改提交到提交区，这时候暂存区也就没有需要提交的东西了。<br><img src="http://img.blog.csdn.net/20160605121442907" alt="这里写图片描述"><br>3、本地修改test.txt文件，随便输入一些字符。此时test.txt文件大小为1KB<br><img src="http://img.blog.csdn.net/20160605121452189" alt="这里写图片描述"><br>4、此时，查看暂存区，发现暂存区存在修改文件，test.txt，这时候，test.txt文件在暂存区与工作目录的内容不一致<br><img src="http://img.blog.csdn.net/20160605121507017" alt="这里写图片描述"><br>5、执行git checkout HEAD – <filename>，发现暂存区不存在修改文件，查看本地目录，test.txt文件已经为空，被上次提交区的空test.txt覆盖<br><img src="http://img.blog.csdn.net/20160605121516017" alt="这里写图片描述"><br>此时test.txt文件为空，0KB<br><img src="http://img.blog.csdn.net/20160605121528799" alt="这里写图片描述"></filename></p>
+<h4 id="问题四：为什么大部分情况下，git-fetch-要优于直接使用-git-pull"><a href="#问题四：为什么大部分情况下，git-fetch-要优于直接使用-git-pull" class="headerlink" title="问题四：为什么大部分情况下，git fetch 要优于直接使用 git pull?"></a>问题四：为什么大部分情况下，git fetch 要优于直接使用 git pull?</h4><p>不难发现， 课程中对于可能常用的 git pull 命令着墨不多.  而把大量的时间放在了 git fetch + git merge 的工作原理上。  </p>
+<p>同学可以总结下，为何使用git fetch来分步骤处理 要优于直接使用git pull？</p>
+<p><strong>回答：</strong></p>
+<p>&emsp;&emsp;git pull的问题是它把过程的细节都隐藏了起来，以至于你不用去了解git中各种类型分支的区别和使用方法。当然，多数时候这是没问题的，但一旦代码有问题，你很难找到出错的地方。</p>
+<p>&emsp;&emsp;将下载（fetch）和合并（merge）放到一个命令里的另外一个弊端是，你的本地工作目录在未经确认的情况下就会被远程分支更新。当然，除非你关闭所有的安全选项，否则git pull在你本地工作目录还不至于造成不可挽回的损失，但很多时候我们宁愿做的慢一些，也不愿意返工重来。</p>
+<p>&emsp;&emsp;前面那些行显示出“git fetch”命令会将哪些文件下载到本地，这些文件一旦下载到本地之后，就可以在本地进行任意操作了。</p>
+<p>&emsp;&emsp;“git fetch”命令执行完毕之后，还不会立即将下载的文件合并到你当前工作目录里，这就给你了一个选择下一步操作的机会，要是想将从远程分支下载的文件更新到你的工作目录里，你需要执行一个“合并（merge）”操作。</p>
+<p>&emsp;&emsp;单独进行下载和合并是一个好的做法，你可以先看看下载的是什么，然后再决定是否和本地代码合并。而且分开来做，可以清晰的区别开本地分支和远程分支，方便选择使用。</p>
+<p><strong>文章推荐：</strong><a href="http://www.oschina.net/translate/git-fetch-and-merge" target="_blank" rel="noopener">Git 少用 Pull 多用 Fetch 和 Merge</a> </p>
+<h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><h4 id="问题一：市面上这么多种模块系统，-它们之间可以相互转换吗"><a href="#问题一：市面上这么多种模块系统，-它们之间可以相互转换吗" class="headerlink" title="问题一：市面上这么多种模块系统， 它们之间可以相互转换吗"></a>问题一：市面上这么多种模块系统， 它们之间可以相互转换吗</h4><p>&emsp;&emsp;AMD、COMMONJS、CMD、UMD、ES6 Module、IIFE… 这么多的模块写法， 一旦你选择了一种模块写法，那它在另一个系统中就可能无法运行了。 值得庆幸的是，现在越来越多的工具可以帮助我们将js从一种模块写法转换为另一种写法， 你能帮助同学们列举出一个或多个转换工具吗？</p>
+<p><strong>回答：</strong></p>
+<p>1、Browserify </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">兼容 Node 模块引用语法和 Node 模块化文件加载方案, </span><br><span class="line">浏览器端运行前需要完成代码的合并, 并配合 SourceMap 进行调试.</span><br></pre></td></tr></table></figure>
+<p>2、Webpack<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">它能把各种资源，例如JS（含JSX）、coffee、样式（含less/sass）、图片等都作为模块来使用和处理</span><br></pre></td></tr></table></figure></p>
+<p>3、Component<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">是一个对客户端 JavaScript 包进行管理的工具，用于更好的构建 Web 应用，编写模块化 commonjs 组件</span><br></pre></td></tr></table></figure></p>
+<p>4 rderjs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个开源的 JS 按需、异步加载工具，同时也是 JS 模块化管理工具。</span><br></pre></td></tr></table></figure></p>
+<p>5 systemjs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个最小系统加载工具。</span><br></pre></td></tr></table></figure></p>
+<h4 id="问题二：关于通信解决方案-xhr-与-socket的取舍"><a href="#问题二：关于通信解决方案-xhr-与-socket的取舍" class="headerlink" title="问题二：关于通信解决方案 xhr 与 socket的取舍"></a>问题二：关于通信解决方案 xhr 与 socket的取舍</h4><p>&emsp;&emsp;视频里介绍了一个双向实时通信解决方案socket.io。你能说出一些这种解决方案的适合场景吗？<br>&emsp;&emsp;实时上在规范中，还有一个Server-Send-Event的规范， 可以帮助我们实现服务器端-&gt;浏览器端的反向消息推送，同学们可以下去学习一下。</p>
+<p><strong>回答：</strong></p>
+<p>&emsp;&emsp;Socket.IO设计的目标是构建能够在不同浏览器和移动设备上良好运行的实时应用，如实时分析系统、二进制流数据处理应用、在线聊天室、在线客服系 统、评论系统、WebIM等。目前，Socket.IO已经支持主流PC浏览器(如IE、Safari、Chrome、Firefox、Opera等)和 移动平台上的浏览器（iOS平台下的Safari、Android平台下的基于Webkit的浏览器等）。</p>
+<p>&emsp;&emsp;参考自<a href="http://www.infoq.com/cn/news/2015/01/socket-io-websocket/" target="_blank" rel="noopener">《Socket.IO：支持WebSocket协议、用于实时通信和跨平台的框架》</a></p>
+<h4 id="问题三：大型的组件库为什么都用到了预处理？"><a href="#问题三：大型的组件库为什么都用到了预处理？" class="headerlink" title="问题三：大型的组件库为什么都用到了预处理？"></a>问题三：大型的组件库为什么都用到了预处理？</h4><p>&emsp;&emsp;事实上处理bootstrap、foundation. 还有一些其它类似规模的组件库， 它们或许在设计和css构建上理念上有部分区别， 它们都非常一致的使用了css预处理器来管理css文件， 你能说出这么做的好处吗？</p>
+<p><strong>回答：</strong></p>
+<ul>
+<li>让 CSS 更见简洁，适应性更强，代码更直观，节省了大量的重复工作和痛苦的代码编辑；</li>
+</ul>
+<p>参考自：<a href="http://www.oschina.net/question/12_44255?sort=default&amp;p=4" target="_blank" rel="noopener">《为您详细比较三个 CSS 预处理器（框架）：Sass、LESS 和 Stylus》</a></p>
+<ul>
+<li>缓解多浏览器兼容造成的冗余；</li>
+</ul>
+<p>参考自<a href="https://segmentfault.com/q/1010000002527156/a-1020000002527759" target="_blank" rel="noopener">《为什么要使用CSS预处理器？》</a></p>
+<ul>
+<li>提供CSS缺失的样式层复用机制，提高CSS代码的可维护性</li>
+</ul>
+<h3 id="开发实践"><a href="#开发实践" class="headerlink" title="开发实践"></a>开发实践</h3><h4 id="问题一：采用文档形式的规范输出有哪些弊端？"><a href="#问题一：采用文档形式的规范输出有哪些弊端？" class="headerlink" title="问题一：采用文档形式的规范输出有哪些弊端？"></a>问题一：采用文档形式的规范输出有哪些弊端？</h4><p>&emsp;&emsp;采用文档形式的规范输出有哪些弊端？可以从协作、后续对规范的重用等方面进行讨论</p>
+<p><strong>回答：</strong></p>
+<ul>
+<li><p>假设题目里面说的是开发规范。文档类型的规范的效力依赖于开发人员的对规范的理解，和遵守规范的程度，需要再有一层QA进行保障。还有就是文档规范需要根<br>据技术和业务的发展定期更新，更新后还要宣贯。否则可能就过时或者成为纸上的规范。尽量还是能通过工具、统一的框架、模块来规范输出。</p>
+</li>
+<li><p>从协助上来说：没有统一规范的管理，可能导致更新不及时，协助起来大家阅读时存在一些问题等。从后续重用性来说：文档形式的规范输出难以保证完全的统一和规范性，后续的修改和重用还需要先了解前面的具体规范再做进一步修改，学习成本更大，且容易导致问题。</p>
+</li>
+</ul>
+<h4 id="问题二：实际项目中对系统进行分解的难点有哪些？"><a href="#问题二：实际项目中对系统进行分解的难点有哪些？" class="headerlink" title="问题二：实际项目中对系统进行分解的难点有哪些？"></a>问题二：实际项目中对系统进行分解的难点有哪些？</h4><p>&emsp;&emsp;实际项目中对系统进行分解的难点有哪些？</p>
+<p><strong>回答：仁智见仁，智者见智。没有实际经验回答个毛！！</strong></p>
+<h4 id="问题三：如何根据交互提取通用组件"><a href="#问题三：如何根据交互提取通用组件" class="headerlink" title="问题三：如何根据交互提取通用组件"></a>问题三：如何根据交互提取通用组件</h4><p>&emsp;&emsp;如何根据交互提取通用组件？交互稿中哪些可以作为通用的组件进行封装？</p>
+<p><strong>回答：</strong></p>
+<p>&emsp;&emsp;视觉说明中包含各个情况下用户界面的显示样式，其定义了交互稿中的所有效果。之后则需要从中提取出通用组件，其中包括：</p>
+<ul>
+<li><p>通用原件（Logo，提示，输入框，图标，按钮等）</p>
+</li>
+<li><p>通用列表（以网易云音乐为例，一般歌单，排行榜，收藏列表，歌手等）</p>
+</li>
+<li><p>复合组件（留言板类，评论控件）</p>
+</li>
+<li><p>浮层弹出</p>
+</li>
+</ul>
+<h4 id="问题四：项目发布时需要做哪些优化？"><a href="#问题四：项目发布时需要做哪些优化？" class="headerlink" title="问题四：项目发布时需要做哪些优化？"></a>问题四：项目发布时需要做哪些优化？</h4><p><strong>回答:</strong></p>
+<ul>
+<li><p>图片的优化，压缩大小</p>
+</li>
+<li><p>CDN的配置</p>
+</li>
+<li><p>代码的压缩和合并</p>
+</li>
+</ul>
+<h4 id="问题五：实际项目中发布工具的哪些功能是你比较关注的？"><a href="#问题五：实际项目中发布工具的哪些功能是你比较关注的？" class="headerlink" title="问题五：实际项目中发布工具的哪些功能是你比较关注的？"></a>问题五：实际项目中发布工具的哪些功能是你比较关注的？</h4><p><strong>回答：仁智见仁，智者见智。没有实际经验回答个毛！！</strong></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://sophoraflower.github.io/EverQuest/2016/0605/《产品前端架构》课堂交流问题汇总/" data-id="cjcj14p98000750u7e77siad2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="知乎" href="https://zhihu.com/people/Houlelord" target="_blank">
+                            <i class="icon fa fa-key"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="微博" href="https://weibo.com/u/1782696323" target="_blank">
+                            <i class="icon fa fa-weibo"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="实验楼" href="https://www.shiyanlou.com/user/577969/" target="_blank">
+                            <i class="icon fa fa-book"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="GitHub" href="https://github.com/sophoraFlower/" target="_blank">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="Rss" href="/" target="_blank">
+                            <i class="icon fa fa-rss"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/0608/《DOM编程艺术》课堂交流问题汇总之进阶篇/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            《DOM编程艺术》课堂交流问题汇总之进阶篇
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/0524/《DOM编程艺术》课堂交流问题汇总之基础篇/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">《DOM编程艺术》课堂交流问题汇总之基础篇</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/1130/年末小记/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/ideas201712.jpg)" alt="年末小记" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/小记/">小记</a></p>
+                            <p class="item-title"><a href="/2017/1130/年末小记/" class="title">年末小记</a></p>
+                            <p class="item-date"><time datetime="2017-11-30T12:08:08.000Z" itemprop="datePublished">2017-11-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/0528/D3.js 小结/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/math.jpg)" alt="D3.js小结" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/数据可视化/">数据可视化</a></p>
+                            <p class="item-title"><a href="/2017/0528/D3.js 小结/" class="title">D3.js小结</a></p>
+                            <p class="item-date"><time datetime="2017-05-28T13:13:00.000Z" itemprop="datePublished">2017-05-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/0424/软件测试管理/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/software-test-management.jpg)" alt="软件测试管理" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/软件测试/">软件测试</a></p>
+                            <p class="item-title"><a href="/2017/0424/软件测试管理/" class="title">软件测试管理</a></p>
+                            <p class="item-date"><time datetime="2017-04-24T15:35:00.000Z" itemprop="datePublished">2017-04-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/0808/上海-西塘-绍兴/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.hdwallpapers.net/previews/lion-453.jpg)" alt="上海-西塘-绍兴" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/摄影/">摄影</a></p>
+                            <p class="item-title"><a href="/2016/0808/上海-西塘-绍兴/" class="title">上海-西塘-绍兴</a></p>
+                            <p class="item-date"><time datetime="2016-08-07T16:00:00.000Z" itemprop="datePublished">2016-08-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/0628/《页面架构》课堂交流问题汇总/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/gallery/page-layout.jpg)" alt="《页面架构》课堂交流问题汇总" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/Web/">Web</a></p>
+                            <p class="item-title"><a href="/2016/0628/《页面架构》课堂交流问题汇总/" class="title">《页面架构》课堂交流问题汇总</a></p>
+                            <p class="item-date"><time datetime="2016-06-28T10:21:00.000Z" itemprop="datePublished">2016-06-28</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/">LifeStyle</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/随笔/">随笔</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/JavaScript/">JavaScript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Web/">Web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/小记/">小记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/数据可视化/">数据可视化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/软件测试/">软件测试</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/摄影/">摄影</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">2017年11月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">2017年05月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">2017年04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016年08月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 ZiZhi Cao</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'EverQuest';
+    
+    
+    var disqus_url = 'https://sophoraflower.github.io/EverQuest/2016/0605/《产品前端架构》课堂交流问题汇总/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
