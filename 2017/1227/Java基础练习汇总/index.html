@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Java基础练习汇总 | 后乐</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="java" />
+    
+    <meta name="description" content="用程序来做计算 温度转换 ​        写一个将华氏温度转换成摄氏温度的程序，转换的公式是： 1°F = (9/5)*°C + 32 ​        程序的输入是一个整数，表示华氏温度。输出对应的摄氏温度，也是一个整数。 提示，为了把计算结果的浮点数转换成整数，需要使用下面的表达式： 1(int)x; 输入格式: ​        一个整数。 输出格式： ​        一个整数 输入样例">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础练习汇总">
+<meta property="og:url" content="https://sophoraflower.github.io/EverQuest/2017/1227/Java基础练习汇总/index.html">
+<meta property="og:site_name" content="后乐">
+<meta property="og:description" content="用程序来做计算 温度转换 ​        写一个将华氏温度转换成摄氏温度的程序，转换的公式是： 1°F = (9/5)*°C + 32 ​        程序的输入是一个整数，表示华氏温度。输出对应的摄氏温度，也是一个整数。 提示，为了把计算结果的浮点数转换成整数，需要使用下面的表达式： 1(int)x; 输入格式: ​        一个整数。 输出格式： ​        一个整数 输入样例">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://p2s7rr94e.bkt.clouddn.com/blog/180121/Jd86GGjhI0.jpg">
+<meta property="og:updated_time" content="2018-01-21T23:24:24.769Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java基础练习汇总">
+<meta name="twitter:description" content="用程序来做计算 温度转换 ​        写一个将华氏温度转换成摄氏温度的程序，转换的公式是： 1°F = (9/5)*°C + 32 ​        程序的输入是一个整数，表示华氏温度。输出对应的摄氏温度，也是一个整数。 提示，为了把计算结果的浮点数转换成整数，需要使用下面的表达式： 1(int)x; 输入格式: ​        一个整数。 输出格式： ​        一个整数 输入样例">
+<meta name="twitter:image" content="http://p2s7rr94e.bkt.clouddn.com/blog/180121/Jd86GGjhI0.jpg">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="后乐" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">柴门闻犬吠，风雪夜归人</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/EverQuest/">EverQuest</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/EverQuest/201712/">201712</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Java/">Java</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Java/编程基础/">编程基础</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LifeStyle/">LifeStyle</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LifeStyle/摄影/">摄影</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LifeStyle/随笔/">随笔</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/">Python</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/自动化测试/">自动化测试</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web前端/">Web前端</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web前端/JavaScript/">JavaScript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web前端/Web综合/">Web综合</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web前端/数据可视化/">数据可视化</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/调优/">调优</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/调优/软件测试/">软件测试</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于+</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Java/">Java</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Java/编程基础/">编程基础</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-Java基础练习汇总" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Java基础练习汇总
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/1227/Java基础练习汇总/" class="article-date">
+            <time datetime="2017-12-27T14:41:00.000Z" itemprop="datePublished">2017-12-27</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/java/">java</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h4 id="用程序来做计算"><a href="#用程序来做计算" class="headerlink" title="用程序来做计算"></a>用程序来做计算</h4><ul>
+<li><p><strong>温度转换</strong></p>
+<p>​        写一个将华氏温度转换成摄氏温度的程序，转换的公式是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">°F = (<span class="number">9</span>/<span class="number">5</span>)*°C + <span class="number">32</span></span><br></pre></td></tr></table></figure>
+<p>​        程序的输入是一个整数，表示华氏温度。输出对应的摄氏温度，也是一个整数。</p>
+<p>提示，为了把计算结果的浮点数转换成整数，需要使用下面的表达式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span>)x;</span><br></pre></td></tr></table></figure>
+<p><strong>输入格式:</strong></p>
+<p>​        一个整数。</p>
+<p><strong>输出格式：</strong></p>
+<p>​        一个整数</p>
+<p><strong>输入样例：</strong></p>
+<p>​        100</p>
+<p><strong>输出样例：</strong></p>
+<p>​        37</p>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> degreeFa;</span><br><span class="line">        <span class="keyword">int</span> centigrade;</span><br><span class="line">        degreeFa = in.nextInt();</span><br><span class="line">        centigrade = (<span class="keyword">int</span>) (<span class="number">5.0</span>*(degreeFa-<span class="number">32</span>)/<span class="number">9.0</span>);</span><br><span class="line">        System.out.println(centigrade);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>猜字游戏</p>
+</li>
+</ul>
+<p>&emsp;&emsp;为什么方法正确的话，100以内的数最多猜7次就够了？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> num=<span class="number">1</span>; num&lt;=<span class="number">100</span>; num++) &#123;</span><br><span class="line">        	<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        	<span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">        	<span class="keyword">int</span> high = <span class="number">100</span>;</span><br><span class="line">        	<span class="keyword">int</span> guess;     	</span><br><span class="line">        	<span class="keyword">do</span> &#123;</span><br><span class="line">        		guess=(low+high)/<span class="number">2</span>;</span><br><span class="line">        		<span class="keyword">if</span>(guess&lt;num) &#123;</span><br><span class="line">        			low=guess+<span class="number">1</span>;</span><br><span class="line">        		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        			high=guess+<span class="number">1</span>;</span><br><span class="line">        		&#125;       		  </span><br><span class="line">                ++count;  </span><br><span class="line">                System.out.println(<span class="string">"第"</span>+count+<span class="string">"次猜:"</span>+guess);</span><br><span class="line">        	&#125;<span class="keyword">while</span>(guess!=num); </span><br><span class="line">            System.out.println(<span class="string">"一共猜了"</span>+count+<span class="string">"次"</span>); </span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;      </span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>温度转换</p>
+<p>写一个将华氏温度转换成摄氏温度的程序，转换的公式是：</p>
+<ol>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">°F = (<span class="number">9</span>/<span class="number">5</span>)*°C + <span class="number">32</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>程序的输入是一个整数，表示华氏温度。输出对应的摄氏温度，也是一个整数。</p>
+<p>提示，为了把计算结果的浮点数转换成整数，需要使用下面的表达式：</p>
+<ol>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">int</span>)x;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>输入格式:</strong></p>
+<p>一个整数。</p>
+<p><strong>输出格式：</strong></p>
+<p>一个整数</p>
+<p><strong>输入样例：</strong></p>
+<p>100</p>
+<p><strong>输出样例：</strong></p>
+<p>37</p>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">      <span class="keyword">int</span> degreeFa;</span><br><span class="line">      <span class="keyword">int</span> centigrade;</span><br><span class="line">      degreeFa = in.nextInt();</span><br><span class="line">      centigrade = (<span class="keyword">int</span>) (<span class="number">5.0</span>*(degreeFa-<span class="number">32</span>)/<span class="number">9.0</span>);</span><br><span class="line">      System.out.println(centigrade);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>时间换算</p>
+<p><strong>题目内容：</strong></p>
+<p>UTC是世界协调时，BJT是北京时间，UTC时间相当于BJT减去8。现在，你的程序要读入一个整数，表示BJT的时和分。整数的个位和十位表示分，百位和千位表示小时。如果小时小于10，则没有千位部分；如果小时是0，则没有百位部分；如果分小于10分，需要保留十位上的0。如1124表示11点24分，而905表示9点5分，36表示0点36分，7表示0点7分。</p>
+<p>有效的输入范围是0到2359，即你的程序不可能从测试服务器读到0到2359以外的输入数据。</p>
+<p>你的程序要输出这个时间对应的UTC时间，输出的格式和输入的相同，即输出一个整数，表示UTC的时和分。整数的个位和十位表示分，百位和千位表示小时。如果小时小于10，则没有千位部分；如果小时是0，则没有百位部分；如果分小于10分，需要保留十位上的0。</p>
+<p>提醒：要小心跨日的换算。</p>
+<p><strong>输入格式:</strong></p>
+<p>一个整数，表示BJT的时和分。整数的个位和十位表示分，百位和千位表示小时。如果小时小于10，则没有千位部分；如果小时是0，则没有百位部分；如果分小于10分，需要保留十位上的0。</p>
+<p><strong>输出格式：</strong></p>
+<p>一个整数，表示UTC的时和分。整数的个位和十位表示分，百位和千位表示小时。如果小时小于10，则没有千位部分；如果小时是0，则没有百位部分；如果分小于10分，需要保留十位上的0。</p>
+<p><strong>输入样例：</strong></p>
+<p>903</p>
+<p><strong>输出样例：</strong></p>
+<p>103</p>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> BTJTime = in.nextInt();</span><br><span class="line">        <span class="keyword">int</span> UTCTime;</span><br><span class="line">        <span class="keyword">if</span> (BTJTime&gt;=<span class="number">800</span>) &#123;</span><br><span class="line">            UTCTime = BTJTime-<span class="number">800</span>;</span><br><span class="line">            System.out.println(UTCTime);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            UTCTime = BTJTime+<span class="number">1600</span>;</span><br><span class="line">            System.out.println(UTCTime);</span><br><span class="line">        &#125;       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>奇偶个数</p>
+<p><strong>题目内容：</strong></p>
+<p>你的程序要读入一系列正整数数据，输入-1表示输入结束，-1本身不是输入的数据。程序输出读到的数据中的奇数和偶数的个数。</p>
+<p><strong>输入格式:</strong></p>
+<p>一系列正整数，整数的范围是（0,100000）。如果输入-1则表示输入结束。</p>
+<p><strong>输出格式：</strong></p>
+<p>两个整数，第一个整数表示读入数据中的奇数的个数，第二个整数表示读入数据中的偶数的个数。两个整数之间以空格分隔。</p>
+<p><strong>输入样例：</strong></p>
+<p>9 3 4 2 5 7 -1</p>
+<p><strong>输出样例：</strong></p>
+<p>4 2</p>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> intNumber = in.nextInt();</span><br><span class="line">        <span class="keyword">int</span> evenNumber = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> oddNumber = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (intNumber!=-<span class="number">1</span>) &#123;</span><br><span class="line">        	</span><br><span class="line">        	<span class="keyword">if</span> (intNumber%<span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        		evenNumber++;</span><br><span class="line">        	&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        		oddNumber++;</span><br><span class="line">        	&#125;</span><br><span class="line">        	intNumber = in.nextInt();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(oddNumber+<span class="string">" "</span>+evenNumber);      </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数字特征值</p>
+<p><strong>题目内容：</strong></p>
+<p>对数字求特征值是常用的编码算法，奇偶特征是一种简单的特征值。对于一个整数，从个位开始对每一位数字编号，个位是1号，十位是2号，以此类推。这个整数在第n位上的数字记作x，如果x和n的奇偶性相同，则记下一个1，否则记下一个0。按照整数的顺序把对应位的表示奇偶性的0和1都记录下来，就形成了一个二进制数字。比如，对于342315，这个二进制数字就是001101。</p>
+<p>这里的计算可以用下面的表格来表示：</p>
+<p>| 数字    | 3    | 4    | 2    | 3    | 1    | 5    |<br>| —– | —- | —- | —- | —- | —- | —- |<br>| 数位    | 6    | 5    | 4    | 3    | 2    | 1    |<br>| 数字奇偶  | 奇    | 偶    | 偶    | 奇    | 奇    | 奇    |<br>| 数位奇偶  | 偶    | 奇    | 偶    | 奇    | 偶    | 奇    |<br>| 奇偶一致  | 0    | 0    | 1    | 1    | 0    | 1    |<br>| 二进制位值 | 32   | 16   | 8    | 4    | 2    | 1    |</p>
+<p>按照二进制位值将1的位的位值加起来就得到了结果13。</p>
+<p>你的程序要读入一个非负整数，整数的范围是[0,100000]，然后按照上述算法计算出表示奇偶性的那个二进制数字，输出它对应的十进制值。</p>
+<p><em>提示：将整数从右向左分解，数位每次加1，而二进制值每次乘2。</em></p>
+<p><strong>输入格式:</strong></p>
+<p>一个非负整数，整数的范围是[0,100000]。</p>
+<p><strong>输出格式：</strong></p>
+<p>一个整数，表示计算结果。</p>
+<p><strong>输入样例：</strong></p>
+<p>342315</p>
+<p><strong>输出样例：</strong></p>
+<p>13</p>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	    Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> intNumber = in.nextInt(); </span><br><span class="line">        in.close();</span><br><span class="line">        <span class="keyword">int</span> iNumber = intNumber;</span><br><span class="line">        <span class="keyword">int</span> outNumber = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 判断输入数位数</span></span><br><span class="line">        <span class="keyword">int</span> figureNumber = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">        	intNumber =intNumber/<span class="number">10</span>;</span><br><span class="line">        	figureNumber =figureNumber+<span class="number">1</span>;       	</span><br><span class="line">        &#125; <span class="keyword">while</span> ( intNumber&gt;<span class="number">0</span> ); </span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 数字和数位奇偶对比</span></span><br><span class="line">        <span class="keyword">while</span> (figureNumber&gt;<span class="number">0</span>) &#123;</span><br><span class="line">        	<span class="comment">// 获取数字</span></span><br><span class="line">        	<span class="keyword">int</span> number1 =iNumber%((<span class="keyword">int</span>)Math.pow(<span class="number">10</span>, figureNumber));</span><br><span class="line">        	<span class="keyword">int</span> number =number1/((<span class="keyword">int</span>)Math.pow(<span class="number">10</span>, figureNumber-<span class="number">1</span>));</span><br><span class="line">        	<span class="keyword">int</span> oNumber = <span class="number">0</span>;</span><br><span class="line">        	<span class="keyword">if</span> (number%<span class="number">2</span>==<span class="number">0</span> &amp;&amp; figureNumber%<span class="number">2</span>==<span class="number">0</span>) &#123;</span><br><span class="line">        		oNumber = (<span class="keyword">int</span>)Math.pow(<span class="number">2</span>, (figureNumber-<span class="number">1</span>));</span><br><span class="line">        	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (number%<span class="number">2</span>!=<span class="number">0</span> &amp;&amp; figureNumber%<span class="number">2</span>!=<span class="number">0</span>) &#123;</span><br><span class="line">        		oNumber = (<span class="keyword">int</span>)Math.pow(<span class="number">2</span>, (figureNumber-<span class="number">1</span>));</span><br><span class="line">        	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        		oNumber = <span class="number">0</span>;</span><br><span class="line">        	&#125;</span><br><span class="line">        	outNumber +=oNumber;</span><br><span class="line">        	figureNumber--;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.print(outNumber);      </span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li><p>信号报告</p>
+<p><strong>题目内容：</strong></p>
+<p>无线电台的RS制信号报告是由三两个部分组成的：</p>
+<p>R(Readability) 信号可辨度即清晰度.</p>
+<p>S(Strength)    信号强度即大小.</p>
+<p>其中R位于报告第一位，共分5级，用1—5数字表示.</p>
+<ul>
+<li>1—Unreadable</li>
+<li>2—Barely readable, occasional words distinguishable</li>
+<li>3—Readable with considerable difficulty</li>
+<li>4—Readable with practically no difficulty</li>
+<li>5—Perfectly readable</li>
+</ul>
+<p>报告第二位是S，共分九个级别，用1—9中的一位数字表示</p>
+<ul>
+<li>1—Faint signals, barely perceptible</li>
+<li>2—Very weak signals</li>
+<li>3—Weak signals</li>
+<li>4—Fair signals</li>
+<li>5—Fairly good signals</li>
+<li>6—Good signals</li>
+<li>7—Moderately strong signals</li>
+<li>8—Strong signals</li>
+<li>9—Extremely strong signals</li>
+</ul>
+<p>现在，你的程序要读入一个信号报告的数字，然后输出对应的含义。如读到59，则输出：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Extremely strong signals, perfectly readable.</span><br></pre></td></tr></table></figure>
+<p><strong>输入格式:</strong></p>
+<p>一个整数，信号报告。整数的十位部分表示可辨度，个位部分表示强度。输入的整数范围是[11,59]，这个范围外的数字不可能出现在测试数据中。</p>
+<p><strong>输出格式：</strong></p>
+<p>一句话，表示这个信号报告的意义。按照题目中的文字，先输出表示强度的文字，跟上逗号和空格，然后是表示可辨度的文字，跟上句号。注意可辨度的句子的第一个字母是小写的。注意这里的标点符号都是英文的。</p>
+<p><strong>输入样例：</strong></p>
+<p>33</p>
+<p><strong>输出样例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Weak signals, readable with considerable difficulty.</span><br></pre></td></tr></table></figure>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	    Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> intNumber = in.nextInt(); </span><br><span class="line">        in.close();</span><br><span class="line">        <span class="keyword">int</span> firstNumber = intNumber/<span class="number">10</span>;</span><br><span class="line">        <span class="keyword">int</span> secondNumber = intNumber%<span class="number">10</span>;</span><br><span class="line">        <span class="keyword">switch</span> (secondNumber) &#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">			System.out.print(<span class="string">"Faint signals, barely perceptible"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">        </span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">			System.out.print(<span class="string">"Very weak signals"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">			System.out.print(<span class="string">"Weak signals"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">			System.out.print(<span class="string">"Fair signals"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			</span><br><span class="line">		<span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">			System.out.print(<span class="string">"Fairly good signals"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			</span><br><span class="line">		<span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">			System.out.print(<span class="string">"Good signals"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			</span><br><span class="line">		<span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">			System.out.print(<span class="string">"Moderately strong signals"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			</span><br><span class="line">		<span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">			System.out.print(<span class="string">"Strong signals"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			</span><br><span class="line">		<span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">			System.out.print(<span class="string">"Extremely strong signals"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			System.out.print(<span class="string">"input error!"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">        System.out.print(<span class="string">", "</span>);</span><br><span class="line">        <span class="keyword">switch</span> (firstNumber) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">			System.out.print(<span class="string">"unreadable"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">        </span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">			System.out.print(<span class="string">"barely readable, occasional words distinguishable"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">			System.out.print(<span class="string">"readable with considerable difficulty"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			</span><br><span class="line">		<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">			System.out.print(<span class="string">"readable with practically no difficulty"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			</span><br><span class="line">		<span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">			System.out.print(<span class="string">"perfectly readable"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			System.out.print(<span class="string">"input error!"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">        System.out.print(<span class="string">"."</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>素数和</p>
+<p><strong>题目内容：</strong></p>
+<p>我们认为2是第一个素数，3是第二个素数，5是第三个素数，依次类推。</p>
+<p>现在，给定两个整数n和m，0&lt;n&lt;=m&lt;=200，你的程序要计算第n个素数到第m个素数之间所有的素数的和，包括第n个素数和第m个素数。</p>
+<p>注意，是第n个素数到第m个素数之间的所有的素数，并不是n和m之间的所有的素数。</p>
+<p><strong>输入格式:</strong></p>
+<p>两个整数，第一个表示n，第二个表示m。</p>
+<p><strong>输出格式：</strong></p>
+<p>一个整数，表示第n个素数到第m个素数之间所有的素数的和，包括第n个素数和第m个素数。</p>
+<p><strong>输入样例：</strong></p>
+<p>2 4</p>
+<p><strong>输出样例：</strong></p>
+<p>15</p>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	    Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> n = in.nextInt(); </span><br><span class="line">        <span class="keyword">int</span> m = in.nextInt();</span><br><span class="line">        in.close();</span><br><span class="line">        <span class="keyword">int</span> sum=<span class="number">0</span>, number=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> x=<span class="number">2</span>, cnt=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(n&lt;=<span class="number">0</span>||m&lt;n||m&gt;<span class="number">200</span>) &#123;</span><br><span class="line">        	System.out.print(<span class="string">"输入不符合，请重新输入："</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> ( cnt &lt; m ) &#123;</span><br><span class="line">        	<span class="keyword">int</span> isPrime = <span class="number">1</span>;</span><br><span class="line">        	<span class="keyword">for</span>( <span class="keyword">int</span> i=<span class="number">2</span>; i&lt;x; i++ ) &#123;</span><br><span class="line">        		<span class="keyword">if</span> ( x%i == <span class="number">0</span> ) &#123;</span><br><span class="line">        			isPrime = <span class="number">0</span>;</span><br><span class="line">        			<span class="keyword">break</span>;</span><br><span class="line">        		&#125;</span><br><span class="line">        	&#125;</span><br><span class="line">        	<span class="keyword">if</span> ( isPrime == <span class="number">1</span> )&#123;</span><br><span class="line">        		number = x;</span><br><span class="line">       			cnt++; </span><br><span class="line">       			<span class="keyword">if</span>( cnt &gt;= n)&#123;</span><br><span class="line">    			    sum = sum + number;</span><br><span class="line">    		    &#125;</span><br><span class="line">        	&#125;</span><br><span class="line">        	x++;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.print(sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li><p>念整数</p>
+<p><strong>题目内容：</strong></p>
+<p>你的程序要读入一个整数，范围是[-100000,100000]。然后，用汉语拼音将这个整数的每一位输出出来。</p>
+<p>如输入1234，则输出：</p>
+<p>yi er san si</p>
+<p>注意，每个字的拼音之间有一个空格，但是最后的字后面没有空格。当遇到负数时，在输出的开头加上“fu”，如-2341输出为：</p>
+<p>fu er san si yi</p>
+<p><strong>输入格式:</strong></p>
+<p>一个整数，范围是[-100000,100000]。</p>
+<p><strong>输出格式：</strong></p>
+<p>表示这个整数的每一位数字的汉语拼音，每一位数字的拼音之间以空格分隔，末尾没有空格。</p>
+<p><strong>输入样例：</strong></p>
+<p>-30</p>
+<p><strong>输出样例：</strong></p>
+<p>fu san ling</p>
+<p><strong>解决方案一：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	    Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> number = in.nextInt(); </span><br><span class="line">        in.close();</span><br><span class="line">        <span class="keyword">int</span> digit = <span class="number">100000</span>;</span><br><span class="line">        <span class="keyword">if</span> ( number &lt; <span class="number">0</span> ) &#123;</span><br><span class="line">        	System.out.print(<span class="string">"fu "</span>);</span><br><span class="line">        	number = -number;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (digit &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        	<span class="keyword">if</span> ( number / digit != <span class="number">0</span> ) &#123;</span><br><span class="line">        		<span class="keyword">break</span>;</span><br><span class="line">        	&#125;</span><br><span class="line">        	digit /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> ( ; digit &gt; <span class="number">0</span>; digit /= <span class="number">10</span> ) &#123;</span><br><span class="line">        	<span class="keyword">switch</span> ( number/digit ) &#123;</span><br><span class="line">	        	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">	        		System.out.print(<span class="string">"yi"</span>);</span><br><span class="line">	                <span class="keyword">break</span>;</span><br><span class="line">	            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">	            	System.out.print(<span class="string">"er"</span>);</span><br><span class="line">	                <span class="keyword">break</span>;</span><br><span class="line">	            <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">	            	System.out.print(<span class="string">"san"</span>);</span><br><span class="line">	                <span class="keyword">break</span>;</span><br><span class="line">	            <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">	            	System.out.print(<span class="string">"si"</span>);</span><br><span class="line">	                <span class="keyword">break</span>;</span><br><span class="line">	            <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">	            	System.out.print(<span class="string">"wu"</span>);</span><br><span class="line">	                <span class="keyword">break</span>;</span><br><span class="line">	            <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">	            	System.out.print(<span class="string">"liu"</span>);</span><br><span class="line">	                <span class="keyword">break</span>;</span><br><span class="line">	            <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">	            	System.out.print(<span class="string">"qi"</span>);</span><br><span class="line">	                <span class="keyword">break</span>;</span><br><span class="line">	            <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">	            	System.out.print(<span class="string">"ba"</span>);</span><br><span class="line">	                <span class="keyword">break</span>;</span><br><span class="line">	            <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">	            	System.out.print(<span class="string">"jiu"</span>);</span><br><span class="line">	                <span class="keyword">break</span>;</span><br><span class="line">	            <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">	            	System.out.print(<span class="string">"ling"</span>);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">        	&#125;</span><br><span class="line">        	number -= (number / digit) * digit;</span><br><span class="line">            <span class="keyword">if</span> (digit != <span class="number">1</span>) &#123;</span><br><span class="line">            	System.out.print(<span class="string">' '</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;      </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>解决方案二：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">hello</span></span>&#123;</span><br><span class="line"> </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">            Scanner s = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">            <span class="keyword">int</span> a = s.nextInt();</span><br><span class="line">            HashMap&lt;String,String&gt; pinyin = <span class="keyword">new</span> HashMap&lt;String,String&gt;();</span><br><span class="line">            pinyin.put(<span class="string">"0"</span>,<span class="string">"ling"</span>);</span><br><span class="line">            pinyin.put(<span class="string">"1"</span>,<span class="string">"yi"</span>);</span><br><span class="line">            pinyin.put(<span class="string">"2"</span>,<span class="string">"er"</span>);</span><br><span class="line">            pinyin.put(<span class="string">"3"</span>,<span class="string">"san"</span>);</span><br><span class="line">            pinyin.put(<span class="string">"4"</span>,<span class="string">"si"</span>);</span><br><span class="line">            pinyin.put(<span class="string">"5"</span>,<span class="string">"wu"</span>);</span><br><span class="line">            pinyin.put(<span class="string">"6"</span>,<span class="string">"liu"</span>);</span><br><span class="line">            pinyin.put(<span class="string">"7"</span>,<span class="string">"qi"</span>);</span><br><span class="line">            pinyin.put(<span class="string">"8"</span>,<span class="string">"ba"</span>);</span><br><span class="line">            pinyin.put(<span class="string">"9"</span>,<span class="string">"jiu"</span>);</span><br><span class="line">            pinyin.put(<span class="string">"-"</span>,<span class="string">"fu"</span>);</span><br><span class="line">         </span><br><span class="line">            String line = a+<span class="string">""</span>;</span><br><span class="line">            String[] arr = line.split(<span class="string">""</span>);</span><br><span class="line">            StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(i==arr.length-<span class="number">1</span>)&#123;</span><br><span class="line">                    sb.append(pinyin.get(arr[i]));</span><br><span class="line">                    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                        sb.append(pinyin.get(arr[i])+<span class="string">" "</span>);     </span><br><span class="line">                    &#125;</span><br><span class="line">            &#125;         </span><br><span class="line">            System.out.print(sb.toString());     </span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>解决方案三：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        String []str1 = &#123;</span><br><span class="line">            <span class="string">"ling"</span>,<span class="string">"yi"</span>,<span class="string">"er"</span>,<span class="string">"san"</span>,<span class="string">"si"</span>,<span class="string">"wu"</span>,<span class="string">"liu"</span>,<span class="string">"qi"</span>,<span class="string">"ba"</span>,<span class="string">"jiu"</span></span><br><span class="line">        &#125;;</span><br><span class="line">        String str = in.next();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;str.length();++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(i!=<span class="number">0</span>)System.out.print(<span class="string">" "</span>);</span><br><span class="line">            String sub = str.substring(i,i+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">if</span>(sub.equals(<span class="string">"-"</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                System.out.print(<span class="string">"fu"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">10</span>;++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(sub.equals(j+<span class="string">""</span>))</span><br><span class="line">                    &#123;</span><br><span class="line">                        System.out.print(str1[j]);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            in.close();</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li><p>多项式加法（5分）</p>
+<p><strong>题目内容：</strong></p>
+<p>一个多项式可以表达为x的各次幂与系数乘积的和，比如：</p>
+<p>2x6+3x5+12x3+6x+20</p>
+<p>现在，你的程序要读入两个多项式，然后输出这两个多项式的和，也就是把对应的幂上的系数相加然后输出。</p>
+<p>程序要处理的幂最大为100。</p>
+<p><strong>输入格式:</strong></p>
+<p>总共要输入两个多项式，每个多项式的输入格式如下：</p>
+<p>每行输入两个数字，第一个表示幂次，第二个表示该幂次的系数，所有的系数都是整数。第一行一定是最高幂，最后一行一定是0次幂。</p>
+<p>注意第一行和最后一行之间不一定按照幂次降低顺序排列；如果某个幂次的系数为0，就不出现在输入数据中了；0次幂的系数为0时还是会出现在输入数据中。</p>
+<p><strong>输出格式：</strong></p>
+<p>从最高幂开始依次降到0幂，如：</p>
+<p>2x6+3x5+12x3-6x+20</p>
+<p>注意其中的x是小写字母x，而且所有的符号之间都没有空格，如果某个幂的系数为0则不需要有那项。</p>
+<p><strong>输入样例：</strong></p>
+<p>6 2</p>
+<p>5 3</p>
+<p>3 12</p>
+<p>1 6</p>
+<p>0 20</p>
+<p>6 2</p>
+<p>5 3</p>
+<p>2 12</p>
+<p>1 6</p>
+<p>0 20</p>
+<p><strong>输出样例：</strong></p>
+<p>4x6+6x5+12x3+12x2+12x+40</p>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;        	</span><br><span class="line">        	Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        	<span class="keyword">final</span> <span class="keyword">int</span> L = <span class="number">101</span>;</span><br><span class="line">        	<span class="keyword">int</span>[] poly = <span class="keyword">new</span> <span class="keyword">int</span>[L];  </span><br><span class="line">        	<span class="keyword">int</span> m=<span class="number">0</span>, n=<span class="number">0</span>;</span><br><span class="line">        	<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        	<span class="keyword">while</span>(count&lt;<span class="number">2</span>) &#123;</span><br><span class="line">        		m = in.nextInt();</span><br><span class="line">            	n = in.nextInt();</span><br><span class="line">            	<span class="keyword">if</span> ( poly[m] != <span class="number">0</span> ) &#123;</span><br><span class="line">                    poly[m] += n;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    poly[m] = n;</span><br><span class="line">                &#125;</span><br><span class="line">            	<span class="keyword">if</span> ( m==<span class="number">0</span> ) &#123;</span><br><span class="line">            		count++;</span><br><span class="line">            	&#125;</span><br><span class="line">        	&#125;</span><br><span class="line">        	in.close();</span><br><span class="line">        	</span><br><span class="line">        	<span class="comment">// 判断最大幂</span></span><br><span class="line">        	<span class="keyword">int</span> maxM = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> ( <span class="keyword">int</span> i = L; i &gt; <span class="number">0</span>; i-- ) &#123;</span><br><span class="line">                <span class="keyword">if</span> (poly[i-<span class="number">1</span>] != <span class="number">0</span> ) &#123;</span><br><span class="line">                    maxM = i-<span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//分只有0次幂和有非0次幂两种情况 </span></span><br><span class="line">            <span class="keyword">if</span> (maxM == <span class="number">0</span>) &#123;</span><br><span class="line">            	<span class="comment">//如果只有0次幂，直接输出</span></span><br><span class="line">                System.out.print(poly[<span class="number">0</span>]);  </span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">for</span> ( <span class="keyword">int</span> i = maxM; i &gt; -<span class="number">1</span>; i--) &#123;</span><br><span class="line">                    <span class="comment">//非0次幂分幂大于1，幂等于1,每种情况中又分系数绝对值为1和不为1两种情况。 </span></span><br><span class="line">                    <span class="keyword">if</span> ( i &gt; <span class="number">1</span>) &#123;           </span><br><span class="line">                        <span class="keyword">if</span> ( Math.abs(poly[i]) == <span class="number">1</span> ) &#123;</span><br><span class="line">                        	System.out.print(<span class="string">"x"</span>+i);</span><br><span class="line">                        &#125; <span class="keyword">else</span> <span class="keyword">if</span> ( Math.abs(poly[i])&gt; <span class="number">1</span> ) &#123;</span><br><span class="line">                        	System.out.print(Math.abs(poly[i])+<span class="string">"x"</span>+i);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i == <span class="number">1</span> ) &#123;</span><br><span class="line">                        <span class="keyword">if</span> ( Math.abs(poly[i]) == <span class="number">1</span> ) &#123;</span><br><span class="line">                        	System.out.print(<span class="string">"x"</span>);</span><br><span class="line">                        &#125; <span class="keyword">else</span> <span class="keyword">if</span> ( Math.abs(poly[i]) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">                        	System.out.print(Math.abs(poly[i])+<span class="string">"x"</span>);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">if</span> ( poly[i] != <span class="number">0</span> ) &#123;</span><br><span class="line">                        	System.out.print(Math.abs(poly[i]));</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                     </span><br><span class="line">                    <span class="keyword">if</span> ( i &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                        <span class="keyword">if</span> ( poly[i-<span class="number">1</span>] &gt; <span class="number">0</span> ) &#123;</span><br><span class="line">                        	System.out.print(<span class="string">"+"</span>);</span><br><span class="line">                        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(poly[i-<span class="number">1</span>] &lt; <span class="number">0</span>) &#123; </span><br><span class="line">                        	System.out.print(<span class="string">"-"</span>);   </span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        	System.out.print(<span class="string">""</span>);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li><p>单词长度</p>
+<p><strong>题目内容：</strong></p>
+<p>你的程序要读入一行文本，其中以空格分隔为若干个单词，以‘.’结束。你要输出这行文本中每个单词的长度。这里的单词与语言无关，可以包括各种符号，比如“it’s”算一个单词，长度为4。注意，行中可能出现连续的空格。</p>
+<p><strong>输入格式:</strong></p>
+<p>输入在一行中给出一行文本，以‘.’结束，结尾的句号不能计算在最后一个单词的长度内。</p>
+<p><strong>输出格式：</strong></p>
+<p>在一行中输出这行文本对应的单词的长度，每个长度之间以空格隔开，行末没有最后的空格。</p>
+<p><strong>输入样例：</strong></p>
+<p>It’s great to see you here.</p>
+<p><strong>输出样例：</strong></p>
+<p>4 5 2 3 3 4</p>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        String intString = in.nextLine(); </span><br><span class="line">        in.close();</span><br><span class="line">        <span class="keyword">int</span> n = <span class="number">0</span>, m = intString.length();</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">        	n = intString.indexOf(<span class="string">" "</span>);      	</span><br><span class="line">        	<span class="keyword">if</span> (n == -<span class="number">1</span>) &#123;</span><br><span class="line">        		<span class="keyword">if</span> (intString.equals(<span class="string">"."</span>)) &#123;</span><br><span class="line">        			<span class="keyword">break</span>;</span><br><span class="line">        		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        			System.out.print(intString.length()-<span class="number">1</span>);</span><br><span class="line">        		&#125;</span><br><span class="line">        		      		</span><br><span class="line">        	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        		<span class="keyword">if</span> (intString.equals(<span class="string">"."</span>)) &#123;</span><br><span class="line">        			<span class="keyword">break</span>;</span><br><span class="line">        		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        			String strX = intString.substring(<span class="number">0</span>, n);</span><br><span class="line">                	System.out.print(strX.length());</span><br><span class="line">        			System.out.print(<span class="string">" "</span>);</span><br><span class="line">        		&#125;</span><br><span class="line">        	&#125; </span><br><span class="line">    		<span class="keyword">for</span> ( <span class="keyword">int</span> i=n+<span class="number">1</span>; i&lt;m; i++ ) &#123;</span><br><span class="line">        		<span class="keyword">if</span> (intString.substring(i, i+<span class="number">1</span>).equals(<span class="string">" "</span>)) &#123;</span><br><span class="line">            		<span class="keyword">continue</span>;</span><br><span class="line">            	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            		intString = intString.substring(i);</span><br><span class="line">            		<span class="keyword">break</span>;</span><br><span class="line">            	&#125;</span><br><span class="line">        	&#125;   			</span><br><span class="line">        &#125; <span class="keyword">while</span>(n&gt;<span class="number">0</span>);           </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>GPS数据处理</p>
+<p><strong>题目内容：</strong></p>
+<p>NMEA-0183协议是为了在不同的GPS（全球定位系统）导航设备中建立统一的BTCM（海事无线电技术委员会）标准，由美国国家海洋电子协会（NMEA-The National Marine Electronics Associa-tion）制定的一套通讯协议。GPS接收机根据NMEA-0183协议的标准规范，将位置、速度等信息通过串口传送到PC机、PDA等设备。</p>
+<p>NMEA-0183协议是GPS接收机应当遵守的标准协议，也是目前GPS接收机上使用最广泛的协议，大多数常见的GPS接收机、GPS数据处理软件、导航软件都遵守或者至少兼容这个协议。</p>
+<p>NMEA-0183协议定义的语句非常多，但是常用的或者说兼容性最广的语句只有$GPGGA、$GPGSA、$GPGSV、$GPRMC、$GPVTG、$GPGLL等。</p>
+<p>其中$GPRMC语句的格式如下：</p>
+<p>$GPRMC,024813.640,A,3158.4608,N,11848.3737,E,10.05,324.27,150706,,,A*50</p>
+<p>这里整条语句是一个文本行，行中以逗号“,”隔开各个字段，每个字段的大小（长度）不一，这里的示例只是一种可能，并不能认为字段的大小就如上述例句一样。</p>
+<p>字段0：$GPRMC，语句ID，表明该语句为Recommended Minimum Specific GPS/TRANSIT Data（RMC）推荐最小定位信息</p>
+<p>字段1：UTC时间，hhmmss.sss格式</p>
+<p>字段2：状态，A=定位，V=未定位</p>
+<p>字段3：纬度ddmm.mmmm，度分格式（前导位数不足则补0）</p>
+<p>字段4：纬度N（北纬）或S（南纬）</p>
+<p>字段5：经度dddmm.mmmm，度分格式（前导位数不足则补0）</p>
+<p>字段6：经度E（东经）或W（西经）</p>
+<p>字段7：速度，节，Knots</p>
+<p>字段8：方位角，度</p>
+<p>字段9：UTC日期，DDMMYY格式</p>
+<p>字段10：磁偏角，（000 - 180）度（前导位数不足则补0）</p>
+<p>字段11：磁偏角方向，E=东W=西</p>
+<p>字段16：校验值</p>
+<p>这里，“<em>”为校验和识别符，其后面的两位数为校验和，代表了“$”和“</em>”之间所有字符（不包括这两个字符）的异或值的十六进制值。上面这条例句的校验和是十六进制的50，也就是十进制的80。</p>
+<p>提示：^运算符的作用是异或。将$和<em>之间所有的字符做^运算(第一个字符和第二个字符异或，结果再和第三个字符异或，依此类推)之后的值对65536取余后的结果，应该和</em>后面的两个十六进制数字的值相等，否则的话说明这条语句在传输中发生了错误。注意这个十六进制值中是会出现A-F的大写字母的。另外，如果你需要的话，可以用Integer.parseInt(s)从String变量s中得到其所表达的整数数字；而Integer.parseInt(s, 16)从String变量s中得到其所表达的十六进制数字</p>
+<p>现在，你的程序要读入一系列GPS输出，其中包含$GPRMC，也包含其他语句。在数据的最后，有一行单独的</p>
+<p>END</p>
+<p>表示数据的结束。</p>
+<p>你的程序要从中找出$GPRMC语句，计算校验和，找出其中校验正确，并且字段2表示已定位的语句，从中计算出时间，换算成北京时间。一次数据中会包含多条$GPRMC语句，以最后一条语句得到的北京时间作为结果输出。</p>
+<p>你的程序一定会读到一条有效的$GPRMC语句。</p>
+<p><strong>输入格式:</strong></p>
+<p>多条GPS语句，每条均以回车换行结束。最后一行是END三个大写字母。</p>
+<p><strong>输出格式：</strong></p>
+<p>6位数时间，表达为：</p>
+<p>hh:mm:ss</p>
+<p>其中，hh是两位数的小时，不足两位时前面补0；mm是两位数的分钟，不足两位时前面补0；ss是两位数的秒，不足两位时前面补0。</p>
+<p><strong>输入样例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$GPRMC,<span class="number">024813.640</span>,A,<span class="number">3158.4608</span>,N,<span class="number">11848.3737</span>,E,<span class="number">10.05</span>,<span class="number">324.27</span>,<span class="number">150706</span>,,,A*<span class="number">50</span></span><br></pre></td></tr></table></figure>
+<p>END</p>
+<p><strong>输出样例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span>:<span class="number">48</span>:<span class="number">13</span></span><br></pre></td></tr></table></figure>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">hello</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		String GPSOut;</span><br><span class="line">		GPSOut = in.nextLine();</span><br><span class="line">		String lastGPMMC = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">boolean</span> verify = <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">while</span> (!GPSOut.equals(<span class="string">"END"</span>)) &#123;	</span><br><span class="line">			lastGPMMC = GPSOut;</span><br><span class="line">			<span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">int</span> GPSValue = <span class="number">0</span>;			</span><br><span class="line">			<span class="comment">// 校验值			</span></span><br><span class="line">			<span class="keyword">if</span> (GPSOut.substring(<span class="number">0</span>, <span class="number">6</span>).equals(<span class="string">"$GPRMC"</span>)) &#123;</span><br><span class="line">				<span class="comment">// ^运算</span></span><br><span class="line">				String GPString = GPSOut;</span><br><span class="line">				<span class="keyword">char</span> gString;</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">int</span> n = GPString.indexOf(<span class="string">"*"</span>);</span><br><span class="line">				<span class="keyword">for</span> ( <span class="keyword">int</span> i=<span class="number">1</span>; i&lt;n; i++ ) &#123;</span><br><span class="line">					gString = GPString.charAt(i);</span><br><span class="line">					sum = sum^gString; </span><br><span class="line">				&#125; </span><br><span class="line">				GPSValue = Integer.parseInt(GPString.substring(n+<span class="number">1</span>), <span class="number">16</span>);	</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (sum == GPSValue) &#123;</span><br><span class="line">				verify = <span class="keyword">true</span>;</span><br><span class="line">				GPSOut = in.nextLine();</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				verify = <span class="keyword">false</span>;</span><br><span class="line">				System.out.print(<span class="string">"GPS输出 $GPRMC语句校验值错误！"</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	    in.close();</span><br><span class="line">	    </span><br><span class="line">	    <span class="comment">// 输出时间(UTC&gt;BJ)</span></span><br><span class="line">	    <span class="keyword">if</span> (verify) &#123;	</span><br><span class="line">			String UTC = lastGPMMC.substring(<span class="number">7</span>, <span class="number">13</span>);</span><br><span class="line">			<span class="keyword">if</span>(UTC.charAt(<span class="number">0</span>)==<span class="string">'0'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">char</span> sigle = UTC.charAt(<span class="number">1</span>);</span><br><span class="line">				String atime = String.valueOf(sigle);</span><br><span class="line">				Integer btime = Integer.parseInt(atime);</span><br><span class="line">				<span class="keyword">int</span> stime=btime;</span><br><span class="line">				<span class="keyword">int</span> BJTstime = stime +<span class="number">8</span>;</span><br><span class="line">				<span class="keyword">if</span>(BJTstime&lt;<span class="number">10</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					System.out.print(<span class="string">"0"</span>+ BJTstime+ <span class="string">":"</span>+lastGPMMC.substring(<span class="number">9</span>, <span class="number">11</span>)+<span class="string">":"</span>+lastGPMMC.substring(<span class="number">11</span>, <span class="number">13</span>)); </span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">				&#123;</span><br><span class="line">					System.out.print(BJTstime+ <span class="string">":"</span>+lastGPMMC.substring(<span class="number">9</span>, <span class="number">11</span>)+<span class="string">":"</span>+lastGPMMC.substring(<span class="number">11</span>, <span class="number">13</span>));</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				String dou = UTC.substring(<span class="number">0</span>, <span class="number">2</span>);</span><br><span class="line">				Integer Ddou = Integer.parseInt(dou);</span><br><span class="line">				<span class="keyword">int</span> BJTdou=Ddou;</span><br><span class="line">				<span class="keyword">if</span>(BJTdou&lt;<span class="number">16</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					System.out.print(BJTdou+ <span class="string">":"</span>+lastGPMMC.substring(<span class="number">9</span>, <span class="number">11</span>)+<span class="string">":"</span>+lastGPMMC.substring(<span class="number">11</span>, <span class="number">13</span>));</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">				&#123;</span><br><span class="line">					BJTdou = BJTdou + <span class="number">8</span> - <span class="number">24</span>; </span><br><span class="line">					System.out.print(<span class="string">"0"</span>+ BJTdou+ <span class="string">":"</span>+lastGPMMC.substring(<span class="number">9</span>, <span class="number">11</span>)+<span class="string">":"</span>+lastGPMMC.substring(<span class="number">11</span>, <span class="number">13</span>)); </span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// UTC &gt; 北京时间</span></span><br><span class="line">lastGPMMC = lastGPMMC.substring(lastGPMMC.indexOf(<span class="string">','</span>)+<span class="number">1</span>);  </span><br><span class="line">lastGPMMC = lastGPMMC.substring(<span class="number">0</span>,lastGPMMC.indexOf(<span class="string">','</span>));</span><br><span class="line">lastGPMMC = lastGPMMC.substring(<span class="number">0</span>,lastGPMMC.indexOf(<span class="string">'.'</span>));</span><br><span class="line"><span class="keyword">int</span> time = Integer.parseInt(lastGPMMC);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> hour;</span><br><span class="line"><span class="keyword">int</span> minute;</span><br><span class="line"><span class="keyword">int</span> second;</span><br><span class="line"><span class="keyword">if</span>(time&lt;<span class="number">99999</span>) &#123;</span><br><span class="line">  time = time%<span class="number">100</span>*<span class="number">10000</span>+time/<span class="number">100</span>%<span class="number">100</span>*<span class="number">100</span>+time/<span class="number">10000</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  time = time%<span class="number">100</span>*<span class="number">10000</span>+time/<span class="number">100</span>%<span class="number">100</span>*<span class="number">100</span>+time/<span class="number">10000</span>;</span><br><span class="line">&#125;                  </span><br><span class="line">hour =time%<span class="number">100</span>;</span><br><span class="line"><span class="keyword">if</span>(hour&gt;=<span class="number">24</span>) &#123;</span><br><span class="line">  hour = hour - <span class="number">16</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  hour = hour + <span class="number">8</span>;</span><br><span class="line">&#125;</span><br><span class="line">minute = time/<span class="number">100</span>%<span class="number">100</span>;</span><br><span class="line">second = time/<span class="number">10000</span>; </span><br><span class="line"><span class="keyword">if</span>(hour&gt;<span class="number">9</span>) &#123;</span><br><span class="line">  System.out.print(hour+<span class="string">":"</span>+minute+<span class="string">":"</span>+second);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  System.out.print(<span class="string">"0"</span>+hour+<span class="string">":"</span>+minute+<span class="string">":"</span>+second);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>分解质因数</p>
+<p><strong>题目内容：</strong></p>
+<p>每个非素数（合数）都可以写成几个素数（也可称为质数）相乘的形式，这几个素数就都叫做这个合数的质因数。比如，6可以被分解为2x3，而24可以被分解为2x2x2x3。</p>
+<p>现在，你的程序要读入一个[2,100000]范围内的整数，然后输出它的质因数分解式；当读到的就是素数时，输出它本身。</p>
+<p><strong>输入格式:</strong></p>
+<p>一个整数，范围在[2,100000]内。</p>
+<p><strong>输出格式：</strong></p>
+<p>形如：</p>
+<p>n=axbxcxd</p>
+<p>或</p>
+<p>n=n</p>
+<p>所有的符号之间都没有空格，x是小写字母x。</p>
+<p><strong>输入样例：</strong></p>
+<p>18</p>
+<p><strong>输出样例：</strong></p>
+<p>18=2x3x3</p>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">	<span class="keyword">boolean</span> isPrime = <span class="keyword">true</span>;</span><br><span class="line">	<span class="keyword">for</span> ( <span class="keyword">int</span> k=<span class="number">2</span>; k&lt;i; k++ )</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">if</span> ( i % k == <span class="number">0</span> )</span><br><span class="line">	&#123;</span><br><span class="line">	isPrime = <span class="keyword">false</span>;</span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> isPrime;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> inputNum = in.nextInt();</span><br><span class="line">		in.close();</span><br><span class="line">		<span class="keyword">boolean</span> isP =  isPrime(inputNum);</span><br><span class="line">		<span class="keyword">int</span> number = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span> (!isP)</span><br><span class="line">		&#123;   </span><br><span class="line">			System.out.print(inputNum+<span class="string">"="</span>);</span><br><span class="line">			<span class="keyword">do</span> &#123;</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;inputNum; i++) &#123;</span><br><span class="line">					<span class="keyword">if</span> (inputNum%i==<span class="number">0</span>) &#123;</span><br><span class="line">						number = inputNum/i;</span><br><span class="line">						inputNum = number;</span><br><span class="line">						System.out.print(i);</span><br><span class="line">						System.out.print(<span class="string">"x"</span>);</span><br><span class="line">						<span class="keyword">break</span>;</span><br><span class="line">					&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">						<span class="keyword">continue</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">										</span><br><span class="line">			&#125; <span class="keyword">while</span>(!isPrime(number));</span><br><span class="line">			System.out.print(number);</span><br><span class="line">			</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> (inputNum == <span class="number">2</span>) &#123;</span><br><span class="line">				System.out.print(inputNum+<span class="string">"="</span>+inputNum);</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				System.out.print(inputNum);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;			</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+<ul>
+<li><p>完数</p>
+<p><strong>题目内容：</strong></p>
+<p>一个正整数的因子是所有可以整除它的正整数。而一个数如果恰好等于除它本身外的因子之和，这个数就称为完数。例如6=1＋2＋3(6的因子是1,2,3)。</p>
+<p>现在，你要写一个程序，读入两个正整数n和m（1&lt;=n&lt;m&lt;1000），输出[n,m]范围内所有的完数。</p>
+<p><em>提示：可以写一个函数来判断某个数是否是完数。</em></p>
+<p><strong>输入格式:</strong></p>
+<p>两个正整数，以空格分隔。</p>
+<p><strong>输出格式：</strong></p>
+<p>其间所有的完数，以空格分隔，最后一个数字后面没有空格。如果没有，则输出一个空行。</p>
+<p><strong>输入样例：</strong></p>
+<p>1 10</p>
+<p><strong>输出样例：</strong></p>
+<p>6</p>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> hello;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line">	  </span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] IntegerDivisor(<span class="keyword">int</span> m)&#123;</span><br><span class="line">		<span class="keyword">int</span>[] IntegerDivisor = <span class="keyword">new</span> <span class="keyword">int</span>[m];</span><br><span class="line">		<span class="keyword">int</span> cut = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> ( <span class="keyword">int</span> i=<span class="number">1</span>; i&lt;m; i++ )&#123;</span><br><span class="line">			<span class="keyword">if</span> ( m % i == <span class="number">0</span> )&#123;</span><br><span class="line">				IntegerDivisor[cut] = i;</span><br><span class="line">				cut ++;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> IntegerDivisor;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isPerfectNumber</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">		<span class="keyword">boolean</span> isPerfectNumber = <span class="keyword">false</span>;</span><br><span class="line">		<span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> ( <span class="keyword">int</span> i=<span class="number">0</span>; i&lt;arr.length; i++ )&#123;</span><br><span class="line">        	sum += arr[i];</span><br><span class="line">        	<span class="keyword">if</span> (sum == x) &#123;</span><br><span class="line">        		isPerfectNumber = <span class="keyword">true</span>;</span><br><span class="line">        	&#125;   </span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> isPerfectNumber;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> n = in.nextInt();</span><br><span class="line">		<span class="keyword">int</span> m = in.nextInt();</span><br><span class="line">		in.close();</span><br><span class="line">		<span class="keyword">int</span> number = n;	</span><br><span class="line">		<span class="keyword">int</span> cut = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span>[] outputIntegerDivisor = <span class="keyword">new</span> <span class="keyword">int</span>[m];</span><br><span class="line">	    <span class="keyword">do</span> &#123;</span><br><span class="line">	    	<span class="keyword">if</span> (isPerfectNumber(IntegerDivisor(number), number)) &#123;	    		</span><br><span class="line">    		    outputIntegerDivisor[cut] = number;	</span><br><span class="line">    		    cut ++;</span><br><span class="line">	    	&#125; 	    	</span><br><span class="line">	    	number ++;</span><br><span class="line">	    &#125; <span class="keyword">while</span>(number&lt;=m);</span><br><span class="line">	    <span class="keyword">for</span> ( <span class="keyword">int</span> j=<span class="number">0</span>; j&lt;outputIntegerDivisor.length; j++ )&#123;</span><br><span class="line">	    	<span class="keyword">if</span> (outputIntegerDivisor[j] != <span class="number">0</span>) &#123;</span><br><span class="line">	    		System.out.print(outputIntegerDivisor[j]);</span><br><span class="line">	    	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	    		System.out.println();</span><br><span class="line">	    	&#125;	    	</span><br><span class="line">    		<span class="keyword">if</span> (outputIntegerDivisor[j+<span class="number">1</span>] != <span class="number">0</span>) &#123;</span><br><span class="line">    			System.out.print(<span class="string">" "</span>);</span><br><span class="line">    		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    			<span class="keyword">break</span>;	</span><br><span class="line">        	&#125; </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://sophoraflower.github.io/EverQuest/2017/1227/Java基础练习汇总/" data-id="cjcpfqr8u0006zwu7wo0h4r04" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zMzMyNy85ODgz">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="知乎" href="https://zhihu.com/people/Houlelord" target="_blank">
+                            <i class="icon fa fa-key"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="微博" href="https://weibo.com/u/1782696323" target="_blank">
+                            <i class="icon fa fa-weibo"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="实验楼" href="https://www.shiyanlou.com/user/577969/" target="_blank">
+                            <i class="icon fa fa-book"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="GitHub" href="https://github.com/sophoraFlower/" target="_blank">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="Rss" href="/atom.xml" target="_blank">
+                            <i class="icon fa fa-rss"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/1220/Java基础知识汇总/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">Java基础知识汇总</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/1227/Java基础练习汇总/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://p2s7rr94e.bkt.clouddn.com/blog/180121/Jd86GGjhI0.jpg)" alt="Java基础练习汇总" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Java/编程基础/">编程基础</a></p>
+                            <p class="item-title"><a href="/2017/1227/Java基础练习汇总/" class="title">Java基础练习汇总</a></p>
+                            <p class="item-date"><time datetime="2017-12-27T14:41:00.000Z" itemprop="datePublished">2017-12-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/1220/Java基础知识汇总/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://p2s7rr94e.bkt.clouddn.com/blog/180121/Jd86GGjhI0.jpg)" alt="Java基础知识汇总" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Java/编程基础/">编程基础</a></p>
+                            <p class="item-title"><a href="/2017/1220/Java基础知识汇总/" class="title">Java基础知识汇总</a></p>
+                            <p class="item-date"><time datetime="2017-12-19T23:41:00.000Z" itemprop="datePublished">2017-12-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/1130/EverQuest201712/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://p2s7rr94e.bkt.clouddn.com/blog/180120/K6HG6D366d.jpg)" alt="EverQuest201712" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EverQuest/">EverQuest</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EverQuest/201712/">201712</a></p>
+                            <p class="item-title"><a href="/2017/1130/EverQuest201712/" class="title">EverQuest201712</a></p>
+                            <p class="item-date"><time datetime="2017-11-30T12:08:08.000Z" itemprop="datePublished">2017-11-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/0909/Unittest单元测试框架/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://p2s7rr94e.bkt.clouddn.com/blog/180121/bl3iEiDkIj.jpg)" alt="Unittest单元测试框架" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Python/自动化测试/">自动化测试</a></p>
+                            <p class="item-title"><a href="/2017/0909/Unittest单元测试框架/" class="title">Unittest单元测试框架</a></p>
+                            <p class="item-date"><time datetime="2017-09-09T15:35:00.000Z" itemprop="datePublished">2017-09-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/0528/D3.js 小结/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://p2s7rr94e.bkt.clouddn.com/blog/180120/clm2diaCmh.jpg)" alt="D3.js小结" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Web前端/">Web前端</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Web前端/数据可视化/">数据可视化</a></p>
+                            <p class="item-title"><a href="/2017/0528/D3.js 小结/" class="title">D3.js小结</a></p>
+                            <p class="item-date"><time datetime="2017-05-28T13:13:00.000Z" itemprop="datePublished">2017-05-28</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/EverQuest/">EverQuest</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/EverQuest/201712/">201712</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/编程基础/">编程基础</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/">LifeStyle</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/摄影/">摄影</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/随笔/">随笔</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/自动化测试/">自动化测试</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/">Web前端</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/JavaScript/">JavaScript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/Web综合/">Web综合</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/数据可视化/">数据可视化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/调优/">调优</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/调优/软件测试/">软件测试</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">2017年12月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">2017年11月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">2017年09月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">2017年05月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">2017年04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016年08月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摄影/">摄影</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试管理/">测试管理</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/摄影/" style="font-size: 10px;">摄影</a> <a href="/tags/测试管理/" style="font-size: 10px;">测试管理</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 ZiZhi Cao</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'EverQuest';
+    
+    
+    var disqus_url = 'https://sophoraflower.github.io/EverQuest/2017/1227/Java基础练习汇总/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

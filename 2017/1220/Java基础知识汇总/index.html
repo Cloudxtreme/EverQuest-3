@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Java基础知识汇总 | 后乐</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="java" />
+    
+    <meta name="description" content="用程序来做计算 安装编程软件：Eclipse  第一个Java程序 123456package hello;public class Hello &amp;#123;	public static void main(String[] args) &amp;#123;        System.out.println(&quot;Hello World&quot;);	&amp;#125;&amp;#125;  输入 12345678910pack">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础知识汇总">
+<meta property="og:url" content="https://sophoraflower.github.io/EverQuest/2017/1220/Java基础知识汇总/index.html">
+<meta property="og:site_name" content="后乐">
+<meta property="og:description" content="用程序来做计算 安装编程软件：Eclipse  第一个Java程序 123456package hello;public class Hello &amp;#123;	public static void main(String[] args) &amp;#123;        System.out.println(&quot;Hello World&quot;);	&amp;#125;&amp;#125;  输入 12345678910pack">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://p2s7rr94e.bkt.clouddn.com/blog/180121/Jd86GGjhI0.jpg">
+<meta property="og:updated_time" content="2018-01-21T23:24:34.368Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java基础知识汇总">
+<meta name="twitter:description" content="用程序来做计算 安装编程软件：Eclipse  第一个Java程序 123456package hello;public class Hello &amp;#123;	public static void main(String[] args) &amp;#123;        System.out.println(&quot;Hello World&quot;);	&amp;#125;&amp;#125;  输入 12345678910pack">
+<meta name="twitter:image" content="http://p2s7rr94e.bkt.clouddn.com/blog/180121/Jd86GGjhI0.jpg">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="后乐" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">柴门闻犬吠，风雪夜归人</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/EverQuest/">EverQuest</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/EverQuest/201712/">201712</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Java/">Java</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Java/编程基础/">编程基础</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LifeStyle/">LifeStyle</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LifeStyle/摄影/">摄影</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LifeStyle/随笔/">随笔</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/">Python</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/自动化测试/">自动化测试</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web前端/">Web前端</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web前端/JavaScript/">JavaScript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web前端/Web综合/">Web综合</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web前端/数据可视化/">数据可视化</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/调优/">调优</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/调优/软件测试/">软件测试</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于+</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Java/">Java</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Java/编程基础/">编程基础</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-Java基础知识汇总" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Java基础知识汇总
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/1220/Java基础知识汇总/" class="article-date">
+            <time datetime="2017-12-19T23:41:00.000Z" itemprop="datePublished">2017-12-20</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/java/">java</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h4 id="用程序来做计算"><a href="#用程序来做计算" class="headerlink" title="用程序来做计算"></a>用程序来做计算</h4><ul>
+<li><p>安装编程软件：Eclipse</p>
+</li>
+<li><p>第一个Java程序</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> hello;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello World"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>输入</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> hello;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">        System.out.println(<span class="string">"Hello"</span>);</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.println(<span class="string">"echo:"</span> + in.nextLine());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>变量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> hello;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">        System.out.println(<span class="string">"Hello"</span>);</span><br><span class="line">        Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> price;</span><br><span class="line">        price = in.nextInt();</span><br><span class="line">        System.out.println(<span class="string">"100-"</span> +price+<span class="string">"="</span>+ (<span class="number">100</span>-price));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义变量、变量名、标识符、关键字（保留字）、变量类型</p>
+</li>
+<li><p>浮点数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 档浮点数和整数方法哦一起运算时，Java会将整数转换成浮点数，然后进行浮点数运算</span><br><span class="line">System.out.println((x+y/2.0)*0.5);</span><br><span class="line">// 结果是0.30000000000000004 &gt; 浮点数</span><br><span class="line">System.out.println(3*0.1);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>赋值</p>
+<p>初始化、运算符、表达式、常量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 常量</span><br><span class="line">final int number =100;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>优先级</p>
+<p>一般自左向右；单目+-和赋值=自右向左</p>
+<p><img src="https://github.com/sophoraFlower/JavaWebPractice/blob/master/Pics/%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7.png"></p>
+</li>
+<li><p>类型转换</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">System.out.println((<span class="keyword">int</span>)(x+y/<span class="number">2.0</span>)*<span class="number">0.5</span>);</span><br><span class="line"><span class="comment">// 强制类型转换(浮点数取整去余数)</span></span><br><span class="line">x = （<span class="keyword">int</span>）(<span class="number">30</span>/<span class="number">3.0</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h4><ul>
+<li>比较</li>
+</ul>
+<ul>
+<li><p>关系运算（关系运算符）  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 所有的关系运算符的优先级比算术运算低，但是比赋值运算的高</span></span><br><span class="line"><span class="comment">// 判断是否相等的==和！=的优先级比其他的低，而连续的关系运算是从左到右进行的</span></span><br><span class="line"><span class="comment">// 5 == 5.0  True</span></span><br><span class="line"><span class="comment">// 5 === 5.0 False</span></span><br><span class="line"><span class="comment">// 判断两个浮点数是否相等</span></span><br><span class="line">Math.abs(f1 - f2) &lt; <span class="number">0.0001</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>做判断</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// if语句</span></span><br><span class="line"><span class="keyword">if</span>( total &gt; amount )&#123;</span><br><span class="line">  total += amount+<span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// DeBug模式、断点、step over等</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 流程图</span><br><span class="line">if ( a&lt;b )&#123;</span><br><span class="line">  max=b;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">  max=a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>嵌套和级联的判断</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// else总是和最近的那个if匹配</span></span><br><span class="line"><span class="comment">// 在if或else后面总是用&#123;&#125;，即使只有一条语句的时候</span></span><br><span class="line"><span class="comment">// 分段函数 &gt; if-else if-...-else</span></span><br><span class="line"><span class="comment">// 单一出口，推荐</span></span><br><span class="line"><span class="keyword">int</span> f;                                   </span><br><span class="line"><span class="keyword">if</span> ( x &lt; <span class="number">0</span> ) &#123;                           </span><br><span class="line">  f = -<span class="number">1</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (x == <span class="number">0</span>) &#123;</span><br><span class="line">  f = <span class="number">0</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  f = <span class="number">2</span> * x;</span><br><span class="line">&#125;</span><br><span class="line">System.out.printIn(f)</span><br><span class="line"><span class="comment">// 非单一出口</span></span><br><span class="line"><span class="keyword">if</span> ( x &lt; <span class="number">0</span> ) &#123;                           </span><br><span class="line">  System.out.println(-<span class="number">1</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (x == <span class="number">0</span>) &#123;</span><br><span class="line">  System.out.println(<span class="number">0</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  System.out.println(<span class="number">2</span> * x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断问题常见错误</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 忘记大括号</span></span><br><span class="line"><span class="comment">// if后加分号</span></span><br><span class="line"><span class="comment">// 错误使用==和=</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多路分支：switch-case</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 控制表达式只能是整数型的结果</span></span><br><span class="line"><span class="comment">// 常量可以是常数，也可以是常数计算的表达式</span></span><br><span class="line"><span class="comment">// 根据表达式的结果，寻找匹配的case，并执行case后面的语句，一直到break为止</span></span><br><span class="line"><span class="keyword">switch</span> （ 控制表达式 ） &#123;</span><br><span class="line">  <span class="keyword">case</span> 常量：</span><br><span class="line">    语句</span><br><span class="line">    ...</span><br><span class="line">  <span class="keyword">case</span> 常量：</span><br><span class="line">    语句</span><br><span class="line">    ...</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    语句</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><ul>
+<li><p>while循环</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// while的条件是在进入循环体之前判断的，执行完一轮循环之后，会再回到循环开始的地方再次判断条件，而不会在循环体中随时判断条件</span></span><br><span class="line"><span class="comment">// 条件成立循环继续的条件</span></span><br><span class="line"><span class="keyword">int</span> number = in.nextInt();</span><br><span class="line"><span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>( number &gt;<span class="number">0</span> )</span><br><span class="line">&#123;</span><br><span class="line">  number = number / <span class="number">10</span>;</span><br><span class="line">  count = count + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(count);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>do…while循环</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在进入循环体的时候不做检查，而是在执行完一轮循环体的代码之后，再来检查循环的条件是否满足，如果满足则进行下一轮循环，不满足则结束循环</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">&#123;</span><br><span class="line">  &lt;循环体语句&gt;</span><br><span class="line">&#125;<span class="keyword">while</span>(&lt;循环条件&gt;)；</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>计数循环</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 循环执行次数</span></span><br><span class="line"><span class="comment">// 循环结束（停止条件）</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>算平拘数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 变量-&gt;算法-&gt;流程图-&gt;程序</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>猜字游戏</p>
+</li>
+<li><p>整数分解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 取整</span></span><br><span class="line"><span class="keyword">int</span> num = <span class="number">765</span>;</span><br><span class="line"><span class="keyword">int</span> intnum1 = num/<span class="number">100</span>; <span class="comment">// 7</span></span><br><span class="line"><span class="keyword">int</span> intnum2 = (num - intnum1*<span class="number">100</span>)/<span class="number">10</span> <span class="comment">// 6</span></span><br><span class="line"><span class="comment">// 取余</span></span><br><span class="line"><span class="keyword">int</span> intnum3 = num%<span class="number">100</span> <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="循环控制"><a href="#循环控制" class="headerlink" title="循环控制"></a>循环控制</h3><ul>
+<li><p>for循环</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// for循环像一个计数循环：设定一个计数器，初始化它，然后在计数器到达某值之前，重复执行循环体，而每</span></span><br><span class="line"><span class="comment">// 执行一轮循环，计数器值以一定步进进行调整</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i+<span class="number">1</span>) &#123;</span><br><span class="line">  System.out.pringln(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// for ( 初始化; 条件; 步进调整 ) &#123;</span></span><br><span class="line"><span class="comment">//  // TODO</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"><span class="comment">// for == while</span></span><br><span class="line"><span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>( i&lt;<span class="number">5</span> )&#123;</span><br><span class="line">  System.out.pringln(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 循环次数的确定</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>循环的选择</p>
+<ul>
+<li>如果有固定的次数，用for</li>
+<li>如果必须执行一次，用do_while</li>
+<li>其他情况用while</li>
+</ul>
+</li>
+<li><p>符合赋值</p>
+</li>
+<li><p>循环控制</p>
+<ul>
+<li><p>求解素数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> isPrime = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> ( <span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=n; i++ ) &#123;</span><br><span class="line">  <span class="keyword">if</span> ( n%i == <span class="number">0</span> ) &#123;</span><br><span class="line">    isPrime = <span class="number">0</span>;</span><br><span class="line">    System.out.println(<span class="string">"不是素数"</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  &#125; </span><br><span class="line">  <span class="keyword">if</span> ( isPrime==<span class="number">1</span> )&#123;</span><br><span class="line">    System.out.println(<span class="string">"是素数"</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">"不是素数"</span>);</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>break 与 continue</p>
+<ul>
+<li>break：跳出循环</li>
+<li>continue：跳过循环这一轮剩下的语句进入下一轮</li>
+<li>label: 在循环前防一个标号来标示循环，带标号的break和continue对那个循环起作用</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>多重循环（嵌套循环）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 100以内的素数</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>逻辑类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line"><span class="comment">// 逻辑运算</span></span><br><span class="line">x &gt; <span class="number">4</span> &amp;&amp; x &lt; <span class="number">6</span>  <span class="comment">// 4&lt;x&lt;6</span></span><br><span class="line"><span class="comment">// 优先级</span></span><br><span class="line">!&gt;&amp;&amp;&gt;||</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>循环例子</p>
+<ul>
+<li>求和</li>
+<li>最大公约数（辗转相除法）</li>
+</ul>
+</li>
+</ul>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><ul>
+<li><p>初识数组</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] numbers = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100</span>];</span><br><span class="line"><span class="comment">// 定义数组变量</span></span><br><span class="line"><span class="keyword">int</span>[] grades= <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100</span>];</span><br><span class="line"><span class="keyword">double</span>[] averages= <span class="keyword">new</span> <span class="keyword">double</span>[<span class="number">20</span>];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数组的元素</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 有效的下标</span></span><br><span class="line"><span class="comment">// 长度</span></span><br><span class="line">array.length();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数组变量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 直接初始化数组</span></span><br><span class="line"><span class="keyword">int</span>[] scores = &#123;<span class="number">11</span>, <span class="number">33</span>, <span class="number">55</span>, <span class="number">77</span>, <span class="number">90</span>&#125;;</span><br><span class="line"><span class="comment">// 数组变量赋值</span></span><br><span class="line"><span class="comment">// 数组赋值、比较、管理权限</span></span><br><span class="line"><span class="comment">// 数组复制 &gt; 遍历</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>遍历数组</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ( <span class="keyword">int</span> i=<span class="number">0</span>; i&lt;data.length; i++ )</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">if</span> (x == data[i])</span><br><span class="line">  &#123;</span><br><span class="line">    loc = i;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// for-each循环，不可修改数组元素，可读取数组中的元素</span></span><br><span class="line"><span class="keyword">for</span> ( <span class="keyword">int</span> k : data )</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">if</span> ( k == x )</span><br><span class="line">  &#123;</span><br><span class="line">    found = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>素数求解的各种方法（思路）</p>
+</li>
+<li><p>二维数组 &gt; 多维数组</p>
+</li>
+</ul>
+<h3 id="使用对象"><a href="#使用对象" class="headerlink" title="使用对象"></a>使用对象</h3><ul>
+<li><p>字符类型</p>
+</li>
+<li><p>包裹类型</p>
+</li>
+<li><p>字符串</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 字符串变量</span></span><br><span class="line">String s = <span class="keyword">new</span> String(<span class="string">"a string"</span>);</span><br><span class="line"><span class="comment">// 字符串连接</span></span><br><span class="line">string1 + string2</span><br><span class="line">string + number</span><br><span class="line"><span class="comment">// 比较两个字符串</span></span><br><span class="line"><span class="comment">// 比较是否同一个</span></span><br><span class="line"><span class="keyword">if</span>(input == <span class="string">"bye"</span>)&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 比较内容是否相同</span></span><br><span class="line"><span class="keyword">if</span>(input.equals(<span class="string">"bye"</span>))&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 字符串操作</span></span><br><span class="line"><span class="comment">// 大小比较</span></span><br><span class="line">s1.compareTo(s2);</span><br><span class="line"><span class="comment">// 字符串的长度</span></span><br><span class="line">str1.length();</span><br><span class="line"><span class="comment">// 访问String里的字符,不能用for-each循环遍历字符串</span></span><br><span class="line">s.chartAt(index);</span><br><span class="line"><span class="comment">// 切片</span></span><br><span class="line">s.substring(<span class="number">2</span>, <span class="number">4</span>);</span><br><span class="line"><span class="comment">// 查找字符位置</span></span><br><span class="line">s.indexOf(<span class="number">3</span>)</span><br><span class="line"><span class="comment">// 其他</span></span><br><span class="line">startsWith、endsWith、trim、replace、toLowerCase、toUpperCase</span><br><span class="line"><span class="comment">// 所有的字符串操作都不能改变原字符串的值</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ul>
+<li><p>函数定义</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数头（返回类型、函数名、参数表）</span></span><br><span class="line"><span class="comment">// 函数体</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数调用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传值</span></span><br><span class="line"><span class="comment">// 形参，实参</span></span><br><span class="line"><span class="comment">// 本地变量，局部变量，全局变量</span></span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://sophoraflower.github.io/EverQuest/2017/1220/Java基础知识汇总/" data-id="cjcpfqr8u0005zwu7h1jt6tjo" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zMzMyNy85ODgz">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="知乎" href="https://zhihu.com/people/Houlelord" target="_blank">
+                            <i class="icon fa fa-key"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="微博" href="https://weibo.com/u/1782696323" target="_blank">
+                            <i class="icon fa fa-weibo"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="实验楼" href="https://www.shiyanlou.com/user/577969/" target="_blank">
+                            <i class="icon fa fa-book"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="GitHub" href="https://github.com/sophoraFlower/" target="_blank">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="Rss" href="/atom.xml" target="_blank">
+                            <i class="icon fa fa-rss"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/1227/Java基础练习汇总/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">
+        
+            Java基础练习汇总
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2017/1130/EverQuest201712/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">EverQuest201712</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/1227/Java基础练习汇总/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://p2s7rr94e.bkt.clouddn.com/blog/180121/Jd86GGjhI0.jpg)" alt="Java基础练习汇总" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Java/编程基础/">编程基础</a></p>
+                            <p class="item-title"><a href="/2017/1227/Java基础练习汇总/" class="title">Java基础练习汇总</a></p>
+                            <p class="item-date"><time datetime="2017-12-27T14:41:00.000Z" itemprop="datePublished">2017-12-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/1220/Java基础知识汇总/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://p2s7rr94e.bkt.clouddn.com/blog/180121/Jd86GGjhI0.jpg)" alt="Java基础知识汇总" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Java/编程基础/">编程基础</a></p>
+                            <p class="item-title"><a href="/2017/1220/Java基础知识汇总/" class="title">Java基础知识汇总</a></p>
+                            <p class="item-date"><time datetime="2017-12-19T23:41:00.000Z" itemprop="datePublished">2017-12-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/1130/EverQuest201712/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://p2s7rr94e.bkt.clouddn.com/blog/180120/K6HG6D366d.jpg)" alt="EverQuest201712" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/EverQuest/">EverQuest</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/EverQuest/201712/">201712</a></p>
+                            <p class="item-title"><a href="/2017/1130/EverQuest201712/" class="title">EverQuest201712</a></p>
+                            <p class="item-date"><time datetime="2017-11-30T12:08:08.000Z" itemprop="datePublished">2017-11-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/0909/Unittest单元测试框架/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://p2s7rr94e.bkt.clouddn.com/blog/180121/bl3iEiDkIj.jpg)" alt="Unittest单元测试框架" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Python/自动化测试/">自动化测试</a></p>
+                            <p class="item-title"><a href="/2017/0909/Unittest单元测试框架/" class="title">Unittest单元测试框架</a></p>
+                            <p class="item-date"><time datetime="2017-09-09T15:35:00.000Z" itemprop="datePublished">2017-09-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/0528/D3.js 小结/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://p2s7rr94e.bkt.clouddn.com/blog/180120/clm2diaCmh.jpg)" alt="D3.js小结" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Web前端/">Web前端</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Web前端/数据可视化/">数据可视化</a></p>
+                            <p class="item-title"><a href="/2017/0528/D3.js 小结/" class="title">D3.js小结</a></p>
+                            <p class="item-date"><time datetime="2017-05-28T13:13:00.000Z" itemprop="datePublished">2017-05-28</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/EverQuest/">EverQuest</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/EverQuest/201712/">201712</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/编程基础/">编程基础</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/">LifeStyle</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/摄影/">摄影</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/随笔/">随笔</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/自动化测试/">自动化测试</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/">Web前端</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/JavaScript/">JavaScript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/Web综合/">Web综合</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/数据可视化/">数据可视化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/调优/">调优</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/调优/软件测试/">软件测试</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">2017年12月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">2017年11月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">2017年09月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">2017年05月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">2017年04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016年08月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摄影/">摄影</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试管理/">测试管理</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/摄影/" style="font-size: 10px;">摄影</a> <a href="/tags/测试管理/" style="font-size: 10px;">测试管理</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 ZiZhi Cao</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'EverQuest';
+    
+    
+    var disqus_url = 'https://sophoraflower.github.io/EverQuest/2017/1220/Java基础知识汇总/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

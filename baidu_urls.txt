@@ -1,6 +1,7 @@
-https://sophoraflower.github.io/EverQuest/2017/1224/Java占位文章/
+https://sophoraflower.github.io/EverQuest/2017/1227/Java基础练习汇总/
+https://sophoraflower.github.io/EverQuest/2017/1220/Java基础知识汇总/
 https://sophoraflower.github.io/EverQuest/2017/1130/EverQuest201712/
-https://sophoraflower.github.io/EverQuest/2017/0824/Python占位文章/
+https://sophoraflower.github.io/EverQuest/2017/0909/Unittest单元测试框架/
 https://sophoraflower.github.io/EverQuest/2017/0528/D3.js 小结/
 https://sophoraflower.github.io/EverQuest/2017/0424/软件测试管理/
 https://sophoraflower.github.io/EverQuest/2016/0808/上海-西塘-绍兴/
