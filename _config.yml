@@ -4,8 +4,8 @@
 
 # Site
 title: 后乐
-subtitle: 先天下之忧而忧，后天下之乐而乐
-description:
+subtitle: 柴门闻犬吠，风雪夜归人
+description: 
 author: ZiZhi Cao
 language: zh-CN
 timezone: Asia/Shanghai
@@ -40,7 +40,7 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
+  # auto_detect: false
   tab_replace:
   
 # Home page setting
@@ -74,6 +74,24 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 # theme: landscape
 theme: hueman
+
+#RSS订阅
+plugin:
+- hexo-generator-feed
+- hexo-generator-sitemap
+- hexo-generator-json-content
+
+#Feed Atom
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+
+# Baidusitemap
+baidusitemap:
+    path: baidusitemap.xml
+    
+# Json-content
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
