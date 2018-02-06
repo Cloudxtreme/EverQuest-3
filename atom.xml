@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sophoraflower.github.io/EverQuest/"/>
-  <updated>2018-01-31T14:43:19.670Z</updated>
+  <updated>2018-02-06T22:25:57.520Z</updated>
   <id>https://sophoraflower.github.io/EverQuest/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python问题汇总-201802</title>
+    <link href="https://sophoraflower.github.io/EverQuest/2018/0201/Python%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB-201802/"/>
+    <id>https://sophoraflower.github.io/EverQuest/2018/0201/Python问题汇总-201802/</id>
+    <published>2018-02-01T08:16:16.000Z</published>
+    <updated>2018-02-06T22:25:57.520Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="20180206"><a href="#20180206" class="headerlink" title="20180206"></a>20180206</h4><ul><li><p>格式化输出json</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">json.dumps(obj, fp, ensure_ascii, indent)</span><br><span class="line">// obj json输出结果或者json文件</span><br><span class="line">// fp 文件句柄</span><br><span class="line">// ensure_ascii 设置为<span class="keyword">False</span>,可以把中文以中文的形式输出显示或存到文件里</span><br><span class="line">// indent 缩进的空格数，设置为非零值时，就起到了格式化的效果</span><br></pre></td></tr></table></figure></li><li><p>configparser模块：</p></li></ul><p>&emsp;&emsp;This module provides the <a href="https://docs.python.org/3/library/configparser.html#configparser.ConfigParser" target="_blank" rel="noopener"><code>ConfigParser</code></a> class which implements a basic configuration language which provides a structure similar to what’s found in Microsoft Windows INI files.  You can use this to write Python programs which can be customized by end users easily.</p><p>&emsp;&emsp;参考文章</p><p>&emsp;&emsp;<a href="http://blog.csdn.net/u014453898/article/details/53544144" target="_blank" rel="noopener">《python3 用ConfigParser包处理 ini文件》</a></p><p>&emsp;&emsp;<a href="http://blog.csdn.net/willhuo/article/details/49512557" target="_blank" rel="noopener">《如何使用Python3读写INI配置文件》</a></p><p>&emsp;&emsp;示例：</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">; config.ini</span></span><br><span class="line"><span class="comment">; PC Online</span></span><br><span class="line"><span class="section">[HTTP_PC]</span></span><br><span class="line">base_url : https://www.xxx.tv/</span><br><span class="line"></span><br><span class="line"><span class="comment">; PC Beta</span></span><br><span class="line"><span class="section">[HTTP_Beta]</span></span><br><span class="line">beta_base_url : https://beta.xxx.tv/</span><br><span class="line"></span><br><span class="line"><span class="comment">; Mobile Online</span></span><br><span class="line"><span class="section">[HTTP_Mobile]</span></span><br><span class="line">mobile_base_url : https://apis.xxx.tv/</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> configparser</span><br><span class="line"></span><br><span class="line">configPath = os.path.abspath(os.curdir) + <span class="string">'\\testConfig\\config.ini'</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ReadConfig</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 构造函数，读取配置文件(config.ini)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.config = configparser.ConfigParser()</span><br><span class="line">        self.config.read(configPath)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_http_pc</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        value = self.config.get(<span class="string">"HTTP_PC"</span>, name)</span><br><span class="line">        <span class="keyword">return</span> value</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_http_beta</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        value = self.config.get(<span class="string">"HTTP_Beta"</span>, name)</span><br><span class="line">        <span class="keyword">return</span> value</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_http_mobile</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        value = self.config.get(<span class="string">"HTTP_Mobile"</span>, name)</span><br><span class="line">        <span class="keyword">return</span> value</span><br><span class="line">      </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    config = ReadConfig()</span><br><span class="line">    self.base = config.get_http_pc(name=<span class="string">"base_url"</span>) // https://www.xxx.tv/ </span><br><span class="line">    self.url = self.base + <span class="string">'api/user/profile'</span></span><br><span class="line">    print(<span class="string">'**** '</span> + self.url + <span class="string">' ****'</span>)</span><br></pre></td></tr></table></figure><h4 id="20180207"><a href="#20180207" class="headerlink" title="20180207"></a>20180207</h4><h4 id="20180208"><a href="#20180208" class="headerlink" title="20180208"></a>20180208</h4><h4 id="20180209"><a href="#20180209" class="headerlink" title="20180209"></a>20180209</h4><h4 id="……"><a href="#……" class="headerlink" title="……"></a>……</h4>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;20180206&quot;&gt;&lt;a href=&quot;#20180206&quot; class=&quot;headerlink&quot; title=&quot;20180206&quot;&gt;&lt;/a&gt;20180206&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;格式化输出json&lt;/p&gt;
+&lt;figure class=&quot;highligh
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://sophoraflower.github.io/EverQuest/categories/Python/"/>
+    
+      <category term="杂烩" scheme="https://sophoraflower.github.io/EverQuest/categories/Python/%E6%9D%82%E7%83%A9/"/>
+    
+    
+      <category term="python" scheme="https://sophoraflower.github.io/EverQuest/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>Java进阶知识汇总</title>
