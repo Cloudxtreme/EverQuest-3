@@ -3,23 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>后乐</title>
+    <title>Python之列表、字典、元组、容器遍历和列表解析 | 后乐</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="" />
+        <meta name="keywords" content="python" />
     
-    <meta name="description" content="title: Python之列表、字典、元组、容器遍历和列表解析date: 2018-06-01 07:48:16categories:  Python Python编程基础tags: pythonthumbnail: http://p2s7rr94e.bkt.clouddn.com/blog/180121/bl3iEiDkIj.jpg   总结参考自知乎专栏《给妹子讲python》–酱油哥  好">
+    <meta name="description" content="总结参考自知乎专栏《给妹子讲python》–酱油哥  好用的列表123456&apos;&apos;&apos;    1.python中的容器数据类型概述    2.列表类型的异构性、有序性和本地可变性三大优势    2.列表的基本操作（增、删、改、分片索引）    3.列表的分片赋值与本地排序&apos;&apos;&apos; 常见“容器”数据类型 列表 字典 元组  列表特性 异构性  可以包含不同种类、任意类型的对象，甚至可以嵌套列表  123">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="后乐">
-<meta property="og:url" content="https://sophoraflower.github.io/EverQuest/2018/0605/Python之列表、字典、元组、容器遍历和列表解析/index.html">
+<meta property="og:title" content="Python之列表、字典、元组、容器遍历和列表解析">
+<meta property="og:url" content="https://sophoraflower.github.io/EverQuest/2018/0601/Python之列表、字典、元组、容器遍历和列表解析/index.html">
 <meta property="og:site_name" content="后乐">
-<meta property="og:description" content="title: Python之列表、字典、元组、容器遍历和列表解析date: 2018-06-01 07:48:16categories:  Python Python编程基础tags: pythonthumbnail: http://p2s7rr94e.bkt.clouddn.com/blog/180121/bl3iEiDkIj.jpg   总结参考自知乎专栏《给妹子讲python》–酱油哥  好">
+<meta property="og:description" content="总结参考自知乎专栏《给妹子讲python》–酱油哥  好用的列表123456&apos;&apos;&apos;    1.python中的容器数据类型概述    2.列表类型的异构性、有序性和本地可变性三大优势    2.列表的基本操作（增、删、改、分片索引）    3.列表的分片赋值与本地排序&apos;&apos;&apos; 常见“容器”数据类型 列表 字典 元组  列表特性 异构性  可以包含不同种类、任意类型的对象，甚至可以嵌套列表  123">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-05T05:51:55.707Z">
+<meta property="og:image" content="http://p2s7rr94e.bkt.clouddn.com/blog/180121/bl3iEiDkIj.jpg">
+<meta property="og:updated_time" content="2018-06-05T05:56:41.045Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="后乐">
-<meta name="twitter:description" content="title: Python之列表、字典、元组、容器遍历和列表解析date: 2018-06-01 07:48:16categories:  Python Python编程基础tags: pythonthumbnail: http://p2s7rr94e.bkt.clouddn.com/blog/180121/bl3iEiDkIj.jpg   总结参考自知乎专栏《给妹子讲python》–酱油哥  好">
+<meta name="twitter:title" content="Python之列表、字典、元组、容器遍历和列表解析">
+<meta name="twitter:description" content="总结参考自知乎专栏《给妹子讲python》–酱油哥  好用的列表123456&apos;&apos;&apos;    1.python中的容器数据类型概述    2.列表类型的异构性、有序性和本地可变性三大优势    2.列表的基本操作（增、删、改、分片索引）    3.列表的分片赋值与本地排序&apos;&apos;&apos; 常见“容器”数据类型 列表 字典 元组  列表特性 异构性  可以包含不同种类、任意类型的对象，甚至可以嵌套列表  123">
+<meta name="twitter:image" content="http://p2s7rr94e.bkt.clouddn.com/blog/180121/bl3iEiDkIj.jpg">
     
 
     
@@ -73,7 +76,7 @@
                                     <a class="main-nav-list-link" href="/">主页</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/EverQuest/">EverQuest</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Java/">Java</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Java/编程基础/">编程基础</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LifeStyle/">LifeStyle</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LifeStyle/摄影/">摄影</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/">Python</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/杂烩/">杂烩</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/自动化测试/">自动化测试</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web前端/">Web前端</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web前端/JavaScript/">JavaScript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web前端/Web综合/">Web综合</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web前端/数据可视化/">数据可视化</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/计算机基础/">计算机基础</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/计算机基础/MySQL/">MySQL</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/调优/">调优</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/调优/软件测试/">软件测试</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/EverQuest/">EverQuest</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Java/">Java</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Java/编程基础/">编程基础</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LifeStyle/">LifeStyle</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LifeStyle/摄影/">摄影</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/">Python</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/Python编程基础/">Python编程基础</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/杂烩/">杂烩</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/自动化测试/">自动化测试</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web前端/">Web前端</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web前端/JavaScript/">JavaScript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web前端/Web综合/">Web综合</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web前端/数据可视化/">数据可视化</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/计算机基础/">计算机基础</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/计算机基础/MySQL/">MySQL</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/调优/">调优</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/调优/软件测试/">软件测试</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">关于+</a>
@@ -132,34 +135,43 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    未分类
+    <a class="page-title-link" href="/categories/Python/">Python</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Python/Python编程基础/">Python编程基础</a>
     </h1>
 </div>
                         <div class="main-body-content">
                             <article id="post-Python之列表、字典、元组、容器遍历和列表解析" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Python之列表、字典、元组、容器遍历和列表解析
+        </h1>
+    
+
+            </header>
+        
         
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/0605/Python之列表、字典、元组、容器遍历和列表解析/" class="article-date">
-            <time datetime="2018-06-05T05:48:46.893Z" itemprop="datePublished">2018-06-05</time>
+        <a href="/2018/0601/Python之列表、字典、元组、容器遍历和列表解析/" class="article-date">
+            <time datetime="2018-05-31T23:48:16.000Z" itemprop="datePublished">2018-06-01</time>
         </a>
     </div>
 
                 
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>title: Python之列表、字典、元组、容器遍历和列表解析<br>date: 2018-06-01 07:48:16<br>categories:</p>
-<ul>
-<li>Python</li>
-<li>Python编程基础<br>tags:</li>
-<li>python<br>thumbnail: <a href="http://p2s7rr94e.bkt.clouddn.com/blog/180121/bl3iEiDkIj.jpg" target="_blank" rel="noopener">http://p2s7rr94e.bkt.clouddn.com/blog/180121/bl3iEiDkIj.jpg</a></li>
-</ul>
-<blockquote>
+            <blockquote>
 <p><strong>总结参考自知乎专栏《给妹子讲python》–酱油哥</strong></p>
 </blockquote>
 <h4 id="好用的列表"><a href="#好用的列表" class="headerlink" title="好用的列表"></a>好用的列表</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">    1.python中的容器数据类型概述</span></span><br><span class="line"><span class="string">    2.列表类型的异构性、有序性和本地可变性三大优势</span></span><br><span class="line"><span class="string">    2.列表的基本操作（增、删、改、分片索引）</span></span><br><span class="line"><span class="string">    3.列表的分片赋值与本地排序</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
@@ -285,7 +297,7 @@
 
 
 
-    <a data-url="https://sophoraflower.github.io/EverQuest/2018/0605/Python之列表、字典、元组、容器遍历和列表解析/" data-id="cji19osyl001f78i1yunv0sw7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://sophoraflower.github.io/EverQuest/2018/0601/Python之列表、字典、元组、容器遍历和列表解析/" data-id="cji19vf640017cwi1kn5vrx1f" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -454,10 +466,10 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/0605/Python之列表、字典、元组、容器遍历和列表解析/" class="thumbnail">
+                            <a href="/2018/0601/Python之列表、字典、元组、容器遍历和列表解析/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://p2s7rr94e.bkt.clouddn.com/blog/180121/bl3iEiDkIj.jpg)" alt="Python之列表、字典、元组、容器遍历和列表解析" class="thumbnail-image"></span>
     
     
 </a>
@@ -465,9 +477,9 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/0605/Python之列表、字典、元组、容器遍历和列表解析/" class="title"></a></p>
-                            <p class="item-date"><time datetime="2018-06-05T05:48:46.893Z" itemprop="datePublished">2018-06-05</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Python/Python编程基础/">Python编程基础</a></p>
+                            <p class="item-title"><a href="/2018/0601/Python之列表、字典、元组、容器遍历和列表解析/" class="title">Python之列表、字典、元组、容器遍历和列表解析</a></p>
+                            <p class="item-date"><time datetime="2018-05-31T23:48:16.000Z" itemprop="datePublished">2018-06-01</time></p>
                         </div>
                     </li>
                 
@@ -560,7 +572,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/EverQuest/">EverQuest</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/编程基础/">编程基础</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/">LifeStyle</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/摄影/">摄影</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/杂烩/">杂烩</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/自动化测试/">自动化测试</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/">Web前端</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/JavaScript/">JavaScript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/Web综合/">Web综合</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/数据可视化/">数据可视化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/MySQL/">MySQL</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/调优/">调优</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/调优/软件测试/">软件测试</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/EverQuest/">EverQuest</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/编程基础/">编程基础</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/">LifeStyle</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/摄影/">摄影</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python编程基础/">Python编程基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/杂烩/">杂烩</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/自动化测试/">自动化测试</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/">Web前端</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/JavaScript/">JavaScript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/Web综合/">Web综合</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/数据可视化/">数据可视化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/MySQL/">MySQL</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/调优/">调优</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/调优/软件测试/">软件测试</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -580,7 +592,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摄影/">摄影</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试管理/">测试管理</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摄影/">摄影</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试管理/">测试管理</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -590,7 +602,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/MySQL/" style="font-size: 16.67px;">MySQL</a> <a href="/tags/java/" style="font-size: 16.67px;">java</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/摄影/" style="font-size: 13.33px;">摄影</a> <a href="/tags/测试管理/" style="font-size: 10px;">测试管理</a>
+            <a href="/tags/MySQL/" style="font-size: 16.67px;">MySQL</a> <a href="/tags/java/" style="font-size: 16.67px;">java</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/摄影/" style="font-size: 13.33px;">摄影</a> <a href="/tags/测试管理/" style="font-size: 10px;">测试管理</a>
         </div>
     </div>
 
@@ -638,7 +650,7 @@
     var disqus_shortname = 'EverQuest';
     
     
-    var disqus_url = 'https://sophoraflower.github.io/EverQuest/2018/0605/Python之列表、字典、元组、容器遍历和列表解析/';
+    var disqus_url = 'https://sophoraflower.github.io/EverQuest/2018/0601/Python之列表、字典、元组、容器遍历和列表解析/';
     
     (function() {
     var dsq = document.createElement('script');

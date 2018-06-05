@@ -1,4 +1,4 @@
-https://sophoraflower.github.io/EverQuest/2018/0605/Python之列表、字典、元组、容器遍历和列表解析/
+https://sophoraflower.github.io/EverQuest/2018/0601/Python之列表、字典、元组、容器遍历和列表解析/
 https://sophoraflower.github.io/EverQuest/2018/0308/MySQL基础之三篇/
 https://sophoraflower.github.io/EverQuest/2018/0226/MySQL基础之二篇/
 https://sophoraflower.github.io/EverQuest/2018/0222/MySQL基础之一篇/
