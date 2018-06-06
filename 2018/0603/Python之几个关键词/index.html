@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Python之几个关键词 | 后乐</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="python" />
+    
+    <meta name="description" content="几个关键词（动态类型与共享引用、赋值与对象拷贝、循环迭代） 总结参考自知乎专栏《给妹子讲python》–酱油哥  动态类型与共享引用123456&apos;&apos;&apos;  1.python采用了动态类型机制  2.python变量本质上是对内存空间的指针  3.python的垃圾收集机制  4.python的共享引用现象&apos;&apos;&apos;  对象引用机制 ​        在python中，要明确一个概念：变量名和对象是划分开">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python之几个关键词">
+<meta property="og:url" content="https://sophoraflower.github.io/EverQuest/2018/0603/Python之几个关键词/index.html">
+<meta property="og:site_name" content="后乐">
+<meta property="og:description" content="几个关键词（动态类型与共享引用、赋值与对象拷贝、循环迭代） 总结参考自知乎专栏《给妹子讲python》–酱油哥  动态类型与共享引用123456&apos;&apos;&apos;  1.python采用了动态类型机制  2.python变量本质上是对内存空间的指针  3.python的垃圾收集机制  4.python的共享引用现象&apos;&apos;&apos;  对象引用机制 ​        在python中，要明确一个概念：变量名和对象是划分开">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://p2s7rr94e.bkt.clouddn.com/blog/180121/bl3iEiDkIj.jpg">
+<meta property="og:updated_time" content="2018-06-05T19:37:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python之几个关键词">
+<meta name="twitter:description" content="几个关键词（动态类型与共享引用、赋值与对象拷贝、循环迭代） 总结参考自知乎专栏《给妹子讲python》–酱油哥  动态类型与共享引用123456&apos;&apos;&apos;  1.python采用了动态类型机制  2.python变量本质上是对内存空间的指针  3.python的垃圾收集机制  4.python的共享引用现象&apos;&apos;&apos;  对象引用机制 ​        在python中，要明确一个概念：变量名和对象是划分开">
+<meta name="twitter:image" content="http://p2s7rr94e.bkt.clouddn.com/blog/180121/bl3iEiDkIj.jpg">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="后乐" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">柴门闻犬吠，风雪夜归人</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/EverQuest/">EverQuest</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Java/">Java</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Java/编程基础/">编程基础</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LifeStyle/">LifeStyle</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LifeStyle/摄影/">摄影</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/">Python</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/Python编程基础/">Python编程基础</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/杂烩/">杂烩</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/自动化测试/">自动化测试</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web前端/">Web前端</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web前端/JavaScript/">JavaScript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web前端/Web综合/">Web综合</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Web前端/数据可视化/">数据可视化</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/计算机基础/">计算机基础</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/计算机基础/MySQL/">MySQL</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/调优/">调优</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/调优/软件测试/">软件测试</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于+</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Python/">Python</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Python/Python编程基础/">Python编程基础</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-Python之几个关键词" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Python之几个关键词
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/0603/Python之几个关键词/" class="article-date">
+            <time datetime="2018-06-03T08:55:55.000Z" itemprop="datePublished">2018-06-03</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h3 id="几个关键词（动态类型与共享引用、赋值与对象拷贝、循环迭代）"><a href="#几个关键词（动态类型与共享引用、赋值与对象拷贝、循环迭代）" class="headerlink" title="几个关键词（动态类型与共享引用、赋值与对象拷贝、循环迭代）"></a>几个关键词（动态类型与共享引用、赋值与对象拷贝、循环迭代）</h3><blockquote>
+<p>总结参考自知乎专栏《给妹子讲python》–酱油哥</p>
+</blockquote>
+<h4 id="动态类型与共享引用"><a href="#动态类型与共享引用" class="headerlink" title="动态类型与共享引用"></a>动态类型与共享引用</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">  1.python采用了动态类型机制</span></span><br><span class="line"><span class="string">  2.python变量本质上是对内存空间的指针</span></span><br><span class="line"><span class="string">  3.python的垃圾收集机制</span></span><br><span class="line"><span class="string">  4.python的共享引用现象</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>对象引用机制</p>
+<p>​        <strong>在python中，要明确一个概念：变量名和对象是划分开的</strong>，变量名永远没有任何关联的类型信息，类型是和对象关联的，而不存在于变量名中。一个变量名当第一次被赋值的时候被创建，而当新的赋值表达式出现时，他会马上被当前新引用的对象所代替。<strong>这就是python所谓的动态类型机制</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">'abcde'</span></span><br><span class="line">print(a)  <span class="comment"># abcde</span></span><br><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">print(a)    <span class="comment"># [1,2,3,4,5]</span></span><br></pre></td></tr></table></figure>
+<p>​         <strong>在内部，变量事实上是到对象内存空间的一个指针，而且指向的对象可以随着程序赋值语句而不断变化。总结一下：变量名没有类型，只有对象才有类型，变量只是引用了不同类型的对象而已。</strong>每一个对象都包含了两个头部信息，一个是类型标志符，标识这个对象的类型，以及一个引用的计数器，用来表示这个对象被多少个变量名所引用，如果此时没有变量引用他，那么就可以回收这个对象。</p>
+</li>
+<li><p>垃圾收集机制</p>
+<p>​        每当一个变量名被赋予了一个新的对象，那么之前的那个对象占用的空间就会被回收，前提是如果他没有被其他变量名或者对象引用。这种自动回收对象空间的机制叫做<strong>垃圾收集机制。</strong></p>
+<p>​        <strong>具体的内部机制是这样的：</strong>python在每个对象中保存了一个计数器，计数器记录了当前指向该对象的引用的数目。一旦这个计数器被设置为<code>0</code>，这个对象的内存空间就会自动回收。当<code>a</code>被赋值给列表对象后，原来的字符串对象<code>‘abcde’</code>的引用计数器就会变为<code>0</code>，导致他的空间被回收。</p>
+</li>
+<li><p>共享引用</p>
+<p>​        多个变量名引用同一个对象，称为共享引用。</p>
+<p>​        给一个变量赋一个新值，并不是替换原始对象，而是让这个变量去引用完全不同的另一个对象，而原来对象的引用计数会随之减1。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 引用计数是2</span></span><br><span class="line">a = <span class="string">'abcde'</span></span><br><span class="line">b = a</span><br><span class="line">print(a)  <span class="comment"># abcde</span></span><br><span class="line">print(b)  <span class="comment"># abcde</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 引用计数是1</span></span><br><span class="line">a = <span class="string">'abcde'</span></span><br><span class="line">b = a</span><br><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">print(a)  <span class="comment"># [1,2,3,4]</span></span><br><span class="line">print(b)  <span class="comment"># abcde</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="赋值与对象拷贝"><a href="#赋值与对象拷贝" class="headerlink" title="赋值与对象拷贝"></a>赋值与对象拷贝</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">  1.可变对象的原处修改</span></span><br><span class="line"><span class="string">  2.如何获取对象的独立复制</span></span><br><span class="line"><span class="string">  3.比较、相等性和真值问题</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>在原处修改可变对象可能会影响程序中其他引用该对象的变量</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">X = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">L = [<span class="string">'a'</span>, X, <span class="string">'b'</span>]</span><br><span class="line">D = &#123;<span class="string">'x'</span>:X, <span class="string">'y'</span>:<span class="number">2</span>&#125;</span><br><span class="line"></span><br><span class="line">print(L)  <span class="comment"># ['a', [1, 2, 3, 4, 5], 'b']</span></span><br><span class="line">print(D)  <span class="comment"># &#123;'y': 2, 'x': [1, 2, 3, 4, 5]&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用这三个引用中的任意一个去修改列表[1，2，3，4，5]，也会同时改变另外两个引用的对象</span></span><br><span class="line">X = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">L = [<span class="string">'a'</span>, X, <span class="string">'b'</span>]</span><br><span class="line">D = &#123;<span class="string">'x'</span>:X, <span class="string">'y'</span>:<span class="number">2</span>&#125;</span><br><span class="line"></span><br><span class="line">L[<span class="number">1</span>][<span class="number">2</span>] = <span class="string">'changed'</span></span><br><span class="line">print(X)  <span class="comment"># change</span></span><br><span class="line">print(L)  <span class="comment"># [1, 2, 'changed', 4, 5]</span></span><br><span class="line">print(D)  <span class="comment"># ['a', [1, 2, 'changed', 4, 5], 'b']</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>独立复制</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 分片表达式能返回一个新的对象拷贝，没有限制条件的分片表达式能够完全复制列表</span></span><br><span class="line">L = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">C = L[<span class="number">1</span>:<span class="number">3</span>]</span><br><span class="line">C[<span class="number">0</span>] = <span class="number">8</span></span><br><span class="line">print(C)  <span class="comment"># [8, 3]</span></span><br><span class="line">print(L)  <span class="comment"># [1, 2, 3, 4, 5]</span></span><br><span class="line"></span><br><span class="line">L = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">C = L[:]</span><br><span class="line">C[<span class="number">0</span>] = <span class="number">8</span></span><br><span class="line">print(C)  <span class="comment"># [8, 2, 3, 4, 5]</span></span><br><span class="line">print(L)  <span class="comment"># [1, 2, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 字典的copy方法也能够实现字典的完全复制</span></span><br><span class="line">D = &#123;<span class="string">'a'</span>:<span class="number">1</span>, <span class="string">'b'</span>:<span class="number">2</span>&#125;</span><br><span class="line">B = D.copy()</span><br><span class="line">B[<span class="string">'a'</span>] = <span class="number">888</span></span><br><span class="line">print(B)  <span class="comment"># &#123;'a':1, 'b':2&#125;</span></span><br><span class="line">print(D)  <span class="comment"># &#123;'a': 1, 'b': 2&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 内置函数list可以生成拷贝</span></span><br><span class="line">L = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">C = list(L) <span class="comment"># C = L[:]</span></span><br><span class="line">C[<span class="number">0</span>] = <span class="number">888</span></span><br><span class="line">print(C)  <span class="comment"># [888, 2, 3, 4]</span></span><br><span class="line">print(L)  <span class="comment"># [1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+<p>​        无限制条件的分片操作以及字典的copy方法只能进行顶层的赋值。就是在最顶层，如果是数值对象就复制数值，如果是对象引用就直接复制引用，所以仍然存在下一级潜藏的共享引用现象。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">L = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">A = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,L]</span><br><span class="line">B = A[:]</span><br><span class="line">B[<span class="number">1</span>] = <span class="number">333</span></span><br><span class="line">B[<span class="number">3</span>][<span class="number">1</span>] = [<span class="string">'changed'</span>]</span><br><span class="line">print(B)  <span class="comment"># [1, 333, 3, [1, ['changed'], 3, 4]]</span></span><br><span class="line">print(A)  <span class="comment"># [1, 2, 3, [1, ['changed'], 3, 4]]</span></span><br><span class="line">print(L)  <span class="comment"># [1, ['changed'], 3, 4]</span></span><br></pre></td></tr></table></figure>
+<p>​        如果想实现自顶向下，深层次的将每一个层次的引用都做完整独立的复制，那么就要使用copy模块的<code>deepcopy</code>方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"></span><br><span class="line">L = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">A = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,L]</span><br><span class="line">B = copy.deepcopy(A)</span><br><span class="line"></span><br><span class="line">B[<span class="number">3</span>][<span class="number">1</span>] = [<span class="string">'changed'</span>]</span><br><span class="line">print(B)  <span class="comment"># [1, 2, 3, [1, ['changed'], 3, 4]]</span></span><br><span class="line">print(A)  <span class="comment"># [1, 2, 3, [1, 2, 3, 4]]</span></span><br><span class="line">print(L)  <span class="comment"># [1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>总结：<strong>普通的=赋值得到的其实仅仅是共享引用；无限条件的分片、<code>字典</code>copy方法和内置函数<code>list</code>这三种方法可以进行顶层对象的拷贝，而<code>deepcopy</code>可以彻底的实现自顶向下的完全拷贝。</strong></p>
+</li>
+<li><p>比较、相等性和真值问题</p>
+<ul>
+<li><p><code>==</code>测试两个对象值的相等性，即递归的比较所有内嵌对象；<code>is</code> 测试两个对象的一致性，即是否是在一个内存空间。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">L1 = [<span class="number">1</span>,<span class="number">2</span>,[<span class="string">'A'</span>,<span class="string">'B'</span>]]</span><br><span class="line">L2 = [<span class="number">1</span>,<span class="number">2</span>,[<span class="string">'A'</span>,<span class="string">'B'</span>]]</span><br><span class="line">L3 = L1</span><br><span class="line">print(L1 == L2, L1 <span class="keyword">is</span> L2)  <span class="comment"># True False</span></span><br><span class="line">print(L1 == L3, L1 <span class="keyword">is</span> L3)  <span class="comment"># True True</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>真值问题</p>
+<p>python把任意的空数据结构视为假，把任何非空数据结构视为真。使用<code>None</code>，一般都起到一个空的占位符的作用，在真值判断的时候为<code>false</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">L = [<span class="keyword">None</span>] * <span class="number">10</span></span><br><span class="line">print(L)</span><br><span class="line"></span><br><span class="line">[<span class="keyword">None</span>, <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="keyword">None</span>, <span class="keyword">None</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>内置<code>bool</code>函数可以测试一个对象是真还是假</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(bool([<span class="number">1</span>,<span class="number">2</span>]))  <span class="comment"># True</span></span><br><span class="line">print(bool(<span class="keyword">True</span>))  <span class="comment"># True</span></span><br><span class="line">print(bool(<span class="keyword">None</span>))  <span class="comment"># False</span></span><br><span class="line">print(bool(<span class="string">'abcde'</span>))  <span class="comment"># True</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="循环迭代"><a href="#循环迭代" class="headerlink" title="循环迭代"></a>循环迭代</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">  1.range函数：返回一系列连续增加的整数</span></span><br><span class="line"><span class="string">  2.zip函数：并行迭代多个序列</span></span><br><span class="line"><span class="string">  3.enumerate函数：同时产生偏移和元素</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><code>ranage</code>函数</p>
+<ul>
+<li><p>用来返回一系列连续增加的函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">5</span>):</span><br><span class="line">  print(x, end=<span class="string">','</span>)</span><br><span class="line">  </span><br><span class="line"><span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,</span><br><span class="line"></span><br><span class="line">print(range(<span class="number">5</span>))  <span class="comment"># 直接打印range函数的返回值是不能直接返回一个整数列表的</span></span><br><span class="line">print(list(range(<span class="number">5</span>))) <span class="comment"># 将其作为一个参数传给list函数，则可以一次性显示全部结果</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重复待定次数的动作</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">S = <span class="string">'abcdefghijklmn'</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(S),<span class="number">2</span>): </span><br><span class="line">    print(S[i], end=<span class="string">','</span>)</span><br><span class="line"></span><br><span class="line">a,c,e,g,i,k,m,</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用分片表达式简化</span></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> S[::<span class="number">2</span>]:</span><br><span class="line">    print(c, end=<span class="string">','</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>zip</code>函数</p>
+<ul>
+<li><p>使用for循环来并行迭代多个序列</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># zip在遍历时也是依次按需产生结果，而不是一次性显示所有结果</span></span><br><span class="line">L1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">L2 = [<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>,<span class="string">'D'</span>,<span class="string">'E'</span>]</span><br><span class="line"><span class="keyword">for</span> t <span class="keyword">in</span> zip(L1,L2):</span><br><span class="line">    print(t, end=<span class="string">','</span>)</span><br><span class="line"></span><br><span class="line">(<span class="number">1</span>, <span class="string">'A'</span>),(<span class="number">2</span>, <span class="string">'B'</span>),(<span class="number">3</span>, <span class="string">'C'</span>),(<span class="number">4</span>, <span class="string">'D'</span>),(<span class="number">5</span>, <span class="string">'E'</span>),</span><br><span class="line"></span><br><span class="line"><span class="comment"># 想一次性显示所有结果，则必须将其包含在一个list调用中，以便一次性显示所有结果</span></span><br><span class="line">L1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">L2 = [<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>,<span class="string">'D'</span>,<span class="string">'E'</span>]</span><br><span class="line"></span><br><span class="line">print(zip(L1,L2))  <span class="comment"># &lt;zip object at 0x000000000260ED08&gt;</span></span><br><span class="line">print(list(zip(L1,L2)))  <span class="comment"># [(1, 'A'), (2, 'B'), (3, 'C'), (4, 'D'), (5, 'E')]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>参数不同长度时</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 当zip的多个参数长度不同时，zip会以最短序列的长度为准来截断所得到的元组</span></span><br><span class="line">L1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">L2 = [<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>]</span><br><span class="line">print(list(zip(L1,L2)))  <span class="comment"># [(1, 'A'), (2, 'B'), (3, 'C')]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当字典的键和值必须在运行时计算产生时，zip函数可以用于产生这样的字典</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">keys = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>]</span><br><span class="line">vals = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">D = dict(zip(keys,vals))</span><br><span class="line">print(D)  <span class="comment"># &#123;'C': 3, 'A': 1, 'B': 2&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>enumerate</code>函数</p>
+<ul>
+<li><p>用来同时产生偏移和元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在for循环的条件下每轮迭代返回一个包含偏移值和偏移元素的元组：(index,value)</span></span><br><span class="line">S = <span class="string">'spam'</span></span><br><span class="line"><span class="keyword">for</span> t <span class="keyword">in</span> enumerate(S):</span><br><span class="line">    print(t,end=<span class="string">' '</span>)</span><br><span class="line"></span><br><span class="line">(<span class="number">0</span>, <span class="string">'s'</span>) (<span class="number">1</span>, <span class="string">'p'</span>) (<span class="number">2</span>, <span class="string">'a'</span>) (<span class="number">3</span>, <span class="string">'m'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按需产生，而非一次性产生所有元素的列表</span></span><br><span class="line">S = <span class="string">'spam'</span></span><br><span class="line">print(enumerate(S))  <span class="comment"># &lt;enumerate object at 0x0000000001ED2558&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://sophoraflower.github.io/EverQuest/2018/0603/Python之几个关键词/" data-id="cji2fbb5m000hd8i1hj5k80je" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zMzMyNy85ODgz">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="知乎" href="https://zhihu.com/people/Houlelord" target="_blank">
+                            <i class="icon fa fa-key"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="微博" href="https://weibo.com/u/1782696323" target="_blank">
+                            <i class="icon fa fa-weibo"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="实验楼" href="https://www.shiyanlou.com/user/577969/" target="_blank">
+                            <i class="icon fa fa-book"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="GitHub" href="https://github.com/sophoraFlower/" target="_blank">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                
+            
+                    
+                    <li>
+                        <a class="social-tooltip" title="Rss" href="/atom.xml" target="_blank">
+                            <i class="icon fa fa-rss"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/0604/Python之迭代与生成/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">
+        
+            Python之迭代与生成
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/0602/Python之字符串、文件编码、文件操作/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">Python之字符串、文件编码、文件操作</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/0604/Python之迭代与生成/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://p2s7rr94e.bkt.clouddn.com/blog/180121/bl3iEiDkIj.jpg)" alt="Python之迭代与生成" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Python/Python编程基础/">Python编程基础</a></p>
+                            <p class="item-title"><a href="/2018/0604/Python之迭代与生成/" class="title">Python之迭代与生成</a></p>
+                            <p class="item-date"><time datetime="2018-06-04T06:22:33.000Z" itemprop="datePublished">2018-06-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/0603/Python之几个关键词/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://p2s7rr94e.bkt.clouddn.com/blog/180121/bl3iEiDkIj.jpg)" alt="Python之几个关键词" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Python/Python编程基础/">Python编程基础</a></p>
+                            <p class="item-title"><a href="/2018/0603/Python之几个关键词/" class="title">Python之几个关键词</a></p>
+                            <p class="item-date"><time datetime="2018-06-03T08:55:55.000Z" itemprop="datePublished">2018-06-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/0602/Python之字符串、文件编码、文件操作/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://p2s7rr94e.bkt.clouddn.com/blog/180121/bl3iEiDkIj.jpg)" alt="Python之字符串、文件编码、文件操作" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Python/Python编程基础/">Python编程基础</a></p>
+                            <p class="item-title"><a href="/2018/0602/Python之字符串、文件编码、文件操作/" class="title">Python之字符串、文件编码、文件操作</a></p>
+                            <p class="item-date"><time datetime="2018-06-02T04:18:18.000Z" itemprop="datePublished">2018-06-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/0601/Python之列表、字典、元组、容器遍历和列表解析/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://p2s7rr94e.bkt.clouddn.com/blog/180121/bl3iEiDkIj.jpg)" alt="Python之列表、字典、元组、容器遍历和列表解析" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Python/Python编程基础/">Python编程基础</a></p>
+                            <p class="item-title"><a href="/2018/0601/Python之列表、字典、元组、容器遍历和列表解析/" class="title">Python之列表、字典、元组、容器遍历和列表解析</a></p>
+                            <p class="item-date"><time datetime="2018-05-31T23:48:16.000Z" itemprop="datePublished">2018-06-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/0308/MySQL基础之三篇/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://p2s7rr94e.bkt.clouddn.com/blog/180121/Jd86GGjhI0.jpg)" alt="MySQL基础之三篇" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/计算机基础/">计算机基础</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/计算机基础/MySQL/">MySQL</a></p>
+                            <p class="item-title"><a href="/2018/0308/MySQL基础之三篇/" class="title">MySQL基础之三篇</a></p>
+                            <p class="item-date"><time datetime="2018-03-08T06:40:00.000Z" itemprop="datePublished">2018-03-08</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/EverQuest/">EverQuest</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/编程基础/">编程基础</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/">LifeStyle</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LifeStyle/摄影/">摄影</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python编程基础/">Python编程基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/杂烩/">杂烩</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/自动化测试/">自动化测试</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/">Web前端</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/JavaScript/">JavaScript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/Web综合/">Web综合</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/数据可视化/">数据可视化</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/MySQL/">MySQL</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/调优/">调优</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/调优/软件测试/">软件测试</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">2018年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">2018年03月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">2018年02月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">2018年01月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">2017年12月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">2017年11月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">2017年09月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">2017年05月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">2017年04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016年08月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摄影/">摄影</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试管理/">测试管理</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/javascript/" style="font-size: 17.5px;">javascript</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/摄影/" style="font-size: 12.5px;">摄影</a> <a href="/tags/测试管理/" style="font-size: 10px;">测试管理</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 ZiZhi Cao</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'EverQuest';
+    
+    
+    var disqus_url = 'https://sophoraflower.github.io/EverQuest/2018/0603/Python之几个关键词/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

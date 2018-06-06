@@ -1,3 +1,5 @@
+https://sophoraflower.github.io/EverQuest/2018/0604/Python之迭代与生成/
+https://sophoraflower.github.io/EverQuest/2018/0603/Python之几个关键词/
 https://sophoraflower.github.io/EverQuest/2018/0602/Python之字符串、文件编码、文件操作/
 https://sophoraflower.github.io/EverQuest/2018/0601/Python之列表、字典、元组、容器遍历和列表解析/
 https://sophoraflower.github.io/EverQuest/2018/0308/MySQL基础之三篇/
