@@ -3,25 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Python问题汇总-201802 | 后乐</title>
+    <title>Python之Urllib库 | 后乐</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="python" />
     
-    <meta name="description" content="20180206 格式化输出json 12345json.dumps(obj, fp, ensure_ascii, indent)// obj json输出结果或者json文件// fp 文件句柄// ensure_ascii 设置为False,可以把中文以中文的形式输出显示或存到文件里// indent 缩进的空格数，设置为非零值时，就起到了格式化的效果  configparser模块：   &amp;">
+    <meta name="description" content="Python之Urllib库基本方法 urlopen() 12345678910111213urllib.request.urlopen(url, data=None, [timeout, ]*,cafile=None,capath=None,cadefault=False, context=None)# 快速爬取网页file=urllib.request.urlopen(&quot;http://www.">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python问题汇总-201802">
-<meta property="og:url" content="https://sophoraflower.github.io/EverQuest/2018/0201/Python问题汇总-201802/index.html">
+<meta property="og:title" content="Python之Urllib库">
+<meta property="og:url" content="https://sophoraflower.github.io/EverQuest/2018/0614/Python之Urllib库/index.html">
 <meta property="og:site_name" content="后乐">
-<meta property="og:description" content="20180206 格式化输出json 12345json.dumps(obj, fp, ensure_ascii, indent)// obj json输出结果或者json文件// fp 文件句柄// ensure_ascii 设置为False,可以把中文以中文的形式输出显示或存到文件里// indent 缩进的空格数，设置为非零值时，就起到了格式化的效果  configparser模块：   &amp;">
+<meta property="og:description" content="Python之Urllib库基本方法 urlopen() 12345678910111213urllib.request.urlopen(url, data=None, [timeout, ]*,cafile=None,capath=None,cadefault=False, context=None)# 快速爬取网页file=urllib.request.urlopen(&quot;http://www.">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://p2s7rr94e.bkt.clouddn.com/blog/180121/bl3iEiDkIj.jpg">
-<meta property="og:updated_time" content="2018-02-06T22:25:58.000Z">
+<meta property="og:updated_time" content="2018-06-14T01:26:11.019Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python问题汇总-201802">
-<meta name="twitter:description" content="20180206 格式化输出json 12345json.dumps(obj, fp, ensure_ascii, indent)// obj json输出结果或者json文件// fp 文件句柄// ensure_ascii 设置为False,可以把中文以中文的形式输出显示或存到文件里// indent 缩进的空格数，设置为非零值时，就起到了格式化的效果  configparser模块：   &amp;">
+<meta name="twitter:title" content="Python之Urllib库">
+<meta name="twitter:description" content="Python之Urllib库基本方法 urlopen() 12345678910111213urllib.request.urlopen(url, data=None, [timeout, ]*,cafile=None,capath=None,cadefault=False, context=None)# 快速爬取网页file=urllib.request.urlopen(&quot;http://www.">
 <meta name="twitter:image" content="http://p2s7rr94e.bkt.clouddn.com/blog/180121/bl3iEiDkIj.jpg">
     
 
@@ -135,18 +135,18 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Python/">Python</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Python/杂烩/">杂烩</a>
+    <a class="page-title-link" href="/categories/Python/">Python</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Python/Python爬虫/">Python爬虫</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-Python问题汇总-201802" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-Python之Urllib库" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Python问题汇总-201802
+        Python之Urllib库
         </h1>
     
 
@@ -156,8 +156,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/0201/Python问题汇总-201802/" class="article-date">
-            <time datetime="2018-02-01T08:16:16.000Z" itemprop="datePublished">2018-02-01</time>
+        <a href="/2018/0614/Python之Urllib库/" class="article-date">
+            <time datetime="2018-06-13T23:55:55.000Z" itemprop="datePublished">2018-06-14</time>
         </a>
     </div>
 
@@ -171,28 +171,90 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h4 id="20180206"><a href="#20180206" class="headerlink" title="20180206"></a>20180206</h4><ul>
-<li><p>格式化输出json</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">json.dumps(obj, fp, ensure_ascii, indent)</span><br><span class="line">// obj json输出结果或者json文件</span><br><span class="line">// fp 文件句柄</span><br><span class="line">// ensure_ascii 设置为<span class="keyword">False</span>,可以把中文以中文的形式输出显示或存到文件里</span><br><span class="line">// indent 缩进的空格数，设置为非零值时，就起到了格式化的效果</span><br></pre></td></tr></table></figure>
+            <h3 id="Python之Urllib库"><a href="#Python之Urllib库" class="headerlink" title="Python之Urllib库"></a>Python之Urllib库</h3><h4 id="基本方法"><a href="#基本方法" class="headerlink" title="基本方法"></a>基本方法</h4><ul>
+<li><p><code>urlopen()</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">urllib.request.urlopen(url, data=<span class="keyword">None</span>, [timeout, ]*,cafile=<span class="keyword">None</span>,capath=<span class="keyword">None</span>,cadefault=<span class="keyword">False</span>, context=<span class="keyword">None</span>)</span><br><span class="line"><span class="comment"># 快速爬取网页</span></span><br><span class="line">file=urllib.request.urlopen(<span class="string">"http://www.baidu.com"</span>)</span><br><span class="line">file.info()  <span class="comment"># &lt;http.client.HTTPMessage object at 0x0000000003623D68&gt;</span></span><br><span class="line">file.getcode()  <span class="comment"># 200</span></span><br><span class="line">file.geturl()  <span class="comment"># http://www.baidu.com</span></span><br><span class="line"><span class="comment"># 读取</span></span><br><span class="line">data=file.read()</span><br><span class="line">dataline=file.readline()</span><br><span class="line"><span class="comment"># 写入</span></span><br><span class="line">fhandle=open(<span class="string">"D:/Python35/myweb/part4/1.html"</span>,<span class="string">"wb"</span>)</span><br><span class="line">fhandle.write(data)</span><br><span class="line">fhandle.close()</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>configparser模块：</p>
+<li><p><code>urlretrieve()</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 直接将对应信息写入文本文件</span></span><br><span class="line">filename=urllib.request.urlretrieve(<span class="string">"http://edu.51cto.com"</span>, filename=<span class="string">"./2.html"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>urlcleanup()</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 清除urlretrieve执行所造成的缓存</span></span><br><span class="line">urllib.request.urlcleanup()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>quote()</code>和<code>unquote()</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编码和解码</span></span><br><span class="line">urllib.request.quote(<span class="string">"http://www.sina.com.cn"</span>)  <span class="comment"># 'http%3A//www.sina.com.cn'</span></span><br><span class="line">urllib.request.unquote(<span class="string">"http%3A//www.sina.com.cn"</span>)  <span class="comment"># 'http://www.sina.com.cn'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Request()</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用request()来包装请求，再通过urlopen()获取页面</span></span><br><span class="line">urllib.request.Request(url, data=<span class="keyword">None</span>, headers=&#123;&#125;, method=<span class="keyword">None</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>POST()</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># urlopen()的data参数默认为None，当data参数不为空的时候，urlopen()提交方式为Post。</span></span><br><span class="line">urllib.request.urlopen(url, data=<span class="keyword">None</span>, [timeout, ]*, cafile=<span class="keyword">None</span>, capath=<span class="keyword">None</span>, </span><br><span class="line">cadefault=<span class="keyword">False</span>, context=<span class="keyword">None</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>urlencode()</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># urlencode()主要作用就是将url附上要提交的数据</span></span><br><span class="line">data = &#123;</span><br><span class="line">    <span class="string">'first'</span>: <span class="string">'true'</span>,</span><br><span class="line">    <span class="string">'pn'</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">'kd'</span>: <span class="string">'Python'</span></span><br><span class="line">&#125;</span><br><span class="line">data = parse.urlencode(data).encode(<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="comment"># 也可以把data的数据封装在urlopen（）参数中</span></span><br><span class="line">page = request.urlopen(req, data=data).read()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>ProxyHandler()</code></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 代理设置</span></span><br><span class="line">urllib.request.ProxyHandler(proxies=<span class="keyword">None</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>parse</code></p>
+<ul>
+<li><p><code>urllib.parse.urljoin()</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基于一个base URL和另一个URL构造一个绝对URL,url必须为一致站点,否则后面参数会覆盖前面的host</span></span><br><span class="line">print(parse.urljoin(<span class="string">'https://www.jianshu.com/xyz'</span>,<span class="string">'FAQ.html'</span>))</span><br><span class="line">print(parse.urljoin(<span class="string">'http://www.baidu.com/about.html'</span>,<span class="string">'http://www.baidu.com/FAQ.html'</span>))</span><br><span class="line"></span><br><span class="line">https://www.jianshu.com/FAQ.html</span><br><span class="line">http://www.baidu.com/FAQ.html</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>urllib.parse.urlencode()</code> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 字典转字符串</span></span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request, parse</span><br><span class="line">url = <span class="string">r'https://www.jianshu.com/collections/20f7f4031550/mark_viewed.json'</span></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">'User-Agent'</span>: <span class="string">r'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'</span>,</span><br><span class="line">    <span class="string">'Referer'</span>: <span class="string">r'https://www.jianshu.com/c/20f7f4031550?utm_medium=index-collections&amp;utm_source=desktop'</span>,</span><br><span class="line">    <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span></span><br><span class="line">&#125;</span><br><span class="line">data = &#123;</span><br><span class="line">    <span class="string">'uuid'</span>: <span class="string">'5a9a30b5-3259-4fa0-ab1f-be647dbeb08a'</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># Post的数据必须是bytes或者iterable of bytes，不能是str，因此需要进行encode()编码</span></span><br><span class="line">data = parse.urlencode(data).encode(<span class="string">'utf-8'</span>)</span><br><span class="line">print(data)  <span class="comment"># b'uuid=5a9a30b5-3259-4fa0-ab1f-be647dbeb08a'</span></span><br><span class="line">req = request.Request(url, headers=headers, data=data)</span><br><span class="line">page = request.urlopen(req).read()</span><br><span class="line">page = page.decode(<span class="string">'utf-8'</span>)</span><br><span class="line">print(page)  <span class="comment"># &#123;"message":"success"&#125;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>&emsp;&emsp;This module provides the <a href="https://docs.python.org/3/library/configparser.html#configparser.ConfigParser" target="_blank" rel="noopener"><code>ConfigParser</code></a> class which implements a basic configuration language which provides a structure similar to what’s found in Microsoft Windows INI files.  You can use this to write Python programs which can be customized by end users easily.</p>
-<p>&emsp;&emsp;参考文章</p>
-<p>&emsp;&emsp;<a href="http://blog.csdn.net/u014453898/article/details/53544144" target="_blank" rel="noopener">《python3 用ConfigParser包处理 ini文件》</a></p>
-<p>&emsp;&emsp;<a href="http://blog.csdn.net/willhuo/article/details/49512557" target="_blank" rel="noopener">《如何使用Python3读写INI配置文件》</a></p>
-<p>&emsp;&emsp;示例：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">; config.ini</span></span><br><span class="line"><span class="comment">; PC Online</span></span><br><span class="line"><span class="section">[HTTP_PC]</span></span><br><span class="line">base_url : https://www.xxx.tv/</span><br><span class="line"></span><br><span class="line"><span class="comment">; PC Beta</span></span><br><span class="line"><span class="section">[HTTP_Beta]</span></span><br><span class="line">beta_base_url : https://beta.xxx.tv/</span><br><span class="line"></span><br><span class="line"><span class="comment">; Mobile Online</span></span><br><span class="line"><span class="section">[HTTP_Mobile]</span></span><br><span class="line">mobile_base_url : https://apis.xxx.tv/</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> configparser</span><br><span class="line"></span><br><span class="line">configPath = os.path.abspath(os.curdir) + <span class="string">'\\testConfig\\config.ini'</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ReadConfig</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 构造函数，读取配置文件(config.ini)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.config = configparser.ConfigParser()</span><br><span class="line">        self.config.read(configPath)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_http_pc</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        value = self.config.get(<span class="string">"HTTP_PC"</span>, name)</span><br><span class="line">        <span class="keyword">return</span> value</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_http_beta</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        value = self.config.get(<span class="string">"HTTP_Beta"</span>, name)</span><br><span class="line">        <span class="keyword">return</span> value</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_http_mobile</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        value = self.config.get(<span class="string">"HTTP_Mobile"</span>, name)</span><br><span class="line">        <span class="keyword">return</span> value</span><br><span class="line">      </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    config = ReadConfig()</span><br><span class="line">    self.base = config.get_http_pc(name=<span class="string">"base_url"</span>) // https://www.xxx.tv/ </span><br><span class="line">    self.url = self.base + <span class="string">'api/user/profile'</span></span><br><span class="line">    print(<span class="string">'**** '</span> + self.url + <span class="string">' ****'</span>)</span><br></pre></td></tr></table></figure>
-<h4 id="20180207"><a href="#20180207" class="headerlink" title="20180207"></a>20180207</h4><h4 id="20180208"><a href="#20180208" class="headerlink" title="20180208"></a>20180208</h4><h4 id="20180209"><a href="#20180209" class="headerlink" title="20180209"></a>20180209</h4><h4 id="……"><a href="#……" class="headerlink" title="……"></a>……</h4>
+</li>
+</ul>
+<h4 id="模拟浏览器"><a href="#模拟浏览器" class="headerlink" title="模拟浏览器"></a>模拟浏览器</h4><ul>
+<li><p>使用<code>build_opener()</code>修改报头</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">url= <span class="string">"http://blog.csdn.net/weiwei_pig/article/details/51178226"</span></span><br><span class="line">headers=(<span class="string">"User-Agent"</span>,<span class="string">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0"</span>)</span><br><span class="line">opener = urllib.request.build_opener()</span><br><span class="line">opener.addheaders = [headers]</span><br><span class="line">data=opener.open(url).read()</span><br><span class="line"></span><br><span class="line">fhandle=open(<span class="string">"./3.html"</span>,<span class="string">"wb"</span>)</span><br><span class="line">fhandle.write(data)</span><br><span class="line">fhandle.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>add__header()</code>添加报头</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">url= <span class="string">"http://blog.csdn.net/weiwei_pig/article/details/51178226"</span></span><br><span class="line">req=urllib.request.Request(url)</span><br><span class="line">req.add_header(<span class="string">'User-Agent'</span>, <span class="string">'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0'</span>)</span><br><span class="line">data=urllib.request.urlopen(req).read()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>超时设置</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">100</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        file=urllib.request.urlopen(<span class="string">"http://yum.iqianyue.com"</span>,timeout=<span class="number">30</span>)</span><br><span class="line">        data=file.read()</span><br><span class="line">        print(len(data))</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        print(<span class="string">"出现异常--&gt;"</span>+str(e))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="HTTP协议请求"><a href="#HTTP协议请求" class="headerlink" title="HTTP协议请求"></a>HTTP协议请求</h4><ul>
+<li><p><code>GET</code>请求</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">url=<span class="string">"http://www.baidu.com/s?wd="</span></span><br><span class="line">key=<span class="string">"苍井空"</span></span><br><span class="line">key_code=urllib.request.quote(key)  <span class="comment"># 编码</span></span><br><span class="line">url_all=url+key_code</span><br><span class="line"><span class="comment"># 构建一个Request对象</span></span><br><span class="line">req=urllib.request.Request(url_all)</span><br><span class="line">data=urllib.request.urlopen(req).read()</span><br><span class="line">fh=open(<span class="string">"./5.html"</span>,<span class="string">"wb"</span>)</span><br><span class="line">fh.write(data)</span><br><span class="line">fh.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>POST</code>请求</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> urllib.parse</span><br><span class="line">url = <span class="string">"http://www.iqianyue.com/mypost/"</span></span><br><span class="line">postdata =urllib.parse.urlencode(&#123;</span><br><span class="line">	<span class="string">"name"</span>:<span class="string">"ceo@iqianyue.com"</span>,</span><br><span class="line">	<span class="string">"pass"</span>:<span class="string">"aA123456"</span></span><br><span class="line">&#125;).encode(<span class="string">'utf-8'</span>)  <span class="comment"># 将数据使用urlencode编码处理后，使用encode()设置为utf-8编码</span></span><br><span class="line"><span class="comment"># 构建一个Request对象</span></span><br><span class="line">req = urllib.request.Request(url,postdata)</span><br><span class="line">req.add_header(<span class="string">'User-Agent'</span>, <span class="string">'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0'</span>)</span><br><span class="line">data=urllib.request.urlopen(req).read()</span><br><span class="line">fhandle=open(<span class="string">"D:/Python35/myweb/part4/6.html"</span>,<span class="string">"wb"</span>)</span><br><span class="line">fhandle.write(data)</span><br><span class="line">fhandle.close()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="代理服务器设置和DebugLog"><a href="#代理服务器设置和DebugLog" class="headerlink" title="代理服务器设置和DebugLog"></a>代理服务器设置和<code>DebugLog</code></h4><ul>
+<li><p>代理设置</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">use_proxy</span><span class="params">(proxy_addr,url)</span>:</span>  </span><br><span class="line">    <span class="comment"># 使用urllib.request.ProxyHandler()来设置对应的代理服务器信息</span></span><br><span class="line">    proxy= urllib.request.ProxyHandler(&#123;<span class="string">'http'</span>:proxy_addr&#125;) </span><br><span class="line">    <span class="comment"># 自定义一个opener对象</span></span><br><span class="line">    opener = urllib.request.build_opener(proxy, urllib.request.HTTPHandler) </span><br><span class="line">    <span class="comment"># 创建全局默认的opener对象</span></span><br><span class="line">    urllib.request.install_opener(opener)</span><br><span class="line">    data = urllib.request.urlopen(url).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line">proxy_addr=<span class="string">"202.75.210.45:7777"</span></span><br><span class="line">data=use_proxy(proxy_addr,<span class="string">"http://www.baidu.com"</span>)</span><br><span class="line">print(len(data))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>DebugLog</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">httphd=urllib.request.HTTPHandler(debuglevel=<span class="number">1</span>)</span><br><span class="line">httpshd=urllib.request.HTTPSHandler(debuglevel=<span class="number">1</span>)</span><br><span class="line">opener=urllib.request.build_opener(httphd,httpshd)</span><br><span class="line">urllib.request.install_opener(opener)</span><br><span class="line">data=urllib.request.urlopen(<span class="string">"http://edu.51cto.com"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h4><ul>
+<li><p><code>URLError</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> urllib.error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    urllib.request.urlopen(<span class="string">"http://blog.csdn.net"</span>)</span><br><span class="line"><span class="keyword">except</span> urllib.error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    print(e.code)  <span class="comment"># 403</span></span><br><span class="line">    print(e.reason)  <span class="comment"># Forbidden</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>HTTPError</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> urllib.error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    urllib.request.urlopen(<span class="string">"http://blog.csdn.net"</span>)</span><br><span class="line"><span class="keyword">except</span> urllib.error.HTTPError <span class="keyword">as</span> e:</span><br><span class="line">    print(e.code)  <span class="comment"># 403</span></span><br><span class="line">    print(e.reason)  <span class="comment"># Forbidden</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>URLError</code>与<code>HTTPError</code></p>
+<p>​        <code>HTTPError</code>子类无法处理这3种<code>URLError</code>：连接不上服务器、远程URL不存在、无网络引起的异常。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 先让HTTPError子类进行处理，若无法处理，再让其用URLError进行处理</span></span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> urllib.error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    urllib.request.urlopen(<span class="string">"http://blog.baidusss.net"</span>)</span><br><span class="line"><span class="keyword">except</span> urllib.error.HTTPError <span class="keyword">as</span> e:</span><br><span class="line">    print(e.code)</span><br><span class="line">    print(e.reason)</span><br><span class="line"><span class="keyword">except</span> urllib.error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    print(e.reason)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 进一步优化</span></span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> urllib.error</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    urllib.request.urlopen(<span class="string">"http://blog.csdn.net"</span>)</span><br><span class="line"><span class="keyword">except</span> urllib.error.URLError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="keyword">if</span> hasattr(e,<span class="string">"code"</span>):</span><br><span class="line">        print(e.code)</span><br><span class="line">    <span class="keyword">if</span> hasattr(e,<span class="string">"reason"</span>):</span><br><span class="line">        print(e.reason)</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://sophoraflower.github.io/EverQuest/2018/0201/Python问题汇总-201802/" data-id="cjidv63h80010oci1myps0zwu" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://sophoraflower.github.io/EverQuest/2018/0614/Python之Urllib库/" data-id="cjidv63gn0005oci1nncv5uo7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -339,20 +401,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/0222/MySQL基础之一篇/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">
-        
-            MySQL基础之一篇
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2018/0131/Java进阶知识汇总/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/0604/Python之迭代与生成/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">Java进阶知识汇总</p>
+        <p class="article-nav-title">Python之迭代与生成</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -555,7 +607,7 @@
     var disqus_shortname = 'EverQuest';
     
     
-    var disqus_url = 'https://sophoraflower.github.io/EverQuest/2018/0201/Python问题汇总-201802/';
+    var disqus_url = 'https://sophoraflower.github.io/EverQuest/2018/0614/Python之Urllib库/';
     
     (function() {
     var dsq = document.createElement('script');
